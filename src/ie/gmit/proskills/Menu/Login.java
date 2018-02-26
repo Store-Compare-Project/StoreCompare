@@ -63,6 +63,7 @@ public class Login extends JFrame {
 				
 				if(textField.getText().equals("test") && textField.getText().equals("test")){
 					System.out.println("Bye!");
+					MainMenu.main(null);
 					CloseFrame();
 				}else {
 					System.out.println("Fail");

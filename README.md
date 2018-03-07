@@ -1,2 +1,2 @@
 # ITProSkills
-IT Pro
+IT Prfessional Skills

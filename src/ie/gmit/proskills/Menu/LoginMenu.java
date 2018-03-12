@@ -64,7 +64,16 @@ public class LoginMenu extends JFrame {
 				
 				System.out.println(username + " " + password);
 				
-				Login.main(username, password);
+				boolean loginCheck = Login.main(username, password);
+				
+				if(loginCheck){
+					
+					MainMenu.main(null);
+					CloseFrame();
+					
+				}else{
+					System.out.println("Failed");
+				}
 				
 			}
 		});

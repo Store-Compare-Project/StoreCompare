@@ -5,7 +5,7 @@ import com.mongodb.*;
 public class Login {
 
 	@SuppressWarnings("deprecation")
-	public static void main(String username, String password) {
+	public static Boolean main(String username, String password) {
 		
 		Boolean loginStatus = false;
 		
@@ -15,7 +15,7 @@ public class Login {
 		
 		
 		DBCursor cursor = coll.find();
-		BasicDBObject query = new BasicDBObject("username", "Cian");
+		//BasicDBObject query = new BasicDBObject("username", "Cian");
 
 		
 		try {
@@ -38,5 +38,7 @@ public class Login {
 		}
 		
 		mongoClient.close();
+		
+		return loginStatus;
 	}
 }

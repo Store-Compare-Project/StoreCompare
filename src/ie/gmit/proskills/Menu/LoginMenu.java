@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import ie.gmit.proskills.Processes.Login;
+
 import java.awt.GridBagLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -61,13 +64,7 @@ public class LoginMenu extends JFrame {
 				
 				System.out.println(username + " " + password);
 				
-				if(textField.getText().equals("test") && textField.getText().equals("test")){
-					System.out.println("Bye!");
-					MainMenu.main(null);
-					CloseFrame();
-				}else {
-					System.out.println("Fail");
-				}
+				Login.main(username, password);
 				
 			}
 		});

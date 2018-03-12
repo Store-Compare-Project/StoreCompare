@@ -1,6 +1,7 @@
 package ie.gmit.proskills.Processes;
 
 import com.mongodb.*;
+import com.mongodb.client.MongoDatabase;
 
 public class Login {
 
@@ -9,5 +10,9 @@ public class Login {
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		
 		
+		
+		MongoDatabase db = mongoClient.getDatabase("login");
+		
+		System.out.print(db);
 	}
 }

@@ -45,7 +45,7 @@ public class LandingPage extends JFrame {
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Login.main(null);
+				LoginMenu.main(null);
 				CloseFrame();
 			}
 		});

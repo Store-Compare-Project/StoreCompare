@@ -1,15 +1,10 @@
 package ie.gmit.proskills.Menu;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import ie.gmit.proskills.Processes.Login;
-
-import java.awt.GridBagLayout;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -21,9 +16,13 @@ import java.awt.event.ActionEvent;
 
 public class LoginMenu extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3819995849104340705L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField usernameInput;
+	private JTextField passwordInput;
 
 	/**
 	 * Launch the application.
@@ -59,8 +58,11 @@ public class LoginMenu extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				String username = textField.getText();
-				String password = textField_1.getText();
+				String username = usernameInput.getText();
+				String password = passwordInput.getText();
+				
+				usernameInput.setText("");
+				passwordInput.setText("");
 				
 				System.out.println(username + " " + password);
 				
@@ -78,11 +80,11 @@ public class LoginMenu extends JFrame {
 			}
 		});
 		
-		textField = new JTextField();
-		textField.setColumns(10);
+		usernameInput = new JTextField();
+		usernameInput.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		passwordInput = new JTextField();
+		passwordInput.setColumns(10);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -92,11 +94,11 @@ public class LoginMenu extends JFrame {
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblNewLabel)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE))
+								.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE))
 							.addGap(18)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 								.addComponent(lblPassword, GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)))
+								.addComponent(passwordInput, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)))
 						.addComponent(btnNewButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
 					.addContainerGap())
 		);
@@ -109,8 +111,8 @@ public class LoginMenu extends JFrame {
 						.addComponent(lblPassword))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(passwordInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
 					.addComponent(btnNewButton)
 					.addContainerGap())

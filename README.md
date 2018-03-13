@@ -1,4 +1,3 @@
-# ITProSkills
 
 # Professional Practice in IT
 

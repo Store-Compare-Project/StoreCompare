@@ -1,9 +1,8 @@
+![readme header](https://user-images.githubusercontent.com/22448079/37356618-5304b46e-26de-11e8-830a-241c949d84ba.png)
 
-# Professional Practice in IT
+## Description
 
-## 3rd Year Software Development in GMIT
-
-## Project Outline
+The aim of this project is to develop a piece of software meeting industry standards for development, documentation and publishing. The collaboratively built program will be developed using the Java programming language and a database (yet to be decided) with Git and Github as version control. Documentation will include Javadocs, a Github read-me page, a video screencast to demonstrate the features of the program and a .pdf document explaining to the user how to use the program.
 
 ## Members
 
@@ -12,10 +11,6 @@ Cian Gannon (G00337022)
 Danielis Joniskis (G00333859)
 
 Edward Eldridge (G00337490)
-
-## Description
-
-The aim of this project is to develop a piece of software meeting industry standards for development, documentation and publishing. The collaboratively built program will be developed using the Java programming language and a database (yet to be decided) with Git and Github as version control. Documentation will include Javadocs, a Github read-me page, a video screencast to demonstrate the features of the program and a .pdf document explaining to the user how to use the program.
 
 ## Program
 

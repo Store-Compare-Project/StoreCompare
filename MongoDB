@@ -1,5 +1,0 @@
-MongoDB Setup:
-
-1. use loginproject
-2. db.login.insert ( {username: "USERNAME", password: "PASSWORD"} )
-3. 

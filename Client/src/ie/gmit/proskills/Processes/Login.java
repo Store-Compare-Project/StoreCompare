@@ -1,7 +1,5 @@
 package ie.gmit.proskills.Processes;
 
-import com.mongodb.*;
-
 import ie.gmit.proskills.object.LoginObject;
 import ie.gmit.proskills.serverconn.Requester;
 

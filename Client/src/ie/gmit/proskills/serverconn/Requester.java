@@ -14,58 +14,32 @@ public class Requester{
  	String ipaddress;
  	Scanner stdin;
 	Requester(){}
+	
 	void run(String messageSend)
 	{
-		stdin = new Scanner(System.in);
+		message = messageSend;
+		
 		try{
-			//1. creating a socket to connect to the server
-			System.out.println("Please Enter your IP Address");
-			ipaddress = stdin.next();
-			requestSocket = new Socket(ipaddress, 2004);
+			
+			requestSocket = new Socket("127.0.0.1", 2004);
 			System.out.println("Connected to "+ipaddress+" in port 2004");
-			//2. get Input and Output streams
 			out = new ObjectOutputStream(requestSocket.getOutputStream());
 			out.flush();
 			in = new ObjectInputStream(requestSocket.getInputStream());
-			System.out.println("Hello");
-			//3: Communicating with the server
 			
-			do{
-				try
-				{
-					sendMessage(messageSend);
-					
-					if(message.compareToIgnoreCase("1")==0)
-					{
-						message = (String)in.readObject();
-						System.out.println(message);
-						message = stdin.next();
-						sendMessage(message);
-						
-						message = (String)in.readObject();
-						System.out.println(message);
-						message = stdin.next();
-						sendMessage(message);
-						
-						message = (String)in.readObject();
-						System.out.println(message);
-						
-					}
-					
-						
-						
-				}
-				catch(ClassNotFoundException classNot)
-				{
-					System.err.println("data received in unknown format");
-				}
-			}while(!(message == ""));
+			
+			sendMessage(message);
+			message = (String)in.readObject();
+			
 		}
 		catch(UnknownHostException unknownHost){
 			System.err.println("You are trying to connect to an unknown host!");
 		}
 		catch(IOException ioException){
 			ioException.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		finally{
 			//4: Closing connection

@@ -22,7 +22,6 @@ public class Requester{
 		try{
 			
 			requestSocket = new Socket("127.0.0.1", 2004);
-			System.out.println("Connected to "+ipaddress+" in port 2004");
 			out = new ObjectOutputStream(requestSocket.getOutputStream());
 			out.flush();
 			in = new ObjectInputStream(requestSocket.getInputStream());
@@ -35,7 +34,7 @@ public class Requester{
 			
 		}
 		catch(UnknownHostException unknownHost){
-			System.err.println("You are trying to connect to an unknown host!");
+			unknownHost.printStackTrace();
 		}
 		catch(IOException ioException){
 			ioException.printStackTrace();
@@ -60,7 +59,6 @@ public class Requester{
 		try{
 			out.writeObject(msg);
 			out.flush();
-			System.out.println("client>" + msg);
 		}
 		catch(IOException ioException){
 			ioException.printStackTrace();

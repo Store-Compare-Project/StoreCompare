@@ -2,6 +2,8 @@ package ie.gmit.proskills.Processes;
 
 import com.mongodb.*;
 
+import ie.gmit.proskills.serverconn.Requester;
+
 public class Login {
 
 	@SuppressWarnings("deprecation")
@@ -28,7 +30,11 @@ public class Login {
 			   
 			   if(usernameTemp.equals(username) && passwordTemp.equals(password)){
 				   loginStatus = true;
-			   }   
+			   }
+			   
+			   String messageSend = "login " + username + " " + password;
+			   
+			   Requester.main(messageSend);
 			   
 			   System.out.println(loginStatus);
 			   

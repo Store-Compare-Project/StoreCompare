@@ -53,74 +53,72 @@ class ClientServiceThread extends Thread {
 		System.out.println("Accepted Client : ID - " + clientID + " : Address - "
 		        + clientSocket.getInetAddress().getHostName());
 		
-		
-		do{
-			try
+		try
+		{
+			message = (String)in.readObject();
+			
+			String[] splited = message.split("\\s+");
+			
+			sendMessage("" + splited);
+			
+			/*
+			if(message.compareToIgnoreCase("1")==0)
 			{
-				sendMessage("Press 1 for string testing\n Press 2 for the calculator \nPress 3 to exit");
-				message = (String)in.readObject();
+				System.out.println("User wishes to complete the string test");
+				sendMessage("Please enter a string");
+				String string1 = (String)in.readObject();
+				sendMessage("Please enter a string");
+				String string2 = (String)in.readObject();
 				
-				
-				
-				/*
-				if(message.compareToIgnoreCase("1")==0)
-				{
-					System.out.println("User wishes to complete the string test");
-					sendMessage("Please enter a string");
-					String string1 = (String)in.readObject();
-					sendMessage("Please enter a string");
-					String string2 = (String)in.readObject();
-					
-					if(string1.equals(string2))
-						sendMessage("Both strings are the same");
-					else if(string1.compareToIgnoreCase(string2)>0)
-						sendMessage("String 1 is bigger");
-					else
-						sendMessage("String 2 is bigger");
-				}
-				
-				else if(message.compareToIgnoreCase("2")==0)
-				{
-					System.out.println("User wishes to complete the calculator test");
-					
-					sendMessage("Press 1 for Multiply\nPress 2 for square root\n");
-					message=(String)in.readObject();
-					
-					if(message.equalsIgnoreCase("1"))
-					{
-						sendMessage("Please enter number 1");
-						message = (String)in.readObject();
-						int a = Integer.parseInt(message);
-						
-						sendMessage("Please enter number 2");
-						message = (String)in.readObject();
-						int b = Integer.parseInt(message);
-						
-						sendMessage(""+(a*b));
-					}
-					
-					else if(message.equalsIgnoreCase("2"))
-					{
-						sendMessage("Please enter the number");
-						message = (String)in.readObject();
-						int a = Integer.parseInt(message);
-						
-						sendMessage(""+Math.sqrt(a));
-						
-					}
-					
-				}
-				*/
-				
-			}
-			catch(ClassNotFoundException classnot){
-				System.err.println("Data received in unknown format");
+				if(string1.equals(string2))
+					sendMessage("Both strings are the same");
+				else if(string1.compareToIgnoreCase(string2)>0)
+					sendMessage("String 1 is bigger");
+				else
+					sendMessage("String 2 is bigger");
 			}
 			
-    	}while(!message.equals("3"));
+			else if(message.compareToIgnoreCase("2")==0)
+			{
+				System.out.println("User wishes to complete the calculator test");
+				
+				sendMessage("Press 1 for Multiply\nPress 2 for square root\n");
+				message=(String)in.readObject();
+				
+				if(message.equalsIgnoreCase("1"))
+				{
+					sendMessage("Please enter number 1");
+					message = (String)in.readObject();
+					int a = Integer.parseInt(message);
+					
+					sendMessage("Please enter number 2");
+					message = (String)in.readObject();
+					int b = Integer.parseInt(message);
+					
+					sendMessage(""+(a*b));
+				}
+				
+				else if(message.equalsIgnoreCase("2"))
+				{
+					sendMessage("Please enter the number");
+					message = (String)in.readObject();
+					int a = Integer.parseInt(message);
+					
+					sendMessage(""+Math.sqrt(a));
+					
+				}
+				
+			}
+			*/
+			
+		}
+		catch(ClassNotFoundException classnot){
+			System.err.println("Data received in unknown format");
+		}
+			
       
-		System.out.println("Ending Client : ID - " + clientID + " : Address - "
-		        + clientSocket.getInetAddress().getHostName());
+		System.out.println("Ending Client : ID - " + clientID + " : Address - " + clientSocket.getInetAddress().getHostName());
+		
     } catch (Exception e) {
       e.printStackTrace();
     }

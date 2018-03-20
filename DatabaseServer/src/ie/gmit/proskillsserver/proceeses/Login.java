@@ -1,4 +1,4 @@
-package ie.gmit.proskills.Processes;
+package ie.gmit.proskillsserver.proceeses;
 
 import com.mongodb.*;
 
@@ -27,8 +27,11 @@ public class Login {
 			   String passwordTemp = temp.get("password").toString();
 			   
 			   if(usernameTemp.equals(username) && passwordTemp.equals(password)){
+				   
 				   loginStatus = true;
-			   }   
+				   
+			   }
+			   
 			   
 			   System.out.println(loginStatus);
 			   

@@ -55,16 +55,20 @@ class ClientServiceThread extends Thread {
 		message = (String)in.readObject();
 		
 		String[] splited = message.split("\\s+");
+		boolean loginStatus = false;
 		
-		sendMessage("" + splited);
 		
-		if(splited[0] == "login"){
+		//sendMessage("" + splited);
+		
+		System.out.println(splited[0]);
+		
+		if(splited[0].equals("login")){
 			
-			boolean loginStatus = Login.main(splited[1], splited[2]);
-			
-			sendMessage("" + loginStatus);
+			loginStatus = Login.main(splited[1], splited[2]);	
 			
 		}
+		
+		sendMessage("" + loginStatus);
 		
 		
 	} catch (IOException e) {

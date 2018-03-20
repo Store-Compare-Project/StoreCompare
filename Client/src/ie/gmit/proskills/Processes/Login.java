@@ -2,32 +2,25 @@ package ie.gmit.proskills.Processes;
 
 import com.mongodb.*;
 
+import ie.gmit.proskills.object.LoginObject;
 import ie.gmit.proskills.serverconn.Requester;
 
 public class Login {
 	
-	Boolean loginStatus;
+	public static Boolean loginStatus = false;
 
 	@SuppressWarnings("deprecation")
 	public static Boolean main(String username, String password) {
-		
-		Boolean loginStatus = false;
-		
-		try {
 			   
-		   String messageSend = "login " + username + " " + password;
-		   
-		   
-		   
-		   Requester.main(messageSend);
-		   
-		   System.out.println(loginStatus);
+	   String messageSend = "login " + username + " " + password;
+	   
+	   Requester.main(messageSend);
+	   
+	   System.out.println(loginStatus);
 			   
-		} finally {
-		   cursor.close();
-		}
 		
 		
-		return loginStatus;
+		
+		return LoginObject.getLogin();
 	}
 }

@@ -27,7 +27,9 @@ public class Login {
 			   String passwordTemp = temp.get("password").toString();
 			   
 			   if(usernameTemp.equals(username) && passwordTemp.equals(password)){
+				   
 				   loginStatus = true;
+				   
 			   }
 			   
 			   

@@ -1,10 +1,10 @@
 package ie.gmit.proskills.serverconn;
 
-
-
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
+
+import ie.gmit.proskills.object.LoginObject;
 
 public class Requester{
 	Socket requestSocket;
@@ -30,6 +30,8 @@ public class Requester{
 			
 			sendMessage(message);
 			message = (String)in.readObject();
+			
+			LoginObject.setLogin(Boolean.parseBoolean(message));
 			
 		}
 		catch(UnknownHostException unknownHost){

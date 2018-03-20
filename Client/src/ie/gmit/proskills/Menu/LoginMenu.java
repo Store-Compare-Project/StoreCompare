@@ -64,8 +64,6 @@ public class LoginMenu extends JFrame {
 				usernameInput.setText("");
 				passwordInput.setText("");
 				
-				System.out.println(username + " " + password);
-				
 				boolean loginCheck = Login.main(username, password);
 				
 				if(loginCheck){
@@ -74,7 +72,7 @@ public class LoginMenu extends JFrame {
 					CloseFrame();
 					
 				}else{
-					System.out.println("Failed");
+					//TODO Add message to user displaying failed login status
 				}
 				
 			}

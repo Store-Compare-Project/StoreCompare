@@ -69,9 +69,9 @@ class ClientServiceThread extends Thread {
 			
 		}
 		
-		System.out.println(loginStatus);
+		System.out.println("> Accepted Client : ID - " + clientID + " | Login status: " + loginStatus);
 		
-		sendMessage("> Accepted Client : ID - " + clientID + " | Login status: " + loginStatus);
+		sendMessage("" + loginStatus);
 		
 		System.out.println("> Disconnecting Client : ID - " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
 	} catch (IOException e) {

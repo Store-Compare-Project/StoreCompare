@@ -7,6 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 import ie.gmit.proskillsserver.proceeses.Login;
+import ie.gmit.proskillsserver.proceeses.Register;
 
 public class EchoServer {
   public static void main(String[] args) throws Exception {
@@ -66,9 +67,11 @@ class ClientServiceThread extends Thread {
 		}
 		else if(splited[0].equals("register")){
 			
-				
+			loginStatus = Register.main(splited[1], splited[2]);	
 			
 		}
+		
+		System.out.println(loginStatus);
 		
 		sendMessage("" + loginStatus);
 		

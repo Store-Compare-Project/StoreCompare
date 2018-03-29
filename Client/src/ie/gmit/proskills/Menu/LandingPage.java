@@ -96,6 +96,12 @@ public class LandingPage extends JFrame {
 		});
 		
 		JButton buttonReg = new JButton("Register");
+		buttonReg.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RegisterMenu.main(null);
+				CloseFrame();
+			}
+		});
 		buttonReg.setBackground(Color.LIGHT_GRAY);
 		buttonReg.setBounds(336, 330, 140, 40);
 		panel.add(buttonReg);

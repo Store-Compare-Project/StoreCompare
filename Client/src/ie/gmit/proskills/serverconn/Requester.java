@@ -21,7 +21,7 @@ public class Requester{
 		
 		try{
 			
-			requestSocket = new Socket("127.0.0.1", 2004);
+			requestSocket = new Socket("35.197.218.124", 2004);
 			out = new ObjectOutputStream(requestSocket.getOutputStream());
 			out.flush();
 			in = new ObjectInputStream(requestSocket.getInputStream());

@@ -46,28 +46,35 @@ public class RegisterMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public RegisterMenu() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(700, 350, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
+		// Labels and buttons for interface
 		JLabel lblUsername = new JLabel("Username:");
 		
 		JLabel lblPassword = new JLabel("Password:");
 		
 		JButton btnNewButton = new JButton("Register");
+		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
+				// Declare variables for input boxes
 				String username = usernameInput.getText();
 				String password1 = passwordInput1.getText();
 				String password2 = passwordInput1.getText();
 				
+				// Set all text boxes to default
 				usernameInput.setText("");
 				passwordInput1.setText("");
 				passwordInput2.setText("");
 				
+				// Input validation for register details
+				// Send register details (username,password) to main method in register
 				boolean registerCheck = Register.main(username, password1);
 				
 				if(!registerCheck){

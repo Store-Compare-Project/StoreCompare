@@ -77,12 +77,7 @@ public class RegisterMenu extends JFrame {
 				passwordInput2.setText("");
 				
 				// Input validation for register details
-				boolean inputValidated = false;
-				
-				while(inputValidated!=true)
-				{
-					
-				}
+				boolean validationCheck = Validator.validate(username);
 						
 				// Send our validated details to Register method
 				boolean registerCheck = Register.main(username, password1);

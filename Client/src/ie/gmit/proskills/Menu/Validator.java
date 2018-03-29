@@ -6,8 +6,8 @@ import java.util.regex.Pattern;
 public class Validator {
 	
 	// Variables
-	private Pattern pattern;
-	private Matcher matcher;
+	private static Pattern pattern;
+	private static Matcher matcher;
 	  
 	// RegEx 
     private static final String USERNAME_PATTERN = "^[a-z0-9_-]{3,15}$";
@@ -22,7 +22,7 @@ public class Validator {
 	   * @param username username for validation
 	   * @return true valid username, false invalid username
 	   */
-	  public boolean validate(final String username){
+	  public static boolean validate(final String username){
 		  
 		  matcher = pattern.matcher(username);
 		  return matcher.matches();

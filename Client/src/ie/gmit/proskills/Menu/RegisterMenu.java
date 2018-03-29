@@ -23,7 +23,8 @@ public class RegisterMenu extends JFrame {
 	private static final long serialVersionUID = 3819995849104340705L;
 	private JPanel contentPane;
 	private JTextField usernameInput;
-	private JTextField passwordInput;
+	private JTextField passwordInput1;
+	private JTextField passwordInput2;
 
 	/**
 	 * Launch the application.
@@ -51,7 +52,7 @@ public class RegisterMenu extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JLabel lblNewLabel = new JLabel("Username:");
+		JLabel lblUsername = new JLabel("Username:");
 		
 		JLabel lblPassword = new JLabel("Password:");
 		
@@ -60,10 +61,10 @@ public class RegisterMenu extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				String username = usernameInput.getText();
-				String password = passwordInput.getText();
+				String password = passwordInput1.getText();
 				
 				usernameInput.setText("");
-				passwordInput.setText("");
+				passwordInput1.setText("");
 				
 				boolean registerCheck = Register.main(username, password);
 				
@@ -84,8 +85,13 @@ public class RegisterMenu extends JFrame {
 		usernameInput = new JTextField();
 		usernameInput.setColumns(10);
 		
-		passwordInput = new JTextField();
-		passwordInput.setColumns(10);
+		passwordInput1 = new JTextField();
+		passwordInput1.setColumns(10);
+		
+		passwordInput2 = new JTextField();
+		passwordInput2.setColumns(10);
+		
+		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -94,27 +100,36 @@ public class RegisterMenu extends JFrame {
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblNewLabel)
-								.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE))
-							.addGap(18)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblPassword, GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-								.addComponent(passwordInput, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(btnNewButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE))
-					.addContainerGap())
+								.addComponent(lblUsername)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
+									.addGap(18))
+								.addComponent(btnNewButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE))
+							.addContainerGap())
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+							.addComponent(lblConfirmPassword, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(lblPassword, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(passwordInput1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(passwordInput2, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(228, Short.MAX_VALUE))))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel)
-						.addComponent(lblPassword))
+					.addComponent(lblUsername)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(passwordInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addPreferredGap(ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
+					.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(lblPassword)
+					.addGap(3)
+					.addComponent(passwordInput1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(lblConfirmPassword)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(passwordInput2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
 					.addComponent(btnNewButton)
 					.addContainerGap())
 		);

@@ -61,14 +61,14 @@ public class RegisterMenu extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				String username = usernameInput.getText();
-				String password = passwordInput1.getText();
+				String password1 = passwordInput1.getText();
+				String password2 = passwordInput1.getText();
 				
 				usernameInput.setText("");
 				passwordInput1.setText("");
+				passwordInput2.setText("");
 				
-				boolean registerCheck = Register.main(username, password);
-				
-				
+				boolean registerCheck = Register.main(username, password1);
 				
 				if(!registerCheck){
 					
@@ -78,6 +78,9 @@ public class RegisterMenu extends JFrame {
 				}else{
 					//TODO Add message to user displaying failed login status
 				}
+				
+				
+				
 				
 			}
 		});

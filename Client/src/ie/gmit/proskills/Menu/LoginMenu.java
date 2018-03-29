@@ -76,6 +76,7 @@ public class LoginMenu extends JFrame {
 		usernameInput.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblPassword.setBounds(11, 113, 200, 14);
 		panel.add(lblPassword);
 		

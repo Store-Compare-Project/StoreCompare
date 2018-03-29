@@ -46,7 +46,7 @@ class ClientServiceThread extends Thread {
 	}
   
   public void run() {
-    System.out.println("> Accepted Client : ID - " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
+    System.out.println("> Accepted Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
    
 	try {
 		out = new ObjectOutputStream(clientSocket.getOutputStream());
@@ -60,20 +60,24 @@ class ClientServiceThread extends Thread {
 		
 		if(splited[0].equals("login")){
 			
+			System.out.println("> Client ID: " + clientID + " | Login Attempt - " + message);
+			
 			loginStatus = Login.main(splited[1], splited[2]);	
 			
 		}
 		else if(splited[0].equals("register")){
 			
+			System.out.println("> Client ID: " + clientID + " | Register Attempt - " + message);
+			
 			loginStatus = Register.main(splited[1], splited[2]);	
 			
 		}
 		
-		System.out.println("> Accepted Client : ID - " + clientID + " | Login status: " + loginStatus);
+		System.out.println("> Accepted Client ID: " + clientID + " | Login Status - " + loginStatus);
 		
 		sendMessage("" + loginStatus);
 		
-		System.out.println("> Disconnecting Client : ID - " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
+		System.out.println("> Disconnecting Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

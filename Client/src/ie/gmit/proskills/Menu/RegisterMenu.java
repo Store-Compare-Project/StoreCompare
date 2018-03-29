@@ -71,25 +71,37 @@ public class RegisterMenu extends JFrame {
 				String password1 = passwordInput1.getText();
 				String password2 = passwordInput1.getText();
 				
-				// Set all text boxes to default
-				usernameInput.setText("");
-				passwordInput1.setText("");
-				passwordInput2.setText("");
-				
 				// Input validation for register details
-				boolean validationCheck = Validator.validate(username);
-						
-				// Send our validated details to Register method
-				boolean registerCheck = Register.main(username, password1);
+				boolean validationCheck = Validator.validate(username, null);
+				
+				// If the user's username passes validation
+				if(validationCheck = true)
+				{
+					// Send our validated details to Register method
+					boolean registerCheck = Register.main(username, password1);
 
-				if(!registerCheck){
-					
-					MainMenu.main(null);
-					CloseFrame();
-					
-				}else{
-					//TODO Add message to user displaying failed login status
+					if(!registerCheck){
+						
+						MainMenu.main(null);
+						CloseFrame();
+						
+					}else{
+						//TODO Add message to user displaying failed login status
+					}
 				}
+				
+				else
+				{
+					// Set all text boxes to default
+					usernameInput.setText("");
+					passwordInput1.setText("");
+					passwordInput2.setText("");
+					
+					// Display a prompt to let the user know wassup
+					JOptionPane.showInputDialog(null, "Please enter a valid username.");
+				}
+						
+				
 				
 			}
 			

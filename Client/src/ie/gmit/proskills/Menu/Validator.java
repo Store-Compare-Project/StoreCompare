@@ -12,7 +12,6 @@ public class Validator {
 	// RegEx 
     private static final String USERNAME_PATTERN = "^[a-z0-9_-]{3,15}$";
 
-    // 
     public Validator(){
 		  pattern = Pattern.compile(USERNAME_PATTERN);
 	  }
@@ -22,7 +21,7 @@ public class Validator {
 	   * @param username username for validation
 	   * @return true valid username, false invalid username
 	   */
-	  public static boolean validate(final String username){
+	  public static boolean validate(String username, Pattern pattern){
 		  
 		  matcher = pattern.matcher(username);
 		  return matcher.matches();

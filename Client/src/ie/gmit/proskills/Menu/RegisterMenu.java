@@ -72,7 +72,7 @@ public class RegisterMenu extends JFrame {
 				String password2 = passwordInput1.getText();
 				
 				// Input validation for register details
-				boolean validationCheck = Validator.validate(username);
+				boolean validationCheck = Validator.validateUsername(username);
 				
 				// If the user's username passes validation
 				if(validationCheck == true)

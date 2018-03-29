@@ -17,7 +17,7 @@ public class Validator {
 	   * @param username username for validation
 	   * @return true valid username, false invalid username
 	   */
-	  public static boolean validate(String username){
+	  public static boolean validateUsername(String username){
 		  
 		  // Deubg
 		  System.out.println("Inside validate function");

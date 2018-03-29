@@ -10,9 +10,12 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.awt.event.ActionEvent;
 
 public class RegisterMenu extends JFrame {
@@ -74,9 +77,16 @@ public class RegisterMenu extends JFrame {
 				passwordInput2.setText("");
 				
 				// Input validation for register details
-				// Send register details (username,password) to main method in register
-				boolean registerCheck = Register.main(username, password1);
+				boolean inputValidated = false;
 				
+				while(inputValidated!=true)
+				{
+					
+				}
+						
+				// Send our validated details to Register method
+				boolean registerCheck = Register.main(username, password1);
+
 				if(!registerCheck){
 					
 					MainMenu.main(null);
@@ -86,11 +96,18 @@ public class RegisterMenu extends JFrame {
 					//TODO Add message to user displaying failed login status
 				}
 				
-				
-				
-				
+			}
+			
+			public validateUsername(String username)
+			{
+				// Variables
+				private Pattern pattern;
+				private Matcher matcher;
+				  
 			}
 		});
+		
+		
 		
 		usernameInput = new JTextField();
 		usernameInput.setColumns(10);

@@ -67,7 +67,7 @@ public class RegisterMenu extends JFrame {
 				
 				boolean registerCheck = Register.main(username, password);
 				
-				if(registerCheck){
+				if(!registerCheck){
 					
 					MainMenu.main(null);
 					CloseFrame();

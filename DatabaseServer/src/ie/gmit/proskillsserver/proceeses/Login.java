@@ -9,7 +9,7 @@ public class Login {
 		
 		Boolean loginStatus = false;
 		
-		MongoClient mongoClient = new MongoClient("35.197.218.124", 27017);
+		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("loginproject");
 		DBCollection coll = db.getCollection("login");
 		

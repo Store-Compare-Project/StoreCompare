@@ -16,7 +16,7 @@ public class Register {
 		
 		BasicDBObject command = new BasicDBObject();
 		
-		MongoClient mongoClient = new MongoClient("localhost", 2004);
+		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("loginproject");
 		DBCollection coll = db.getCollection("login");
 		

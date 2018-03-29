@@ -1,5 +1,6 @@
 package ie.gmit.proskills.Processes;
 
+import ie.gmit.proskills.object.LoginObject;
 import ie.gmit.proskills.serverconn.Requester;
 
 public class Register {
@@ -10,7 +11,7 @@ public class Register {
 		   
 	   	Requester.main(messageSend);
 	   	
-		return false;
+		return LoginObject.getLogin();
 	}
 
 }

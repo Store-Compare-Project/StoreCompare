@@ -10,7 +10,7 @@ import com.mongodb.MongoClient;
 public class Register {
 
 	@SuppressWarnings("deprecation")
-	public static Boolean main(String username, String password) {
+	public static Boolean main(String username, String password, int clientID) {
 		
 		Boolean loginStatus = false;
 		
@@ -49,6 +49,12 @@ public class Register {
 		}
 		
 		mongoClient.close();
+		
+		if(!loginStatus){
+			System.out.println("> Client ID: " + clientID + " | Registed - " + username);
+		}else {
+			System.out.println("> Client ID: " + clientID + " | Failed Register - " + username);
+		}
 		
 		return loginStatus;
 	}

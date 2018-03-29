@@ -5,7 +5,7 @@ import com.mongodb.*;
 public class Login {
 
 	@SuppressWarnings("deprecation")
-	public static Boolean main(String username, String password) {
+	public static Boolean main(String username, String password, int clientID) {
 		
 		Boolean loginStatus = false;
 		
@@ -13,10 +13,7 @@ public class Login {
 		DB db = mongoClient.getDB("loginproject");
 		DBCollection coll = db.getCollection("login");
 		
-		
 		DBCursor cursor = coll.find();
-		//BasicDBObject query = new BasicDBObject("username", "Cian");
-
 		
 		try {
 		   while(cursor.hasNext() && !loginStatus) {
@@ -30,17 +27,19 @@ public class Login {
 				   
 				   loginStatus = true;
 				   
-			   }
-			   
-			   
-			   System.out.println(loginStatus);
-			   
+			   }  
 		   }
 		} finally {
 		   cursor.close();
 		}
 		
 		mongoClient.close();
+		
+		if(loginStatus){
+			System.out.println("> Client ID: " + clientID + " | Logged-in - " + username);
+		}else {
+			System.out.println("> Client ID: " + clientID + " | Failed Login - " + username);
+		}
 		
 		return loginStatus;
 	}

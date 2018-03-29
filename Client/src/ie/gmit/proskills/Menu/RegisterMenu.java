@@ -98,13 +98,6 @@ public class RegisterMenu extends JFrame {
 				
 			}
 			
-			public validateUsername(String username)
-			{
-				// Variables
-				private Pattern pattern;
-				private Matcher matcher;
-				  
-			}
 		});
 		
 		

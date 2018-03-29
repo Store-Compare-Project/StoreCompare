@@ -1,6 +1,7 @@
 package ie.gmit.proskills.Menu;
 
 import ie.gmit.proskills.Processes.Register;
+import ie.gmit.proskills.Processes.Validator;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
@@ -14,8 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.awt.event.ActionEvent;
 
 public class RegisterMenu extends JFrame {

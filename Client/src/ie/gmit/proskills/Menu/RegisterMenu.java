@@ -80,7 +80,7 @@ public class RegisterMenu extends JFrame {
 					
 					// Send our validated details to Register method
 					boolean registerCheck = Register.main(username, password1);
-
+					
 					if(!registerCheck){
 						
 						MainMenu.main(null);
@@ -99,9 +99,9 @@ public class RegisterMenu extends JFrame {
 					passwordInput2.setText("");
 					
 					// Debug
-					System.out.println("Invalid username");
+					System.out.printf("Username %s is invalid", username);
 					
-					// Display a prompt to let the user know wassup
+					// Display a prompt to let the user know their username is invalid
 					JOptionPane.showMessageDialog(null, "Please enter a valid username. \n - Between 3-15 characters \n - Numbers (0-9) \n Symbols - (_ . @)");
 				}
 						

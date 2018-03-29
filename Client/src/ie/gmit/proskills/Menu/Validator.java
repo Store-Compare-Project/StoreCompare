@@ -21,7 +21,6 @@ public class Validator {
 		  
 		  // Deubg
 		  System.out.println("Inside validate function");
-		  System.out.println(username);
 		  
 		  pattern = Pattern.compile(USERNAME_PATTERN);
 

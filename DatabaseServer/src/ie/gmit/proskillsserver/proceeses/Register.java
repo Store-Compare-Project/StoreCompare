@@ -1,5 +1,6 @@
 package ie.gmit.proskillsserver.proceeses;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
@@ -12,6 +13,8 @@ public class Register {
 	public static Boolean main(String username, String password) {
 		
 		Boolean loginStatus = false;
+		
+		BasicDBObject command = new BasicDBObject();
 		
 		MongoClient mongoClient = new MongoClient("localhost", 2004);
 		DB db = mongoClient.getDB("loginproject");
@@ -32,9 +35,15 @@ public class Register {
 				   
 			   }
 			   
-			   System.out.println(loginStatus);
-			   
 		   }
+		   
+		   if(!loginStatus){
+			   command.put("username", username);
+			   command.put("password", password);
+			   
+			   coll.insert(command);
+		   }
+		   
 		} finally {
 		   cursor.close();
 		}

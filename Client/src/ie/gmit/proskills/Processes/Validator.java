@@ -10,7 +10,7 @@ public class Validator {
 	private static Matcher matcher;
 	  
 	// RegEx 
-    private static final String USERNAME_PATTERN = "^[a-z0-9_@.]{3,15}$";
+    private static final String USERNAME_PATTERN = "^[a-zA-Z0-9]*${3,15}$";
 
     /**
 	   * Validate username with regular expression

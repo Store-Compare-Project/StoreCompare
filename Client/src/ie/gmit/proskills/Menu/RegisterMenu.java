@@ -154,7 +154,7 @@ public class RegisterMenu extends JFrame {
 					System.out.printf("Username %s is invalid", username);
 					
 					// Display a prompt to let the user know their username is invalid
-					JOptionPane.showMessageDialog(null, "Please enter a valid username. \n - Between 3-15 characters \n - Numbers (0-9) \n Symbols - (_ . @)");
+					JOptionPane.showMessageDialog(null, "Please enter a valid username. \n - Between 3-15 characters \n - Numbers (0-9) \n -Symbols not accepted");
 				}
 						
 				

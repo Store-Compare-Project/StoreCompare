@@ -99,12 +99,19 @@ public class LoginMenu extends JFrame {
 				
 				boolean loginCheck = Login.main(username, password);
 				
-				if(loginCheck){
-					
-					MainMenu.main(null);
-					CloseFrame();
-					
-				}else{
+				// If the user logs in successfully, send them to the main landing page of the program                                                                                
+				if(loginCheck)
+				{		
+					try {
+						MainPage.mainPage();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					//MainMenu.main(null);
+					//CloseFrame();					
+				}
+				else{
 					//TODO Add message to user displaying failed login status
 				}
 				

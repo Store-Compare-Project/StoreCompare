@@ -11,6 +11,7 @@ import ie.gmit.proskills.Websites.Ebay;
 public class MainPage 
 {
 
+	@SuppressWarnings("deprecation")
 	public static void run() throws InterruptedException 
 	{
 		
@@ -36,9 +37,11 @@ public class MainPage
 		
 		EbayThread = new EbayThread(searchTerm, itemList);
 		EbayThread.start();
+		EbayThread.join();
 		
 		// Basic output of object list array
 		System.out.println(itemList);
+		
 		
 		// Close reader
 		reader.close();

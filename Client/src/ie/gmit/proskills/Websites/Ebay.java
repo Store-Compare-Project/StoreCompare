@@ -15,6 +15,7 @@ public class Ebay {
 	public static void run(String searchTerm, List<Items> itemList) throws IOException {
 		
 		String name = null;
+		String priceString=null;
 		double price = 0;
 		String urlPart1 = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 		String urlPart2 = ".TRS0&_nkw=";
@@ -59,10 +60,14 @@ public class Ebay {
 			
 			try
 			{
-				price =  Double.parseDouble((el.getElementsByClass("lvprice prc").text()).replaceAll("[^0-9.]", ""));
+				priceString =  ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
+				System.out.println(priceString);
+				price = Double.parseDouble(priceString);
+
 			} 
 			catch (NumberFormatException e) 
 			{
+				e.printStackTrace();
 				System.out.println("Price not found.");
 			}
 			

@@ -66,7 +66,7 @@ public class RegisterMenu extends JFrame {
 		panel.setLayout(null);
 		
 		passwordInput1 = new JTextField();
-		passwordInput1.setBounds(10, 137, 273, 20);
+		passwordInput1.setBounds(11, 153, 272, 20);
 		panel.add(passwordInput1);
 		passwordInput1.setColumns(10);
 	
@@ -77,7 +77,7 @@ public class RegisterMenu extends JFrame {
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblPassword.setBounds(11, 113, 200, 14);
+		lblPassword.setBounds(11, 128, 200, 14);
 		panel.add(lblPassword);
 		
 		// Labels and buttons for interface
@@ -87,12 +87,13 @@ public class RegisterMenu extends JFrame {
 		panel.add(lblUsername);
 		
 		passwordInput2 = new JTextField();
-		passwordInput2.setBounds(42, 228, 186, 20);
+		passwordInput2.setBounds(10, 209, 273, 20);
 		panel.add(passwordInput2);
 		passwordInput2.setColumns(10);
 		
 		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
-		lblConfirmPassword.setBounds(42, 188, 186, 14);
+		lblConfirmPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblConfirmPassword.setBounds(10, 184, 186, 14);
 		panel.add(lblConfirmPassword);
 		
 		JButton btnNewButton = new JButton("Register");

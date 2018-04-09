@@ -6,11 +6,13 @@ import ie.gmit.proskills.Processes.Validator;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
+import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
@@ -64,7 +66,7 @@ public class RegisterMenu extends JFrame {
 		panel.setBounds(251, 0, 293, 381);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
+	
 		passwordInput1 = new JTextField();
 		passwordInput1.setBounds(11, 153, 272, 20);
 		panel.add(passwordInput1);
@@ -97,8 +99,14 @@ public class RegisterMenu extends JFrame {
 		panel.add(lblConfirmPassword);
 		
 		JButton btnNewButton = new JButton("Register");
-		btnNewButton.setBounds(61, 287, 141, 23);
+		btnNewButton.setBounds(11, 251, 272, 88);
 		panel.add(btnNewButton);
+		
+		JLabel logoLabel = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/logo.png")).getImage();
+		logoLabel.setIcon(new ImageIcon(img));
+		logoLabel.setBounds(0, 0, 250, 200);
+		contentPane.add(logoLabel);
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

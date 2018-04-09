@@ -1,4 +1,4 @@
-package Storage;
+package ie.gmit.proskills.Storage;
 
 public class Items {
 

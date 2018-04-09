@@ -3,6 +3,7 @@ package ie.gmit.proskills.Menu;
 import ie.gmit.proskills.Processes.Register;
 import ie.gmit.proskills.Processes.Validator;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -54,13 +55,46 @@ public class RegisterMenu extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(267, 16, 262, 354);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		passwordInput1 = new JTextField();
+		passwordInput1.setBounds(42, 42, 86, 20);
+		panel.add(passwordInput1);
+		passwordInput1.setColumns(10);
+		
+		
+		
+		usernameInput = new JTextField();
+		usernameInput.setBounds(42, 109, 86, 20);
+		panel.add(usernameInput);
+		usernameInput.setColumns(10);
+		
+		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setBounds(42, 84, 186, 14);
+		panel.add(lblPassword);
 		
 		// Labels and buttons for interface
 		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setBounds(42, 17, 52, 14);
+		panel.add(lblUsername);
 		
-		JLabel lblPassword = new JLabel("Password:");
+		passwordInput2 = new JTextField();
+		passwordInput2.setBounds(42, 160, 186, 20);
+		panel.add(passwordInput2);
+		passwordInput2.setColumns(10);
+		
+		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
+		lblConfirmPassword.setBounds(42, 140, 186, 14);
+		panel.add(lblConfirmPassword);
 		
 		JButton btnNewButton = new JButton("Register");
+		btnNewButton.setBounds(61, 287, 141, 23);
+		panel.add(btnNewButton);
 		
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -109,61 +143,6 @@ public class RegisterMenu extends JFrame {
 			}
 			
 		});
-		
-		
-		
-		usernameInput = new JTextField();
-		usernameInput.setColumns(10);
-		
-		passwordInput1 = new JTextField();
-		passwordInput1.setColumns(10);
-		
-		passwordInput2 = new JTextField();
-		passwordInput2.setColumns(10);
-		
-		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(lblUsername)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
-									.addGap(18))
-								.addComponent(btnNewButton, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE))
-							.addContainerGap())
-						.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
-							.addComponent(lblConfirmPassword, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(lblPassword, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addComponent(passwordInput1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(passwordInput2, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
-							.addContainerGap(228, Short.MAX_VALUE))))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblUsername)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(usernameInput, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(lblPassword)
-					.addGap(3)
-					.addComponent(passwordInput1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(lblConfirmPassword)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(passwordInput2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-					.addComponent(btnNewButton)
-					.addContainerGap())
-		);
-		contentPane.setLayout(gl_contentPane);
 	}
 	
 	public void CloseFrame(){

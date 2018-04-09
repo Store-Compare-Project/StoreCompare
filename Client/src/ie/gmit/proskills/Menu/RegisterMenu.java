@@ -50,7 +50,7 @@ public class RegisterMenu extends JFrame {
 	public RegisterMenu() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(700, 350, 450, 300);
+		setBounds(100, 100, 560, 420);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

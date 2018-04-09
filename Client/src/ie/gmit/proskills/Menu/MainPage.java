@@ -24,7 +24,7 @@ public class MainPage
 		// Items Object list array
 		List<Items> itemList = new ArrayList<Items>();
 				
-		// Decelerations
+		// Declarations
 		Scanner reader = new Scanner(System.in);
 
 		// Debug
@@ -45,4 +45,34 @@ public class MainPage
 		
 	}
 
+}
+
+// Declare threads
+class EbayThread extends Thread 
+{
+	// Variables
+	String searchTerm;
+	List<Items> itemList;
+	
+	// Constructor
+	EbayThread(String g, List<Items> i)
+	{
+		searchTerm = g;
+		itemList = i;
+	}
+	
+	// Run method for thread
+	public void run()
+	{
+		// Try catch
+		try
+		{
+			Ebay.run(searchTerm, itemList);
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 }

@@ -155,6 +155,11 @@ public class RegisterMenu extends JFrame {
 			}
 			
 		});
+		
+		JPanel coverPanel = new JPanel();
+		coverPanel.setBackground(Color.DARK_GRAY);
+		coverPanel.setBounds(0, 199, 250, 182);
+		contentPane.add(coverPanel);
 	}
 	
 	public void CloseFrame(){

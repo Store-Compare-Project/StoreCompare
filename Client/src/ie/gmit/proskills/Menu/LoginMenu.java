@@ -114,10 +114,10 @@ public class LoginMenu extends JFrame {
 		contentPane.add(panel);
 		contentPane.add(logoLabel);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.DARK_GRAY);
-		panel_1.setBounds(0, 199, 250, 182);
-		contentPane.add(panel_1);
+		JPanel coverPanel = new JPanel();
+		coverPanel.setBackground(Color.DARK_GRAY);
+		coverPanel.setBounds(0, 199, 250, 182);
+		contentPane.add(coverPanel);
 	}
 	
 	public void CloseFrame(){

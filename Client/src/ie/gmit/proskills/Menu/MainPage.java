@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import ie.StoreCompare.storage.Items;
+import ie.gmit.proskills.Storage.Items;
 import ie.gmit.proskills.Websites.Ebay;
 
 public class MainPage 
 {
 
-	public static void mainPage() throws InterruptedException
+	public static void run() throws InterruptedException 
 	{
 		
 		// Threads
-		//DiscogsThread DiscogsThread;
+		EbayThread EbayThread;
 							
 		// Variables
 		boolean menuKeeper = true;
@@ -33,6 +33,15 @@ public class MainPage
 		// Prompt user for input
 		System.out.println("Enter item to search: ");
 		searchTerm = reader.nextLine();
+		
+		EbayThread = new EbayThread(searchTerm, itemList);
+		EbayThread.start();
+		
+		// Basic output of object list array
+		System.out.println(itemList);
+		
+		// Close reader
+		reader.close();
 		
 	}
 

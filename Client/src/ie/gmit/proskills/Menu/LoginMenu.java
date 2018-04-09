@@ -103,7 +103,7 @@ public class LoginMenu extends JFrame {
 				if(loginCheck)
 				{		
 					try {
-						MainPage.mainPage();
+						MainPage.run();
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();

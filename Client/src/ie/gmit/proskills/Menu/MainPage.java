@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import ie.StoreCompare.storage.Items;
-import ie.gmit.proskills.Websites.Discogs;
+import ie.gmit.proskills.Websites.Ebay;
 
 public class MainPage 
 {

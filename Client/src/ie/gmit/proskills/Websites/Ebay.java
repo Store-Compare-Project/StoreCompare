@@ -10,14 +10,14 @@ import org.jsoup.select.Elements;
 
 import ie.StoreCompare.storage.Items;
 
-public class Discogs {
+public class Ebay {
 
 	public static void main(String searchTerm, List<Items> itemList) throws IOException {
 		
 		String name = null;
 		double price = 0;
 		double postage = 0;
-		String url = "http://www.ebay.ie/sch/i.html?LH_BIN=1&_nkw=";
+		String url = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 		
 		searchTerm = searchTerm.replaceAll(" ", "+");
 		url = url + searchTerm + "&_ssn=musicmagpie";

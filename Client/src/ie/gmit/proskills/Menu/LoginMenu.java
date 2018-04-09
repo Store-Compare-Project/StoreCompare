@@ -14,6 +14,8 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -84,6 +86,12 @@ public class LoginMenu extends JFrame {
 		passwordInput.setBounds(10, 137, 273, 20);
 		panel.add(passwordInput);
 		passwordInput.setColumns(10);
+		
+		JLabel headerLabel = new JLabel("Login");
+		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		headerLabel.setFont(new Font("Jokerman", Font.PLAIN, 28));
+		headerLabel.setBounds(11, 11, 272, 43);
+		panel.add(headerLabel);
 		
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.setBounds(11, 215, 272, 88);

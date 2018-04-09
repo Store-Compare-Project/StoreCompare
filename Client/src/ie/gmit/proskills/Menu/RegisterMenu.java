@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class RegisterMenu extends JFrame {
 
@@ -101,6 +102,12 @@ public class RegisterMenu extends JFrame {
 		JButton btnNewButton = new JButton("Register");
 		btnNewButton.setBounds(11, 251, 272, 88);
 		panel.add(btnNewButton);
+		
+		JLabel headerLabel = new JLabel("Register");
+		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		headerLabel.setFont(new Font("Jokerman", Font.PLAIN, 28));
+		headerLabel.setBounds(11, 11, 272, 43);
+		panel.add(headerLabel);
 		
 		JLabel logoLabel = new JLabel("");
 		Image img = new ImageIcon(this.getClass().getResource("/logo.png")).getImage();

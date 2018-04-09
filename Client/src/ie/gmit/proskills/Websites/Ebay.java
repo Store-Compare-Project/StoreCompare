@@ -36,14 +36,14 @@ public class Ebay {
 		
 		Elements els  = doc.select("li.sresult.lvresult");
 		
-		//System.out.println(doc);
+		// Debug
+		System.out.println(doc);
 
 		
 		for(Element el : els)
 		{
 			name = (el.getElementsByTag("h3").text()).replaceAll("VideoGames", "");
 			price =  Double.parseDouble((el.getElementsByClass("lvprice prc").text()).replaceAll("[^0-9.]", ""));
-			postage =  Double.parseDouble((el.getElementsByClass("fee").text()).replaceAll("[^0-9.]", ""));
 			
 			itemList.add(new Items(name, (price + postage)));
 		}

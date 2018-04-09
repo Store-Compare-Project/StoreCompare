@@ -61,7 +61,6 @@ public class Ebay {
 			try
 			{
 				priceString =  ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
-				System.out.println(priceString);
 				price = Double.parseDouble(priceString);
 
 			} 

@@ -5,6 +5,8 @@ import ie.gmit.proskills.Processes.Validator;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -64,24 +66,24 @@ public class RegisterMenu extends JFrame {
 		panel.setLayout(null);
 		
 		passwordInput1 = new JTextField();
-		passwordInput1.setBounds(42, 53, 258, 20);
+		passwordInput1.setBounds(10, 137, 273, 20);
 		panel.add(passwordInput1);
 		passwordInput1.setColumns(10);
-		
-		
-		
+	
 		usernameInput = new JTextField();
 		usernameInput.setBounds(11, 82, 272, 20);
 		panel.add(usernameInput);
 		usernameInput.setColumns(10);
 		
 		JLabel lblPassword = new JLabel("Password:");
-		lblPassword.setBounds(42, 132, 186, 14);
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblPassword.setBounds(11, 113, 200, 14);
 		panel.add(lblPassword);
 		
 		// Labels and buttons for interface
 		JLabel lblUsername = new JLabel("Username:");
-		lblUsername.setBounds(42, 17, 52, 14);
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblUsername.setBounds(11, 57, 200, 14);
 		panel.add(lblUsername);
 		
 		passwordInput2 = new JTextField();

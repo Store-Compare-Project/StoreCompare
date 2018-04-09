@@ -16,12 +16,14 @@ public class Ebay {
 		
 		String name = null;
 		double price = 0;
-		double postage = 0;
 		String urlPart1 = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 		String urlPart2 = ".TRS0&_nkw=";
 		String completeUrl;
 
+		// Replace any spaces with a +
 		searchTerm = searchTerm.replaceAll(" ", "+");
+		
+		// Complete the url with search terms added 
 		completeUrl = urlPart1 + searchTerm + urlPart2 + searchTerm;
 		
 		
@@ -45,9 +47,26 @@ public class Ebay {
 		// For every element of the element we assign above
 		for(Element el : els)
 		{
-			name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
-			price =  Double.parseDouble((el.getElementsByClass("lvprice prc").text()).replaceAll("[^0-9.]", ""));
+			try
+			{
+				name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
+			} 
+			catch (Exception e)
+			{
+				System.out.println("Name not found.");
+			}
 			
+			
+			try
+			{
+				price =  Double.parseDouble((el.getElementsByClass("lvprice prc").text()).replaceAll("[^0-9.]", ""));
+			} 
+			catch (NumberFormatException e) 
+			{
+				System.out.println("Price not found.");
+			}
+			
+			// Add the found stuff to our list
 			itemList.add(new Items(name, price));
 		}
 	}

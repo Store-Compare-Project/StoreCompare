@@ -30,22 +30,25 @@ public class Ebay {
 		System.out.println(urlPart2);
 		System.out.println(completeUrl);
 
-		
+		// Tell the user they're request is being sent to the user
 		System.out.println("\nSending request..." + "\"" + completeUrl + "\"");
+		
+		// Create a document of the HTML of the webpage we are searching (In our case ebay)
 		Document doc = Jsoup.connect(completeUrl).userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2").timeout(60000).get();
 		
+		// Selecting the following element of 
 		Elements els  = doc.select("li.sresult.lvresult");
 		
-		// Debug
-		System.out.println(doc);
+		// Print out the whole DOM
+		//System.out.println(doc);
 
-		
+		// For every element of the element we assign above
 		for(Element el : els)
 		{
-			name = (el.getElementsByTag("h3").text()).replaceAll("VideoGames", "");
+			name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
 			price =  Double.parseDouble((el.getElementsByClass("lvprice prc").text()).replaceAll("[^0-9.]", ""));
 			
-			itemList.add(new Items(name, (price + postage)));
+			itemList.add(new Items(name, price));
 		}
 	}
 

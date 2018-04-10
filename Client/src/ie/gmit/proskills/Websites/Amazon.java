@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.jsoup.Jsoup;
+import org.jsoup.helper.HttpConnection.Response;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -38,7 +39,16 @@ public class Amazon {
 		System.out.println("\nSending request..." + "\"" + completeUrl + "\"");
 		
 		// Create a document of the HTML of the webpage we are searching (In our case ebay)
-		Document doc = Jsoup.connect(completeUrl).userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36").timeout(60000).get();
+
+
+		Response response= Jsoup.connect(completeUrl).ignoreContentType(true).userAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0") .referrer("http://www.google.com").timeout(12000).followRedirects(true).execute();
+
+      
+
+
+          
+		
+		Document doc = response.parse();
 		
 		System.out.println(doc);
 

@@ -17,10 +17,12 @@ public class MainPage
 		
 		// Threads
 		EbayThread EbayThread;
+		AmazonThread AmazonThread;
 							
 		// Variables
 		boolean menuKeeper = true;
 		String searchTerm = null;
+		int menuChoice = 0;
 		
 		// Items Object list array
 		List<Items> itemList = new ArrayList<Items>();
@@ -35,9 +37,29 @@ public class MainPage
 		System.out.println("Enter item to search: ");
 		searchTerm = reader.nextLine();
 		
-		EbayThread = new EbayThread(searchTerm, itemList);
-		EbayThread.start();
-		EbayThread.join();
+		// Menu display
+		System.out.println("1: Ebay");
+		System.out.println("2: Amazon");
+		
+		// Switch statement for menu choice
+		switch (menuChoice)
+		{
+			// Ebay
+			case 1:
+				EbayThread = new EbayThread(searchTerm, itemList);
+				EbayThread.start();
+				EbayThread.join();
+			break;
+			
+			// Amazon
+			case 2:
+				AmazonThread = new AmazonThread(searchTerm, itemList);
+				AmazonThread.start();
+				AmazonThread.join();
+			break;
+				
+		}
+
 		
 		// Basic output of object list array
 		System.out.println(itemList);

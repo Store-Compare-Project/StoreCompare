@@ -1,15 +1,23 @@
 package ie.gmit.proskills.Websites;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.util.List;
 
+import org.jsoup.Connection;
+import org.jsoup.Connection.Response;
 import org.jsoup.Jsoup;
-import org.jsoup.helper.HttpConnection.Response;
+import org.jsoup.helper.HttpConnection;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import ie.gmit.proskills.Storage.Items;
+import sun.rmi.runtime.Log;
 
 public class Amazon {
 
@@ -40,19 +48,36 @@ public class Amazon {
 		
 		// Create a document of the HTML of the webpage we are searching (In our case ebay)
 
+        Connection.Response response=null;
+        Document doc = null;
 
-		Response response= Jsoup.connect(completeUrl).ignoreContentType(true).userAgent("Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/25.0") .referrer("http://www.google.com").timeout(12000).followRedirects(true).execute();
+        try 
+        {
 
-      
+            System.out.println(completeUrl);
+            response =  Jsoup.
+                        connect(completeUrl).
+	                    followRedirects(true).
+	                    userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36").
+	                    execute();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
 
+        if(response!=null && response.statusCode()==200)
+        {
 
-          
-		
-		Document doc = response.parse();
+            doc =  response.parse();
+        }
+        else
+        {
+        	doc = null;
+        }
 		
 		System.out.println(doc);
 
-		
 		// Selecting the following element of 
 		Elements els  = doc.select("s-result-item celwidget");
 		
@@ -91,4 +116,5 @@ public class Amazon {
 					itemList.add(new Items(name, price));
 	}
 	}
+	
 }

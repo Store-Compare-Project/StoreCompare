@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import ie.gmit.proskills.Storage.Items;
+import ie.gmit.proskills.Websites.Amazon;
 import ie.gmit.proskills.Websites.Ebay;
 
 public class MainPage 
@@ -40,7 +41,8 @@ public class MainPage
 		// Menu display
 		System.out.println("1: Ebay");
 		System.out.println("2: Amazon");
-		
+		menuChoice = reader.nextInt();
+
 		// Switch statement for menu choice
 		switch (menuChoice)
 		{
@@ -49,7 +51,7 @@ public class MainPage
 				EbayThread = new EbayThread(searchTerm, itemList);
 				EbayThread.start();
 				EbayThread.join();
-			break;
+				break;
 			
 			// Amazon
 			case 2:
@@ -123,7 +125,7 @@ class AmazonThread extends Thread
 		// Try catch
 		try
 		{
-			Ebay.run(searchTerm, itemList);
+			Amazon.run(searchTerm, itemList);
 		}
 		catch (IOException e)
 		{

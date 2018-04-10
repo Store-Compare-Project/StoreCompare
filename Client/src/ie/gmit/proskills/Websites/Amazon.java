@@ -38,10 +38,15 @@ public class Amazon {
 		System.out.println("\nSending request..." + "\"" + completeUrl + "\"");
 		
 		// Create a document of the HTML of the webpage we are searching (In our case ebay)
-		Document doc = Jsoup.connect(completeUrl).userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2").timeout(60000).get();
+		Document doc = Jsoup.connect(completeUrl).userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36").timeout(60000).get();
+		
+		System.out.println(doc);
+
 		
 		// Selecting the following element of 
-		Elements els  = doc.select("li.sresult.lvresult");
+		Elements els  = doc.select("s-result-item celwidget");
+		
+		System.out.println(els);
 		
 		// For every element of the element we assign above
 		for(Element el : els)
@@ -49,6 +54,7 @@ public class Amazon {
 					try
 					{
 						name = (el.getElementsByClass("a-size-medium s-inline  s-access-title  a-text-normal").text()).replaceAll("Name: ", "");
+						System.out.println(name);
 					} 
 					catch (Exception e)
 					{
@@ -59,7 +65,10 @@ public class Amazon {
 					try
 					{
 						priceString =  ((el.getElementsByClass("a-size-base a-color-price s-price a-text-bold").text().replaceAll("[^0-9.]", "")));
+						System.out.println(priceString);
 						price = Double.parseDouble(priceString);
+						System.out.println(price);
+
 
 					} 
 					catch (NumberFormatException e) 

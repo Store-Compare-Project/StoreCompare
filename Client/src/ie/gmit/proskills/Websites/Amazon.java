@@ -18,7 +18,7 @@ public class Amazon {
 		// Varaibles
 		String name = null;
 		String priceString=null;
-		String urlPart1 ="";
+		String urlPart1="https://www.amazon.co.uk/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=";
 		String urlPart2="";
 		String completeUrl;
 		double price=0.00;
@@ -27,7 +27,7 @@ public class Amazon {
 		searchTerm = searchTerm.replaceAll(" ", "+");
 		
 		// Complete the url with search terms added 
-		completeUrl = urlPart1 + searchTerm + urlPart2 + searchTerm;
+		completeUrl = urlPart1 + searchTerm;
 
 		// Debug
 		System.out.println(urlPart1);
@@ -48,7 +48,7 @@ public class Amazon {
 		{
 					try
 					{
-						name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
+						name = (el.getElementsByClass("a-size-medium s-inline  s-access-title  a-text-normal").text()).replaceAll("Name: ", "");
 					} 
 					catch (Exception e)
 					{
@@ -58,7 +58,7 @@ public class Amazon {
 					
 					try
 					{
-						priceString =  ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
+						priceString =  ((el.getElementsByClass("a-size-base a-color-price s-price a-text-bold").text().replaceAll("[^0-9.]", "")));
 						price = Double.parseDouble(priceString);
 
 					} 

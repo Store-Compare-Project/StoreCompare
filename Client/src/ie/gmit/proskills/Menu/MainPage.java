@@ -51,6 +51,7 @@ public class MainPage
 }
 
 // Declare threads
+// Ebay Thread
 class EbayThread extends Thread 
 {
 	// Variables
@@ -59,6 +60,36 @@ class EbayThread extends Thread
 	
 	// Constructor
 	EbayThread(String g, List<Items> i)
+	{
+		searchTerm = g;
+		itemList = i;
+	}
+	
+	// Run method for thread
+	public void run()
+	{
+		// Try catch
+		try
+		{
+			Ebay.run(searchTerm, itemList);
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+}
+
+// Amazon Thread
+class AmazonThread extends Thread 
+{
+	// Variables
+	String searchTerm;
+	List<Items> itemList;
+	
+	// Constructor
+	AmazonThread(String g, List<Items> i)
 	{
 		searchTerm = g;
 		itemList = i;

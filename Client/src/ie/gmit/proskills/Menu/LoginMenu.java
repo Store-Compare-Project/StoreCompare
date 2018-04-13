@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -106,16 +107,12 @@ public class LoginMenu extends JFrame {
 				
 				// Input validation for register details
 				boolean validationCheck = Validator.validateUsername(username);
-				
-				// Reset text to default
-				usernameInput.setText("");
-				passwordInput.setText("");
-				
+						
 				boolean loginCheck = Login.main(username, password);
 				
 				
 				// If the validated login details match those in the database
-				if(validationCheck)
+				if(validationCheck == true)
 				{
 					// If the user logs in successfully, send them to the main landing page of the program                                                                                
 					if(loginCheck)
@@ -136,6 +133,20 @@ public class LoginMenu extends JFrame {
 					{
 						//TODO Add message to user displaying failed login status
 					}
+				}
+				
+				// If the validated login details DON'T match those in the database
+				else if(validationCheck == false)
+				{
+					// Set all text boxes to default
+					usernameInput.setText("");
+					passwordInput.setText("");
+					
+					// Debug
+					System.out.printf("Username %s is invalid", username);
+					
+					// Display a prompt to let the user know their username is invalid
+					JOptionPane.showMessageDialog(null, "Please enter a valid username. \n - Between 3-15 characters \n - Numbers (0-9) \n -Symbols not accepted");
 				}
 				
 				

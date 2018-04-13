@@ -106,44 +106,59 @@ public class LoginMenu extends JFrame {
 				String password = passwordInput.getText();
 				
 				// Input validation for register details
-				boolean validationCheck = Validator.validateUsername(username);
+				boolean usernameValidationCheck = Validator.validateUsername(username);
+				boolean passwordValidationCheck = Validator.validatePassword(password);
 						
 				boolean loginCheck = Login.main(username, password);
 				
 				
-				// If the validated login details match those in the database
-				if(validationCheck == true)
+				// If the username details are valid
+				if(usernameValidationCheck == true)
 				{
-					// If the user logs in successfully, send them to the main landing page of the program                                                                                
-					if(loginCheck)
-					{		
-						try 
-						{
-							MainPage.run();
-						}
-						catch (InterruptedException e)
-						{
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-						//MainMenu.main(null);
-						//CloseFrame();					
-					}
-					else
+					// If the password details are valid
+					if(passwordValidationCheck == true)
 					{
-						//TODO Add message to user displaying failed login status
+							// If the user logs in successfully, send them to the main landing page of the program                                                                                
+							if(loginCheck)
+							{		
+								try 
+								{
+									MainPage.run();
+								}
+								catch (InterruptedException e)
+								{
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+								//MainMenu.main(null);
+								//CloseFrame();					
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(null, "Username/Password are incorrect.");
+								usernameInput.setText("");
+								passwordInput.setText("");
+							}
 					}
-				}
+					else if(passwordValidationCheck==false)
+					{
+						// Display a prompt to let the user know their username is invalid
+						JOptionPane.showMessageDialog(null, "Please enter a valid password. \n -No spaces allowed");
+						
+						// Set all text boxes to default
+						usernameInput.setText("");
+						passwordInput.setText("");					
+					}
 				
 				// If the validated login details DON'T match those in the database
-				else if(validationCheck == false)
+				else if(usernameValidationCheck == false)
 				{
 					// Set all text boxes to default
 					usernameInput.setText("");
 					passwordInput.setText("");
 					
 					// Debug
-					System.out.printf("Username %s is invalid", username);
+					//System.out.printf("Username %s is invalid", username);
 					
 					// Display a prompt to let the user know their username is invalid
 					JOptionPane.showMessageDialog(null, "Please enter a valid username. \n - Between 3-15 characters \n - Numbers (0-9) \n -Symbols not accepted");
@@ -151,6 +166,7 @@ public class LoginMenu extends JFrame {
 				
 				
 			}
+		}
 		});
 		contentPane.setLayout(null);
 		contentPane.add(panel);

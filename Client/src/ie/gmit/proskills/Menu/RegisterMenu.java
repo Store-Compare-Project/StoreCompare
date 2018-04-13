@@ -133,19 +133,34 @@ public class RegisterMenu extends JFrame {
 					// If the password details are valid
 					if(passwordValidationCheck == true)
 					{
-						// Send our validated details to Register method
-						boolean registerCheck = Register.main(username, password1);
-						
-						// If the validated login details match those in the database
-						if(!registerCheck)
-						{				
-							MainMenu.main(null);
-							CloseFrame();						
-						}
-						else
+						// Check the password's are the same
+						if(password1 == password2)
 						{
-							JOptionPane.showMessageDialog(null, "Error: Could not register. Please try again.");
+							// Send our validated details to Register method
+							boolean registerCheck = Register.main(username, password1);
+							
+							// If the validated login details match those in the database
+							if(!registerCheck)
+							{				
+								MainMenu.main(null);
+								CloseFrame();						
+							}
+							else
+							{
+								JOptionPane.showMessageDialog(null, "Error: Could not register. Please try again.");
+							}
+					    }
+						else if(password1 != password2)
+						{
+							JOptionPane.showMessageDialog(null, "Passwords do not match");
+							
+							// Set all text boxes to default
+							usernameInput.setText("");
+							passwordInput1.setText("");		
+							passwordInput2.setText("");	
 						}
+
+						
 					}
 					else if(passwordValidationCheck==false)
 					{
@@ -166,7 +181,7 @@ public class RegisterMenu extends JFrame {
 					passwordInput2.setText("");
 					
 					// Debug
-					System.out.printf("Username %s is invalid", username);
+					//System.out.printf("Username %s is invalid", username);
 					
 					// Display a prompt to let the user know their username is invalid
 					JOptionPane.showMessageDialog(null, "Please enter a valid username. \n - Between 3-15 characters \n - Numbers (0-9) \n -Symbols not accepted");

@@ -128,17 +128,20 @@ public class RegisterMenu extends JFrame {
 				
 				// If the user's username passes validation
 				if(validationCheck == true)
-				{
-					
+				{					
 					// Send our validated details to Register method
 					boolean registerCheck = Register.main(username, password1);
 					
-					if(!registerCheck){
+					// If the validated login details match those in the database
+					if(!registerCheck)
+					{
 						
 						MainMenu.main(null);
 						CloseFrame();
 						
-					}else{
+					}
+					else
+					{
 						//TODO Add message to user displaying failed login status
 					}
 				}

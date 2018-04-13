@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import ie.gmit.proskills.Processes.Login;
+import ie.gmit.proskills.Processes.Validator;
+
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.GroupLayout.Alignment;
@@ -102,26 +104,40 @@ public class LoginMenu extends JFrame {
 				String username = usernameInput.getText();
 				String password = passwordInput.getText();
 				
+				// Input validation for register details
+				boolean validationCheck = Validator.validateUsername(username);
+				
+				// Reset text to default
 				usernameInput.setText("");
 				passwordInput.setText("");
 				
 				boolean loginCheck = Login.main(username, password);
 				
-				// If the user logs in successfully, send them to the main landing page of the program                                                                                
-				if(loginCheck)
-				{		
-					try {
-						MainPage.run();
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+				
+				// If the validated login details match those in the database
+				if(validationCheck)
+				{
+					// If the user logs in successfully, send them to the main landing page of the program                                                                                
+					if(loginCheck)
+					{		
+						try 
+						{
+							MainPage.run();
+						}
+						catch (InterruptedException e)
+						{
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						//MainMenu.main(null);
+						//CloseFrame();					
 					}
-					//MainMenu.main(null);
-					//CloseFrame();					
+					else
+					{
+						//TODO Add message to user displaying failed login status
+					}
 				}
-				else{
-					//TODO Add message to user displaying failed login status
-				}
+				
 				
 			}
 		});

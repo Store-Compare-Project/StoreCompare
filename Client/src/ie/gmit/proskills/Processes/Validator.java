@@ -17,10 +17,11 @@ public class Validator {
 	   * @param username username for validation
 	   * @return true valid username, false invalid username
 	   */
-	  public static boolean validateUsername(String username){
+	  public static boolean validateUsername(String username)
+	  {
 		  
 		  // Deubg
-		  System.out.println("Inside validate function");
+		  //System.out.println("Inside validate function");
 		  
 		  pattern = Pattern.compile(USERNAME_PATTERN);
 

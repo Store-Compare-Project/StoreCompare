@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Client/src"/>
+	<classpathentry kind="src" path="DatabaseServer/src"/>
+	<classpathentry kind="src" path="Prototype/src"/>
+	<classpathentry kind="lib" path="DatabaseServer/jars/mongo-java-driver-3.4.3.jar"/>
+	<classpathentry kind="lib" path="jars/jsoup-1.11.2.jar"/>
+	<classpathentry kind="lib" path="jars/mongo-java-driver-3.4.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="jars/mongo-java-driver-3.4.3.jar"/>
+	<classpathentry kind="lib" path="Prototype/jar/jsoup-1.11.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

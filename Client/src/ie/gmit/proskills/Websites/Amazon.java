@@ -17,7 +17,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import ie.gmit.proskills.Storage.Items;
-import sun.rmi.runtime.Log;
 
 public class Amazon {
 

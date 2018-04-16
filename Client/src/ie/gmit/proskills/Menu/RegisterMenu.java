@@ -110,7 +110,7 @@ public class RegisterMenu extends JFrame {
 		panel.add(headerLabel);
 		
 		JLabel logoLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/logo.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
 		logoLabel.setIcon(new ImageIcon(img));
 		logoLabel.setBounds(0, 0, 250, 200);
 		contentPane.add(logoLabel);

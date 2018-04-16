@@ -66,20 +66,20 @@ public class LandingPage extends JFrame {
 		panel.add(welcomeLabel);
 		
 		JLabel imageLabel = new JLabel("");					
-		Image img = new ImageIcon(this.getClass().getResource("/barcode.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/img/barcode.png")).getImage();
 		imageLabel.setIcon(new ImageIcon(img));
 		imageLabel.setBounds(207, 85, 128, 165);
 		panel.add(imageLabel);
 		
 		JLabel imageLabel2 = new JLabel("");//Icon made by Pixel Perfect from "https://www.flaticon.com/" 
 		//is licensed by "http://creativecommons.org/licenses/by/3.0/"
-		Image img2 = new ImageIcon(this.getClass().getResource("/login.png")).getImage();
+		Image img2 = new ImageIcon(this.getClass().getResource("/img/login.png")).getImage();
 		imageLabel2.setIcon(new ImageIcon(img2));
 		imageLabel2.setBounds(110, 279, 46, 46);
 		panel.add(imageLabel2);
 		
 		JLabel imageLabel3 = new JLabel("");
-		Image img3 = new ImageIcon(this.getClass().getResource("/id-card.png")).getImage();
+		Image img3 = new ImageIcon(this.getClass().getResource("/img/id-card.png")).getImage();
 		imageLabel3.setIcon(new ImageIcon(img3));
 		imageLabel3.setBounds(391, 279, 32, 40);
 		panel.add(imageLabel3);

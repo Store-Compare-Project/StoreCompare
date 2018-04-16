@@ -60,14 +60,14 @@ class ClientServiceThread extends Thread {
 		
 		if(splited[0].equals("login")){
 			
-			System.out.println("> Client ID: " + clientID + " | Login Attempt - " + splited[1]);
+			System.out.println("> Client ID: " + clientID + " | Login Attempt Username - " + splited[1]);
 			
 			loginStatus = Login.main(splited[1], splited[2], clientID);	
 			
 		}
 		else if(splited[0].equals("register")){
 			
-			System.out.println("> Client ID: " + clientID + " | Register Attempt - " + splited[1]);
+			System.out.println("> Client ID: " + clientID + " | Register Attempt Username - " + splited[1]);
 			
 			loginStatus = Register.main(splited[1], splited[2], clientID);	
 			

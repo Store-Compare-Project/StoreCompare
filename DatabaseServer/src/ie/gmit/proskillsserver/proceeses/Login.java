@@ -36,9 +36,9 @@ public class Login {
 		mongoClient.close();
 		
 		if(loginStatus){
-			System.out.println("> Client ID: " + clientID + " | Logged-in - " + username);
+			System.out.println("> Client ID: " + clientID + " | Logged-in Username - " + username);
 		}else {
-			System.out.println("> Client ID: " + clientID + " | Failed Login - " + username);
+			System.out.println("> Client ID: " + clientID + " | Failed Login Username - " + username);
 		}
 		
 		return loginStatus;

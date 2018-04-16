@@ -51,9 +51,9 @@ public class Register {
 		mongoClient.close();
 		
 		if(!loginStatus){
-			System.out.println("> Client ID: " + clientID + " | Registed - " + username);
+			System.out.println("> Client ID: " + clientID + " | Registed Username - " + username);
 		}else {
-			System.out.println("> Client ID: " + clientID + " | Failed Register - " + username);
+			System.out.println("> Client ID: " + clientID + " | Failed Register Username - " + username);
 		}
 		
 		return loginStatus;

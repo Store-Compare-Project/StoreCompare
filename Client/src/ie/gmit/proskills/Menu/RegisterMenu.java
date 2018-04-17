@@ -72,6 +72,11 @@ public class RegisterMenu extends JFrame {
 		passwordInput1.setBounds(11, 153, 272, 20);
 		panel.add(passwordInput1);
 		passwordInput1.setColumns(10);
+		
+		passwordInput2 = new JTextField();
+		passwordInput2.setBounds(10, 209, 273, 20);
+		panel.add(passwordInput2);
+		passwordInput2.setColumns(10);
 	
 		usernameInput = new JTextField();
 		usernameInput.setBounds(11, 82, 272, 20);
@@ -88,11 +93,6 @@ public class RegisterMenu extends JFrame {
 		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblUsername.setBounds(11, 57, 200, 14);
 		panel.add(lblUsername);
-		
-		passwordInput2 = new JTextField();
-		passwordInput2.setBounds(10, 209, 273, 20);
-		panel.add(passwordInput2);
-		passwordInput2.setColumns(10);
 		
 		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
 		lblConfirmPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
@@ -121,7 +121,7 @@ public class RegisterMenu extends JFrame {
 				// Declare variables for input boxes
 				String username = usernameInput.getText();
 				String password1 = passwordInput1.getText();
-				String password2 = passwordInput1.getText();
+				String password2 = passwordInput2.getText();
 				
 				// Input validation for register details
 				boolean usernameValidationCheck = Validator.validateUsername(username);
@@ -134,7 +134,7 @@ public class RegisterMenu extends JFrame {
 					if(passwordValidationCheck == true)
 					{
 						// Check the password's are the same
-						if(password1 == password2)
+						if(password1.equals(password2))
 						{
 							// Send our validated details to Register method
 							boolean registerCheck = Register.main(username, password1);
@@ -150,7 +150,7 @@ public class RegisterMenu extends JFrame {
 								JOptionPane.showMessageDialog(null, "Error: Could not register. Please try again.");
 							}
 					    }
-						else if(password1 != password2)
+						else if(!password1.equals(password2))
 						{
 							JOptionPane.showMessageDialog(null, "Passwords do not match");
 							

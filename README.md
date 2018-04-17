@@ -1,4 +1,4 @@
-![readme header](https://user-images.githubusercontent.com/22448079/37356995-32709186-26df-11e8-9709-3afdd53b2bef.png)
+![storecompare](https://user-images.githubusercontent.com/22448079/38895768-d87f1a4c-4288-11e8-99ab-416e24d32da8.png)
 
 ## Description
 

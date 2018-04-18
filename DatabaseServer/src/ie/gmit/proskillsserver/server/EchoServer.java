@@ -49,7 +49,7 @@ class ClientServiceThread extends Thread {
 	}
   
   public void run() {
-    System.out.println("> Accepted Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
+    System.out.println("\n> Accepted Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
    
 	try {
 		out = new ObjectOutputStream(clientSocket.getOutputStream());

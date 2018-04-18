@@ -12,6 +12,9 @@ import ie.gmit.proskillsserver.proceeses.Register;
 public class EchoServer {
   public static void main(String[] args) throws Exception {
     ServerSocket m_ServerSocket = new ServerSocket(2004,10);
+    
+    System.out.println("> Started Server on port: " + m_ServerSocket.getLocalPort());
+    
     int id = 0;
     while (true) {
       Socket clientSocket = m_ServerSocket.accept();

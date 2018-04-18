@@ -12,7 +12,6 @@ public class Runner {
 		
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
-		System.out.println(); //2016/11/16 12:08:43
 		
 		System.out.println("> (" + dateFormat.format(date) + ") Starting Server...");
 		

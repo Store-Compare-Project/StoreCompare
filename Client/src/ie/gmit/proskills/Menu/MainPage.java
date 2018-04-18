@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import ie.gmit.proskills.Storage.Items;
-import ie.gmit.proskills.Websites.Amazon;
+import ie.gmit.proskills.Websites.Aliexpress;
 import ie.gmit.proskills.Websites.Ebay;
 
 public class MainPage 
@@ -18,7 +18,7 @@ public class MainPage
 		
 		// Threads
 		EbayThread EbayThread;
-		AmazonThread AmazonThread;
+		AliexpressThread AliexpressThread;
 							
 		// Variables
 		boolean menuKeeper = true;
@@ -55,9 +55,9 @@ public class MainPage
 			
 			// Amazon
 			case 2:
-				AmazonThread = new AmazonThread(searchTerm, itemList);
-				AmazonThread.start();
-				AmazonThread.join();
+				AliexpressThread = new AliexpressThread(searchTerm, itemList);
+				AliexpressThread.start();
+				AliexpressThread.join();
 			break;
 				
 		}
@@ -106,14 +106,14 @@ class EbayThread extends Thread
 }
 
 // Amazon Thread
-class AmazonThread extends Thread 
+class AliexpressThread extends Thread 
 {
 	// Variables
 	String searchTerm;
 	List<Items> itemList;
 	
 	// Constructor
-	AmazonThread(String g, List<Items> i)
+	AliexpressThread(String g, List<Items> i)
 	{
 		searchTerm = g;
 		itemList = i;
@@ -125,7 +125,7 @@ class AmazonThread extends Thread
 		// Try catch
 		try
 		{
-			Amazon.run(searchTerm, itemList);
+			Aliexpress.run(searchTerm, itemList);
 		}
 		catch (IOException e)
 		{

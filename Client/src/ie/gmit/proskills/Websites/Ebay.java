@@ -61,13 +61,14 @@ public class Ebay {
 			try
 			{
 				priceString =  ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
+				System.out.println(priceString);
 				price = Double.parseDouble(priceString);
 
 			} 
 			catch (NumberFormatException e) 
 			{
-				e.printStackTrace();
-				System.out.println("Price not found.");
+				//e.printStackTrace();
+				//System.out.println("Price not found.");
 			}
 			
 			// Add the found stuff to our list

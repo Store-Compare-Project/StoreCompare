@@ -5,6 +5,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import ie.gmit.proskillsserver.proceeses.Login;
 import ie.gmit.proskillsserver.proceeses.Register;
@@ -13,7 +16,10 @@ public class EchoServer {
   public static void main(String[] args) throws Exception {
     ServerSocket m_ServerSocket = new ServerSocket(2004,10);
     
-    System.out.println("> Started Server on port: " + m_ServerSocket.getLocalPort());
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	Date date = new Date();
+    
+    System.out.println("> (" + dateFormat.format(date) + ") Started Server on port: " + m_ServerSocket.getLocalPort());
     
     int id = 0;
     while (true) {
@@ -27,7 +33,7 @@ public class EchoServer {
 class ClientServiceThread extends Thread {
   Socket clientSocket;
   String message;
-  int clientID = -1;
+  int clientID = 0;
   boolean running = true;
   ObjectOutputStream out;
   ObjectInputStream in;
@@ -49,7 +55,11 @@ class ClientServiceThread extends Thread {
 	}
   
   public void run() {
-    System.out.println("\n> Accepted Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
+	  
+	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	Date date = new Date();
+	  
+    System.out.println("\n> (" + dateFormat.format(date) + ") Accepted Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
    
 	try {
 		out = new ObjectOutputStream(clientSocket.getOutputStream());
@@ -78,7 +88,7 @@ class ClientServiceThread extends Thread {
 		
 		sendMessage("" + loginStatus);
 		
-		System.out.println("> Disconnecting Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
+		System.out.println("> (" + dateFormat.format(date) + ") Disconnecting Client ID: " + clientID + " | Address - " + clientSocket.getInetAddress().getHostName());
 	} catch (IOException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

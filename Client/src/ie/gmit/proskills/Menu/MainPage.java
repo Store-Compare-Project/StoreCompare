@@ -40,7 +40,7 @@ public class MainPage
 		
 		// Menu display
 		System.out.println("1: Ebay");
-		System.out.println("2: Amazon");
+		System.out.println("2: Aliexpress");
 		menuChoice = reader.nextInt();
 
 		// Switch statement for menu choice

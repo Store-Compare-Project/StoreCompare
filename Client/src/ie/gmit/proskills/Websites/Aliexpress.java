@@ -50,9 +50,13 @@ public class Aliexpress {
 
 		//System.out.println(doc);
 	
-		// Selecting the following element of 
-		Elements els  = doc.select("div#hs-list-items");
+		// If item is a special item, Aliexpress uses div
+		Elements els  = doc.select("div#hs-below-list-items");
 		
+		// If not a special item, Aliexpress uses ul
+		// Element els  = doc.select("ul#hs-below-list-items");
+		
+
 		//System.out.println(els);
 		
 		// For every element of the element we assigned above
@@ -71,7 +75,7 @@ public class Aliexpress {
 					try
 					{
 						priceString =  ((el.getElementsByClass("price price-m").text().replaceAll("[^0-9.]", "")));
-						//System.out.println(priceString);
+						System.out.println(priceString);
 						price = Double.parseDouble(priceString);
 						//System.out.println(price);
 						//price = Double.parseDouble(priceString);

@@ -16,7 +16,7 @@ public class Ebay {
 		
 		String name = null;
 		String priceString=null;
-		double price = 0;
+		double price = 0.00;
 		String urlPart1 = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 		String urlPart2 = ".TRS0&_nkw=";
 		String completeUrl;

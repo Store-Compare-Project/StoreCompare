@@ -18,7 +18,7 @@ import org.jsoup.select.Elements;
 
 import ie.gmit.proskills.Storage.Items;
 
-public class Amazon {
+public class Aliexpress {
 
 	// Run this class when we want to search amazon
 	public static void run(String searchTerm, List<Items> itemList) throws IOException
@@ -71,7 +71,7 @@ public class Amazon {
 					try
 					{
 						priceString =  ((el.getElementsByClass("price price-m").text().replaceAll("[^0-9.]", "")));
-						System.out.println(priceString);
+						//System.out.println(priceString);
 						price = Double.parseDouble(priceString);
 						//System.out.println(price);
 						//price = Double.parseDouble(priceString);

@@ -26,7 +26,7 @@ public class Amazon {
 		// Varaibles
 		String name = null;
 		String priceString=null;
-		String urlPart1="https://www.amazon.co.uk/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=";
+		String urlPart1="https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20180418114634&SearchText=";
 		String urlPart2="";
 		String completeUrl;
 		double price=0.00;
@@ -46,49 +46,21 @@ public class Amazon {
 		System.out.println("\nSending request..." + "\"" + completeUrl + "\"");
 		
 		// Create a document of the HTML of the webpage we are searching (In our case ebay)
+		Document doc = Jsoup.connect(completeUrl).userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2").timeout(60000).get();
 
-        Connection.Response response=null;
-        Document doc = null;
-
-        try 
-        {
-
-            System.out.println(completeUrl);
-            response =  Jsoup.
-                        connect(completeUrl).
-	                    followRedirects(true).
-	                    userAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36").
-	                    execute();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-
-        if(response!=null && response.statusCode()==200)
-        {
-
-            doc =  response.parse();
-        }
-        else
-        {
-        	doc = null;
-        }
-		
-		System.out.println(doc);
-
+		//System.out.println(doc);
+	
 		// Selecting the following element of 
-		Elements els  = doc.select("s-result-item celwidget");
+		Elements els  = doc.select("div#hs-list-items");
 		
-		System.out.println(els);
+		//System.out.println(els);
 		
-		// For every element of the element we assign above
+		// For every element of the element we assigned above
 		for(Element el : els)
 		{
 					try
 					{
-						name = (el.getElementsByClass("a-size-medium s-inline  s-access-title  a-text-normal").text()).replaceAll("Name: ", "");
-						System.out.println(name);
+						name = (el.getElementsByClass("history-item.product").text()).replaceAll("Name: ", "");
 					} 
 					catch (Exception e)
 					{
@@ -98,17 +70,21 @@ public class Amazon {
 					
 					try
 					{
-						priceString =  ((el.getElementsByClass("a-size-base a-color-price s-price a-text-bold").text().replaceAll("[^0-9.]", "")));
+						priceString =  ((el.getElementsByClass("price price-m").text().replaceAll("[^0-9.]", "")));
 						System.out.println(priceString);
 						price = Double.parseDouble(priceString);
-						System.out.println(price);
+						//System.out.println(price);
+						//price = Double.parseDouble(priceString);
+						//System.out.println(price);
+						//Elements itemPrice = doc.select("span[itemprop]"); //Get address
+						//name = itemPrice.text().replaceAll("Price: ", "");
 
 
 					} 
 					catch (NumberFormatException e) 
 					{
-						e.printStackTrace();
-						System.out.println("Price not found.");
+						//e.printStackTrace();
+						//System.out.println("Price not found.");
 					}
 					
 					// Add the found stuff to our list

@@ -33,7 +33,7 @@ public class EchoServer {
 class ClientServiceThread extends Thread {
   Socket clientSocket;
   String message;
-  int clientID = -1;
+  int clientID = 0;
   boolean running = true;
   ObjectOutputStream out;
   ObjectInputStream in;

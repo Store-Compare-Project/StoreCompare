@@ -58,6 +58,7 @@ public class RegisterMenu extends JFrame {
 	 */
 	public RegisterMenu(int x, int y) {
 
+		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(x, y, 560, 420);
 		setTitle("StoreCompare - Register");
@@ -66,12 +67,49 @@ public class RegisterMenu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// Panel settings
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.LIGHT_GRAY);
 		panel.setBounds(251, 0, 293, 381);
 		contentPane.add(panel);
 		panel.setLayout(null);
+		
+		JPanel coverPanel = new JPanel();
+		coverPanel.setBackground(Color.DARK_GRAY);
+		coverPanel.setBounds(0, 199, 250, 182);
+		contentPane.add(coverPanel);
+		
+		// Text tables settings
+		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblPassword.setBounds(11, 128, 200, 14);
+		panel.add(lblPassword);
+		
+		JLabel headerLabel = new JLabel("Register");
+		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		headerLabel.setFont(new Font("Jokerman", Font.PLAIN, 28));
+		headerLabel.setBounds(11, 11, 272, 43);
+		panel.add(headerLabel);
+		
+		// Image labels
+		JLabel logoLabel = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
+		logoLabel.setIcon(new ImageIcon(img));
+		logoLabel.setBounds(0, 0, 250, 200);
+		contentPane.add(logoLabel);
 
+		// Labels and buttons for interface
+		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblUsername.setBounds(11, 57, 200, 14);
+		panel.add(lblUsername);
+
+		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
+		lblConfirmPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblConfirmPassword.setBounds(10, 184, 186, 14);
+		panel.add(lblConfirmPassword);
+		
+		// Textfield settings for user input
 		passwordInput1 = new JTextField();
 		passwordInput1.setBounds(11, 153, 272, 20);
 		panel.add(passwordInput1);
@@ -87,39 +125,11 @@ public class RegisterMenu extends JFrame {
 		panel.add(usernameInput);
 		usernameInput.setColumns(10);
 
-		JLabel lblPassword = new JLabel("Password:");
-		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblPassword.setBounds(11, 128, 200, 14);
-		panel.add(lblPassword);
-
-		// Labels and buttons for interface
-		JLabel lblUsername = new JLabel("Username:");
-		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblUsername.setBounds(11, 57, 200, 14);
-		panel.add(lblUsername);
-
-		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
-		lblConfirmPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblConfirmPassword.setBounds(10, 184, 186, 14);
-		panel.add(lblConfirmPassword);
-
-		JButton btnNewButton = new JButton("Register");
-		btnNewButton.setBounds(11, 251, 272, 88);
-		panel.add(btnNewButton);
-
-		JLabel headerLabel = new JLabel("Register");
-		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		headerLabel.setFont(new Font("Jokerman", Font.PLAIN, 28));
-		headerLabel.setBounds(11, 11, 272, 43);
-		panel.add(headerLabel);
-
-		JLabel logoLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
-		logoLabel.setIcon(new ImageIcon(img));
-		logoLabel.setBounds(0, 0, 250, 200);
-		contentPane.add(logoLabel);
-
-		btnNewButton.addActionListener(new ActionListener() {
+		// Register button settings and listener
+		JButton buttonReg = new JButton("Register");
+		buttonReg.setBounds(11, 251, 272, 88);
+		panel.add(buttonReg);
+		buttonReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 				// Declare variables for input boxes
@@ -140,8 +150,7 @@ public class RegisterMenu extends JFrame {
 							// Send our validated details to Register method
 							boolean registerCheck = Register.main(username, password1);
 
-							// If the validated login details match those in the
-							// database
+							// If the validated login details match those in the database
 							if (!registerCheck) {
 								MainMenu.main(x, y);
 								CloseFrame();
@@ -158,8 +167,7 @@ public class RegisterMenu extends JFrame {
 						}
 
 					} else if (passwordValidationCheck == false) {
-						// Display a prompt to let the user know their username
-						// is invalid
+						// Display a prompt to let the user know their username is invalid
 						JOptionPane.showMessageDialog(null, "Please enter a valid password. \n -No spaces allowed");
 
 						// Set all text boxes to default
@@ -173,23 +181,12 @@ public class RegisterMenu extends JFrame {
 					passwordInput1.setText("");
 					passwordInput2.setText("");
 
-					// Debug
-					// System.out.printf("Username %s is invalid", username);
-
-					// Display a prompt to let the user know their username is
-					// invalid
+					// Display a prompt to let the user know their username is invalid
 					JOptionPane.showMessageDialog(null,
 							"Please enter a valid username. \n - Between 3-15 characters \n - Numbers (0-9) \n -Symbols not accepted");
 				}
-
 			}
-
 		});
-
-		JPanel coverPanel = new JPanel();
-		coverPanel.setBackground(Color.DARK_GRAY);
-		coverPanel.setBounds(0, 199, 250, 182);
-		contentPane.add(coverPanel);
 	}
 
 	public void CloseFrame() {

@@ -112,7 +112,7 @@ public class LoginMenu extends JFrame {
 		panel.add(passwordInput);
 		passwordInput.setColumns(10);
 		
-
+		// Login button setup and action listener
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.setBounds(11, 215, 272, 88);
 		panel.add(btnNewButton);

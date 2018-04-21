@@ -22,6 +22,8 @@ public class Ebay {
 		String name = null;
 		String price = null;
 		String postage = "€0.00";
+		double total = 0.00;
+		
 		String urlPart1 = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 		String urlPart2 = ".TRS0&_nkw=";
 		String completeUrl;
@@ -44,7 +46,7 @@ public class Ebay {
 			
 			name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
 			
-			price = "€" + ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
+			price = "€" + (el.getElementsByClass("lvprice prc").text()).replaceAll("[^0-9.]", "");
 				
 			postage = (el.getElementsByClass("fee").text()).replaceAll("[^0-9.]", "");
 			
@@ -58,7 +60,9 @@ public class Ebay {
 				continue;
 			}
 			
-			dtm.addRow(new Object[] { name, price,  postage, "Ebay" });
+			total = Double.parseDouble(price.replaceAll("[^0-9.]", "")) + Double.parseDouble(postage.replaceAll("[^0-9.]", ""));
+			
+			dtm.addRow(new Object[] { name, price,  postage, "€" + df.format(total), "Ebay" });
 		}
 	}
 }

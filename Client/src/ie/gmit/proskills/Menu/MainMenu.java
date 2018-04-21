@@ -50,7 +50,7 @@ public class MainMenu extends JFrame {
 		DefaultTableModel dtm = new DefaultTableModel(0, 0);
 
 		// add header of the table
-		String header[] = new String[] { "Item Name", "Price", "Postage", "Store"};
+		String header[] = new String[] { "Item Name", "Price", "Postage", "Total", "Store"};
 
 		// add header in table model
 		dtm.setColumnIdentifiers(header);

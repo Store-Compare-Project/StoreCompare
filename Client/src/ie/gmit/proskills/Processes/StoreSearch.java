@@ -18,11 +18,8 @@ public class StoreSearch {
 		
 		// Items Object list array
 		List<Items> itemList = new ArrayList<Items>();
-		
-		// Variables
-		String gameName = null;
 			
-		EbayThread = new EbayThread(gameName, itemList);
+		EbayThread = new EbayThread(username, itemList, dtm);
 		EbayThread.start();
 		EbayThread.join();
 	}
@@ -31,10 +28,13 @@ public class StoreSearch {
 class EbayThread extends Thread {
  	String gameName;
  	List<Items> itemList;
+ 	DefaultTableModel dtm;
 	
- 	EbayThread(String g, List<Items> i) {
+ 	EbayThread(String g, List<Items> i, DefaultTableModel d) {
 		gameName = g;
 		itemList = i;
+		dtm = d;
+		
 	}
 	
 	public void run() {

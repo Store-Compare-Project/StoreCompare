@@ -12,7 +12,7 @@ import ie.gmit.proskills.Storage.Items;
 
 public class Ebay {
 
-	public static void run(String searchTerm, List<Items> itemList) throws IOException {
+	public static void main(String searchTerm, List<Items> itemList) throws IOException {
 		
 		String name = null;
 		String priceString=null;

@@ -95,7 +95,7 @@ class EbayThread extends Thread
 		// Try catch
 		try
 		{
-			Ebay.main(searchTerm, itemList);
+			Ebay.main(searchTerm, itemList, null);
 		}
 		catch (IOException e)
 		{

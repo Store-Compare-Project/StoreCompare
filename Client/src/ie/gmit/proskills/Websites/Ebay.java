@@ -3,6 +3,8 @@ package ie.gmit.proskills.Websites;
 import java.io.IOException;
 import java.util.List;
 
+import javax.swing.table.DefaultTableModel;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,7 +14,7 @@ import ie.gmit.proskills.Storage.Items;
 
 public class Ebay {
 
-	public static void main(String searchTerm, List<Items> itemList) throws IOException {
+	public static void main(String searchTerm, List<Items> itemList, DefaultTableModel dtm) throws IOException {
 		
 		String name = null;
 		String priceString=null;
@@ -20,6 +22,7 @@ public class Ebay {
 		String urlPart1 = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 		String urlPart2 = ".TRS0&_nkw=";
 		String completeUrl;
+		String store = "Ebay";
 
 		// Replace any spaces with a +
 		searchTerm = searchTerm.replaceAll(" ", "+");
@@ -70,6 +73,8 @@ public class Ebay {
 				//e.printStackTrace();
 				//System.out.println("Price not found.");
 			}
+			
+			dtm.addRow(new Object[] { name, price, "€2.50", store });
 			
 			// Add the found stuff to our list
 			itemList.add(new Items(name, price));

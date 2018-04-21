@@ -40,7 +40,7 @@ class EbayThread extends Thread {
 	public void run() {
 
 		try {
-			Ebay.main(gameName, itemList);
+			Ebay.main(gameName, itemList, dtm);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -23,11 +23,11 @@ public class MainMenu extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainMenu frame = new MainMenu();
+					MainMenu frame = new MainMenu(x, y);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,10 +38,12 @@ public class MainMenu extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param y 
+	 * @param x 
 	 */
-	public MainMenu() {
+	public MainMenu(int x, int y) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(700, 350, 660, 500);
+		setBounds(x, y, 660, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

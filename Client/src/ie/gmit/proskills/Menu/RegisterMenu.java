@@ -144,7 +144,7 @@ public class RegisterMenu extends JFrame {
 							// If the validated login details match those in the database
 							if(!registerCheck)
 							{				
-								MainMenu.main(null);
+								MainMenu.main(x, y);
 								CloseFrame();						
 							}
 							else

@@ -37,11 +37,11 @@ public class LoginMenu extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginMenu frame = new LoginMenu();
+					LoginMenu frame = new LoginMenu(x, y);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,9 +53,9 @@ public class LoginMenu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public LoginMenu() {
+	public LoginMenu(int x, int y) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 560, 420);
+		setBounds(x, y, 560, 420);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -121,7 +121,7 @@ public class LoginMenu extends JFrame {
 							// If the user logs in successfully, send them to the main landing page of the program                                                                                
 							if(loginCheck)
 							{		
-								MainMenu.main(null);
+								MainMenu.main(x, y);
 								CloseFrame();	
 							}
 							else

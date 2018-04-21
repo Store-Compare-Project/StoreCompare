@@ -90,7 +90,7 @@ public class LandingPage extends JFrame {
 		panel.add(buttonLogin);
 		buttonLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LoginMenu.main(null);
+				LoginMenu.main((int)Math.round(contentPane.getLocationOnScreen().getX()), (int)Math.round(contentPane.getLocationOnScreen().getY()));
 				CloseFrame();
 			}
 		});

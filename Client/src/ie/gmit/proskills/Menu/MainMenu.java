@@ -12,11 +12,14 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 
 public class MainMenu extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -62,9 +65,18 @@ public class MainMenu extends JFrame {
 				// set model into the table object
 				table.setModel(dtm);
 				
-				JLabel lblSearch = new JLabel("Search:");
-				lblSearch.setBounds(10, 101, 60, 14);
+				JLabel lblSearch = new JLabel("Store Search:");
+				lblSearch.setBounds(10, 56, 125, 14);
 				contentPane.add(lblSearch);
+				
+				textField = new JTextField();
+				textField.setBounds(10, 71, 125, 20);
+				contentPane.add(textField);
+				textField.setColumns(10);
+				
+				JButton btnNewButton = new JButton("Search");
+				btnNewButton.setBounds(10, 92, 125, 23);
+				contentPane.add(btnNewButton);
 		
 		//contentPane.add(new JScrollPane(table));
 

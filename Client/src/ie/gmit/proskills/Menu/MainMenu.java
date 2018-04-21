@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.GroupLayout;
@@ -44,23 +45,28 @@ public class MainMenu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		table = new JTable();
-		table.setBounds(40, 160, 559, 264);
-		contentPane.add(table);
-
 		DefaultTableModel dtm = new DefaultTableModel(0, 0);
 
 		// add header of the table
-		String header[] = new String[] { "Prority", "Task Title", "Start", "Pause", "Stop", "Statulses" };
+		String header[] = new String[] { "Item Name", "Price", "Postage", "Store"};
 
 		// add header in table model
 		dtm.setColumnIdentifiers(header);
-		// set model into the table object
-		table.setModel(dtm);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 624, 325);
+		contentPane.add(scrollPane);
+		
+				table = new JTable();
+				scrollPane.setViewportView(table);
+				// set model into the table object
+				table.setModel(dtm);
+		
+		//contentPane.add(new JScrollPane(table));
 
 		// add row dynamically into the table
 		for (int count = 1; count <= 30; count++) {
-			dtm.addRow(new Object[] { "data", "data", "data", "data", "data", "data" });
+			dtm.addRow(new Object[] { "Call Of Duty", "€5.00", "€2.50", "Ebay" });
 		}
 
 	}

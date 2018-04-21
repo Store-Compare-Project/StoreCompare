@@ -54,7 +54,7 @@ public class LandingPage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		// Inner panel settings
+		// Panel settings
 		JPanel panel = new JPanel();
 		panel.setForeground(Color.DARK_GRAY);
 		panel.setBackground(Color.DARK_GRAY);

@@ -62,42 +62,56 @@ public class LoginMenu extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
 
+		// Panel settings
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.LIGHT_GRAY);
 		panel.setBounds(251, 0, 293, 381);
-
-		JLabel logoLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
-		logoLabel.setIcon(new ImageIcon(img));
-		logoLabel.setBounds(0, 0, 250, 200);
+		contentPane.add(panel);
 		panel.setLayout(null);
-
+		
+		JPanel coverPanel = new JPanel();
+		coverPanel.setBackground(Color.DARK_GRAY);
+		coverPanel.setBounds(0, 199, 250, 182);
+		contentPane.add(coverPanel);
+		
+		// Text labels
 		JLabel lblNewLabel = new JLabel("Username:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblNewLabel.setBounds(11, 57, 200, 14);
 		panel.add(lblNewLabel);
-
-		usernameInput = new JTextField();
-		usernameInput.setBounds(11, 82, 272, 20);
-		panel.add(usernameInput);
-		usernameInput.setColumns(10);
-
+		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblPassword.setBounds(11, 113, 200, 14);
 		panel.add(lblPassword);
-
+		
+		JLabel lblHeader = new JLabel("Login");
+		lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHeader.setFont(new Font("Jokerman", Font.PLAIN, 28));
+		lblHeader.setBounds(11, 11, 272, 43);
+		panel.add(lblHeader);
+		
+		// Image labels
+		JLabel logoLabel = new JLabel("");
+		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
+		logoLabel.setIcon(new ImageIcon(img));
+		logoLabel.setBounds(0, 0, 250, 200);
+		
+		contentPane.add(logoLabel);
+		
+		// Text fields for user input
+		usernameInput = new JTextField();
+		usernameInput.setBounds(11, 82, 272, 20);
+		panel.add(usernameInput);
+		usernameInput.setColumns(10);
+		
 		passwordInput = new JTextField();
 		passwordInput.setBounds(10, 137, 273, 20);
 		panel.add(passwordInput);
 		passwordInput.setColumns(10);
-
-		JLabel headerLabel = new JLabel("Login");
-		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		headerLabel.setFont(new Font("Jokerman", Font.PLAIN, 28));
-		headerLabel.setBounds(11, 11, 272, 43);
-		panel.add(headerLabel);
+		
 
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.setBounds(11, 215, 272, 88);
@@ -158,14 +172,7 @@ public class LoginMenu extends JFrame {
 				}
 			}
 		});
-		contentPane.setLayout(null);
-		contentPane.add(panel);
-		contentPane.add(logoLabel);
-
-		JPanel coverPanel = new JPanel();
-		coverPanel.setBackground(Color.DARK_GRAY);
-		coverPanel.setBounds(0, 199, 250, 182);
-		contentPane.add(coverPanel);
+		
 	}
 
 	public void CloseFrame() {

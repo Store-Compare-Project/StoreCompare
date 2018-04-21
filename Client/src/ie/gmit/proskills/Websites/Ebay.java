@@ -58,6 +58,9 @@ public class Ebay {
 				postage = "€" + postage;
 			}
 			
+			if(price.indexOf('.', price.indexOf('.') + 1) != -1){
+				continue;
+			}
 			dtm.addRow(new Object[] { name, price,  postage, "Ebay" });
 		}
 	}

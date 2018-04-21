@@ -15,11 +15,8 @@ public class StoreSearch {
 		
 		// Threads
 		EbayThread EbayThread;
-		
-		// Items Object list array
-		List<Items> itemList = new ArrayList<Items>();
 			
-		EbayThread = new EbayThread(username, itemList, dtm);
+		EbayThread = new EbayThread(username, dtm);
 		EbayThread.start();
 		EbayThread.join();
 	}
@@ -27,12 +24,10 @@ public class StoreSearch {
 
 class EbayThread extends Thread {
  	String gameName;
- 	List<Items> itemList;
  	DefaultTableModel dtm;
 	
- 	EbayThread(String g, List<Items> i, DefaultTableModel d) {
+ 	EbayThread(String g, DefaultTableModel d) {
 		gameName = g;
-		itemList = i;
 		dtm = d;
 		
 	}
@@ -40,7 +35,7 @@ class EbayThread extends Thread {
 	public void run() {
 
 		try {
-			Ebay.main(gameName, itemList, dtm);
+			Ebay.main(gameName, dtm);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

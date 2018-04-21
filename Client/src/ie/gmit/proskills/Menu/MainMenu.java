@@ -21,7 +21,7 @@ public class MainMenu extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
-	private JTextField textField;
+	private JTextField tfStore_Seach;
 
 	/**
 	 * Launch the application.
@@ -67,24 +67,25 @@ public class MainMenu extends JFrame {
 				// set model into the table object
 				table.setModel(dtm);
 				
-				JLabel lblSearch = new JLabel("Store Search:");
-				lblSearch.setBounds(10, 56, 125, 14);
-				contentPane.add(lblSearch);
+				JLabel lblStore_Search = new JLabel("Store Search:");
+				lblStore_Search.setBounds(10, 56, 125, 14);
+				contentPane.add(lblStore_Search);
 				
-				textField = new JTextField();
-				textField.setBounds(10, 71, 125, 20);
-				contentPane.add(textField);
-				textField.setColumns(10);
+				tfStore_Seach = new JTextField();
+				tfStore_Seach.setBounds(10, 71, 125, 20);
+				contentPane.add(tfStore_Seach);
+				tfStore_Seach.setColumns(10);
 				
-				JButton btnNewButton = new JButton("Search");
-				btnNewButton.addActionListener(new ActionListener() {
+				JButton btnStore_Search = new JButton("Search");
+				btnStore_Search.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						
+						String username = tfStore_Seach.getText();
 						
 					}
 				});
-				btnNewButton.setBounds(10, 92, 125, 23);
-				contentPane.add(btnNewButton);
+				btnStore_Search.setBounds(10, 92, 125, 23);
+				contentPane.add(btnStore_Search);
 		
 		//contentPane.add(new JScrollPane(table));
 

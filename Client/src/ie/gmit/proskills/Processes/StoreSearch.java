@@ -19,12 +19,9 @@ public static void main(String[] args) throws InterruptedException {
 		
 		// Variables
 		String gameName = null;
-		int menu = -1;
 			
 		EbayThread = new EbayThread(gameName, itemList);
 		EbayThread.start();
-		menu = 0;
-		
 		EbayThread.join();
 	}
 }

@@ -77,6 +77,8 @@ public class MainMenu extends JFrame {
 				btnStore_Search.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						
+						dtm.setRowCount(0);
+						
 						String itemSearch = tfStore_Seach.getText();
 						
 						try {

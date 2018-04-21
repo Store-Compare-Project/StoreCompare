@@ -37,9 +37,6 @@ public class Ebay {
 		
 		// Selecting the following element of 
 		Elements els  = doc.select("li.sresult.lvresult");
-		
-		// Print out the whole DOM
-		//System.out.println(doc);
 
 		// For every element of the element we assign above
 		for(Element el : els)

@@ -1,6 +1,7 @@
 package ie.gmit.proskills.Websites;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
@@ -15,6 +16,8 @@ import ie.gmit.proskills.Storage.Items;
 public class Ebay {
 
 	public static void main(String searchTerm, DefaultTableModel dtm) throws IOException {
+		
+		DecimalFormat df = new DecimalFormat("#.00");
 		
 		String name = null;
 		String priceString=null;
@@ -57,7 +60,7 @@ public class Ebay {
 				//Error
 			}
 			
-			dtm.addRow(new Object[] { name, "€" + price, "€" + postage, store });
+			dtm.addRow(new Object[] { name, "€" + price, "€" + df.format(postage), store });
 		}
 	}
 }

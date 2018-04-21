@@ -54,13 +54,17 @@ public class MainMenu extends JFrame {
 		dtm.setColumnIdentifiers(header);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 624, 325);
+		scrollPane.setBounds(10, 126, 624, 325);
 		contentPane.add(scrollPane);
 		
 				table = new JTable();
 				scrollPane.setViewportView(table);
 				// set model into the table object
 				table.setModel(dtm);
+				
+				JLabel lblSearch = new JLabel("Search:");
+				lblSearch.setBounds(10, 101, 60, 14);
+				contentPane.add(lblSearch);
 		
 		//contentPane.add(new JScrollPane(table));
 

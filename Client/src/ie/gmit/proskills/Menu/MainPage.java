@@ -102,7 +102,6 @@ class EbayThread extends Thread
 			e.printStackTrace();
 		}
 	}
-	
 }
 
 // Amazon Thread

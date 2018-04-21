@@ -49,7 +49,6 @@ public class Ebay {
 			
 			price = "€" + ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
 				
-				
 			postage = (el.getElementsByClass("fee").text()).replaceAll("[^0-9.]", "");
 			
 			if(postage.isEmpty()){
@@ -61,6 +60,7 @@ public class Ebay {
 			if(price.indexOf('.', price.indexOf('.') + 1) != -1){
 				continue;
 			}
+			
 			dtm.addRow(new Object[] { name, price,  postage, "Ebay" });
 		}
 	}

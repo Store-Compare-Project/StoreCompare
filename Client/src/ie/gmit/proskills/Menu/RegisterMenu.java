@@ -37,11 +37,11 @@ public class RegisterMenu extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					RegisterMenu frame = new RegisterMenu();
+					RegisterMenu frame = new RegisterMenu(x, y);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,11 +52,13 @@ public class RegisterMenu extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param y 
+	 * @param x 
 	 */
-	public RegisterMenu() {
+	public RegisterMenu(int x, int y) {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 560, 420);
+		setBounds(x, y, 560, 420);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

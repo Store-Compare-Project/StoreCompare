@@ -98,7 +98,8 @@ public class LandingPage extends JFrame {
 		JButton buttonReg = new JButton("Register");
 		buttonReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				RegisterMenu.main(null);
+				
+				RegisterMenu.main((int)Math.round(contentPane.getLocationOnScreen().getX()), (int)Math.round(contentPane.getLocationOnScreen().getY()));
 				CloseFrame();
 			}
 		});

@@ -6,13 +6,16 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
+import javax.swing.JTable;
 
 public class MainMenu extends JFrame {
 
 	private JPanel contentPane;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -35,26 +38,30 @@ public class MainMenu extends JFrame {
 	 */
 	public MainMenu() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(700, 350, 450, 300);
+		setBounds(700, 350, 660, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
-		JLabel lblLoginPass = new JLabel("Login Pass!");
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblLoginPass, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(312, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addComponent(lblLoginPass)
-					.addContainerGap(238, Short.MAX_VALUE))
-		);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+
+		table = new JTable();
+		table.setBounds(40, 160, 559, 264);
+		contentPane.add(table);
+
+		DefaultTableModel dtm = new DefaultTableModel(0, 0);
+
+		// add header of the table
+		String header[] = new String[] { "Prority", "Task Title", "Start", "Pause", "Stop", "Statulses" };
+
+		// add header in table model
+		dtm.setColumnIdentifiers(header);
+		// set model into the table object
+		table.setModel(dtm);
+
+		// add row dynamically into the table
+		for (int count = 1; count <= 30; count++) {
+			dtm.addRow(new Object[] { "data", "data", "data", "data", "data", "data" });
+		}
+
 	}
 }

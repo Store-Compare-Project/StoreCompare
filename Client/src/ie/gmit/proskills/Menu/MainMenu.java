@@ -96,13 +96,6 @@ public class MainMenu extends JFrame {
 				});
 				btnStore_Search.setBounds(10, 92, 125, 23);
 				contentPane.add(btnStore_Search);
-		
-		//contentPane.add(new JScrollPane(table));
-
-		// add row dynamically into the table
-		for (int count = 1; count <= 30; count++) {
-			dtm.addRow(new Object[] { "Call Of Duty", "€5.00", "€2.50", "Ebay" });
-		}
 
 	}
 }

@@ -54,27 +54,16 @@ public class Ebay {
 			try
 			{
 				name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
+				
+				priceString =  ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
+				price = Double.parseDouble(priceString);
 			} 
 			catch (Exception e)
 			{
-				System.out.println("Name not found.");
+				//Error
 			}
 			
-			
-			try
-			{
-				priceString =  ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
-				System.out.println(priceString);
-				price = Double.parseDouble(priceString);
-
-			} 
-			catch (NumberFormatException e) 
-			{
-				//e.printStackTrace();
-				//System.out.println("Price not found.");
-			}
-			
-			dtm.addRow(new Object[] { name, price, "€2.50", store });
+			dtm.addRow(new Object[] { name, "€" + price, "€2.50", store });
 			
 			// Add the found stuff to our list
 			itemList.add(new Items(name, price));

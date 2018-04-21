@@ -8,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+
+import ie.gmit.proskills.Processes.StoreSearch;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
@@ -81,6 +84,13 @@ public class MainMenu extends JFrame {
 					public void actionPerformed(ActionEvent arg0) {
 						
 						String username = tfStore_Seach.getText();
+						
+						try {
+							StoreSearch.main(username, dtm);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						
 					}
 				});

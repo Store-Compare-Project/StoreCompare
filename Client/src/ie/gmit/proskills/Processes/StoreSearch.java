@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.table.DefaultTableModel;
+
 import ie.gmit.proskills.Storage.Items;
 import ie.gmit.proskills.Websites.Ebay;
 
 public class StoreSearch {
 
-public static void main(String[] args) throws InterruptedException {
+	public static void main(String username, DefaultTableModel dtm) throws InterruptedException {
 		
 		// Threads
 		EbayThread EbayThread;

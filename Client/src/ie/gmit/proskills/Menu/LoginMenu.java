@@ -54,8 +54,11 @@ public class LoginMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginMenu(int x, int y) {
+		
+		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(x, y, 560, 420);
+		setTitle("StoreCompare - Login");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

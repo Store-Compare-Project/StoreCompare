@@ -20,13 +20,11 @@ public class Ebay {
 		DecimalFormat df = new DecimalFormat("#.00");
 		
 		String name = null;
-		String priceString=null;
-		double price = 0.00;
-		double postage = 0.00;
+		String price = null;
+		String postage = "€0.00";
 		String urlPart1 = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 		String urlPart2 = ".TRS0&_nkw=";
 		String completeUrl;
-		String store = "Ebay";
 
 		// Replace any spaces with a +
 		searchTerm = searchTerm.replaceAll(" ", "+");
@@ -46,21 +44,21 @@ public class Ebay {
 		// For every element of the element we assign above
 		for(Element el : els)
 		{
-			try
-			{
-				name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
+			
+			name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
+			
+			price = "€" + ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
 				
-				priceString =  ((el.getElementsByClass("lvprice prc").text().replaceAll("[^0-9.]", "")));
-				price = Double.parseDouble(priceString);
-				postage =  Double.parseDouble((el.getElementsByClass("fee").text()).replaceAll("[^0-9.]", ""));
 				
-			} 
-			catch (Exception e)
-			{
-				//Error
+			postage = (el.getElementsByClass("fee").text()).replaceAll("[^0-9.]", "");
+			
+			if(postage.isEmpty()){
+				postage = "€0.00";
+			}else{
+				postage = "€" + postage;
 			}
 			
-			dtm.addRow(new Object[] { name, "€" + price, "€" + df.format(postage), store });
+			dtm.addRow(new Object[] { name, price,  postage, "Ebay" });
 		}
 	}
 }

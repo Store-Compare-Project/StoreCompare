@@ -43,6 +43,8 @@ public class MainMenu extends JFrame {
 	 * @param x
 	 */
 	public MainMenu(int x, int y) {
+		
+		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(x, y, 660, 500);
 		setTitle("StoreCompare - Main Menu");
@@ -51,33 +53,34 @@ public class MainMenu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// Table settings
 		DefaultTableModel dtm = new DefaultTableModel(0, 0);
-
-		// add header of the table
 		String header[] = new String[] { "Item Name", "Price", "Postage", "Total", "Store" };
-
-		// add header in table model
 		dtm.setColumnIdentifiers(header);
+		table = new JTable();
+		table.setModel(dtm);
 
+		// Panel settings
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 126, 624, 325);
 		contentPane.add(scrollPane);
-
-		table = new JTable();
 		scrollPane.setViewportView(table);
-		// set model into the table object
-		table.setModel(dtm);
-
+		
+		// Text label settings
 		JLabel lblStore_Search = new JLabel("Store Search:");
 		lblStore_Search.setBounds(10, 56, 125, 14);
 		contentPane.add(lblStore_Search);
 
+		// Textfield settings for user input
 		tfStore_Seach = new JTextField();
 		tfStore_Seach.setBounds(10, 71, 125, 20);
 		contentPane.add(tfStore_Seach);
 		tfStore_Seach.setColumns(10);
 
+		// Search button setup and action listener
 		JButton btnStore_Search = new JButton("Search");
+		btnStore_Search.setBounds(10, 92, 125, 23);
+		contentPane.add(btnStore_Search);
 		btnStore_Search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -94,8 +97,7 @@ public class MainMenu extends JFrame {
 
 			}
 		});
-		btnStore_Search.setBounds(10, 92, 125, 23);
-		contentPane.add(btnStore_Search);
+		
 
 	}
 }

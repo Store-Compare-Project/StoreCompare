@@ -14,6 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainMenu extends JFrame {
 
@@ -75,6 +77,12 @@ public class MainMenu extends JFrame {
 				textField.setColumns(10);
 				
 				JButton btnNewButton = new JButton("Search");
+				btnNewButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						
+						
+					}
+				});
 				btnNewButton.setBounds(10, 92, 125, 23);
 				contentPane.add(btnNewButton);
 		

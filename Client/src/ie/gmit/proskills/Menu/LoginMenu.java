@@ -121,17 +121,8 @@ public class LoginMenu extends JFrame {
 							// If the user logs in successfully, send them to the main landing page of the program                                                                                
 							if(loginCheck)
 							{		
-								try 
-								{
-									MainPage.run();
-								}
-								catch (InterruptedException e)
-								{
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-								//MainMenu.main(null);
-								//CloseFrame();					
+								MainMenu.main(null);
+								CloseFrame();	
 							}
 							else
 							{

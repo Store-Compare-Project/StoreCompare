@@ -1,10 +1,10 @@
 package ie.gmit.proskills.serverconn;
 
+import ie.gmit.proskills.object.LoginObject;
+
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
-
-import ie.gmit.proskills.object.LoginObject;
 
 public class Requester{
 	Socket requestSocket;

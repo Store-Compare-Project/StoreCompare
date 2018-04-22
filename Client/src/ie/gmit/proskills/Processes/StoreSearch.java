@@ -1,13 +1,9 @@
 package ie.gmit.proskills.Processes;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.swing.table.DefaultTableModel;
-
-import ie.gmit.proskills.Storage.Items;
 import ie.gmit.proskills.Websites.Ebay;
+
+import java.io.IOException;
+import javax.swing.table.DefaultTableModel;
 
 public class StoreSearch {
 

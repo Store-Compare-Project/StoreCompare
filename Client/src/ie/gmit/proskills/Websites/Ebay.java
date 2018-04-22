@@ -1,17 +1,12 @@
 package ie.gmit.proskills.Websites;
 
+import javax.swing.table.DefaultTableModel;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.List;
-
-import javax.swing.table.DefaultTableModel;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-import ie.gmit.proskills.Storage.Items;
 
 public class Ebay {
 

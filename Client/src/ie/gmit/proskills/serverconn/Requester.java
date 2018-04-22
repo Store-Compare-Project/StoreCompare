@@ -39,11 +39,9 @@ public class Requester{
 		catch(IOException ioException){
 			ioException.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		finally{
-			//4: Closing connection
 			try{
 				in.close();
 				out.close();

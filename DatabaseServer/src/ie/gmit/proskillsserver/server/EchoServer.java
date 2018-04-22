@@ -24,7 +24,6 @@ import java.util.Date;
  * @author Danielis Joniškis
  * @author Eddie Eldridge
  */
-
 public class EchoServer {
 
 	/**
@@ -67,13 +66,7 @@ class ClientServiceThread extends Thread {
 		clientSocket = s;
 		clientID = i;
 	}
-
-	/**
-	 * This
-	 * 
-	 * @param msg
-	 *            String to be send back to the user
-	 */
+	
 	void sendMessage(String msg) {
 		try {
 			out.writeObject(msg);

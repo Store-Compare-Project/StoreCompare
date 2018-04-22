@@ -2,45 +2,68 @@ package ie.gmit.proskillsserver.proceeses;
 
 import com.mongodb.*;
 
+/**
+ * This class is responisble for logging the user into the system. </br>
+ * The class checks if the user provided username and password match any users
+ * in the system and then are told if they have provided correct information
+ * client-side.
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 public class Login {
 
+	/**
+	 * Method revives the login details from the user trying to access the
+	 * system and checks if they are a valid user.
+	 * 
+	 * @param username
+	 *            The username provided by the user
+	 * @param password
+	 *            The password provided by the user
+	 * @param clientID
+	 *            Client ID used to inform the server on the users login status
+	 * @return returns the login status so the server can send a success or
+	 *         failure to the user
+	 */
 	@SuppressWarnings("deprecation")
 	public static Boolean main(String username, String password, int clientID) {
-		
+
 		Boolean loginStatus = false;
-		
+
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("loginproject");
 		DBCollection coll = db.getCollection("login");
-		
+
 		DBCursor cursor = coll.find();
-		
+
 		try {
-		   while(cursor.hasNext() && !loginStatus) {
-			   
-			   DBObject temp = cursor.next();
-		       
-			   String usernameTemp = temp.get("username").toString();
-			   String passwordTemp = temp.get("password").toString();
-			   
-			   if(usernameTemp.equals(username) && passwordTemp.equals(password)){
-				   
-				   loginStatus = true;
-				   
-			   }  
-		   }
+			while (cursor.hasNext() && !loginStatus) {
+
+				DBObject temp = cursor.next();
+
+				String usernameTemp = temp.get("username").toString();
+				String passwordTemp = temp.get("password").toString();
+
+				if (usernameTemp.equals(username) && passwordTemp.equals(password)) {
+
+					loginStatus = true;
+
+				}
+			}
 		} finally {
-		   cursor.close();
+			cursor.close();
 		}
-		
+
 		mongoClient.close();
-		
-		if(loginStatus){
+
+		if (loginStatus) {
 			System.out.println("> Client ID: " + clientID + " | Logged-in Username - " + username);
-		}else {
+		} else {
 			System.out.println("> Client ID: " + clientID + " | Failed Login Username - " + username);
 		}
-		
+
 		return loginStatus;
 	}
 }

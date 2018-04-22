@@ -1,5 +1,8 @@
 package ie.gmit.proskillsserver.server;
 
+import ie.gmit.proskillsserver.proceeses.Login;
+import ie.gmit.proskillsserver.proceeses.Register;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -9,10 +12,18 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import ie.gmit.proskillsserver.proceeses.Login;
-import ie.gmit.proskillsserver.proceeses.Register;
+/**
+ * This class is the main server competent used to sent and receive data from/to the user.
+ * The server receives a header which is the first word in the string to identify 'login' and
+ * register, otherwise the server would have no idea whether it was a login or register attempt
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 
 public class EchoServer {
+	
   public static void main(String[] args) throws Exception {
     ServerSocket m_ServerSocket = new ServerSocket(2004,10);
     
@@ -30,11 +41,21 @@ public class EchoServer {
   }
 }
 
+/**
+ * Thread setup and settings
+ * 
+ * @param clientSocket Server listener for user
+ * @param message string representation of the server input from user
+ * @param clientID Client ID used to identify each users instance
+ * @param out Message received by the server
+ * @param in Message sent to the server
+ * @param s Socket information passed from 'main'
+ * @param i clients id passed from 'main'
+ */
 class ClientServiceThread extends Thread {
   Socket clientSocket;
   String message;
   int clientID = 0;
-  boolean running = true;
   ObjectOutputStream out;
   ObjectInputStream in;
 

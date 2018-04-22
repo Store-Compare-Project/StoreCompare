@@ -25,13 +25,6 @@ public class Runner {
 	 *            Default function values
 	 * @throws Exception
 	 *             Ignores any errors that occur
-	 * 
-	 * @param dateFormat
-	 *            Used to set date/time format
-	 * @param date
-	 *            Used to generate a date/time for the current date/time
-	 * @param EchoServer.main()
-	 *            Calls the main server component
 	 */
 	public static void main(String[] args) throws Exception {
 

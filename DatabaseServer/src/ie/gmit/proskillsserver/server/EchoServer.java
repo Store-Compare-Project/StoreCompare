@@ -27,6 +27,17 @@ import java.util.Date;
 
 public class EchoServer {
 
+	/**
+	 * The main server component.</br>
+	 * The server starts the server on port '2004' and listens on this port for
+	 * a user connection. When a user connects they are setup on a new thread
+	 * and given an ID for their request to the server
+	 * 
+	 * @param args
+	 *            Default method argument
+	 * @throws Exception
+	 *             Throws all errors
+	 */
 	public static void main(String[] args) throws Exception {
 		ServerSocket m_ServerSocket = new ServerSocket(2004, 10);
 
@@ -45,24 +56,6 @@ public class EchoServer {
 	}
 }
 
-/**
- * Thread setup and settings
- * 
- * @param clientSocket
- *            Server listener for user
- * @param message
- *            string representation of the server input from user
- * @param clientID
- *            Client ID used to identify each users instance
- * @param out
- *            Message received by the server
- * @param in
- *            Message sent to the server
- * @param s
- *            Socket information passed from 'main'
- * @param i
- *            clients id passed from 'main'
- */
 class ClientServiceThread extends Thread {
 	Socket clientSocket;
 	String message;

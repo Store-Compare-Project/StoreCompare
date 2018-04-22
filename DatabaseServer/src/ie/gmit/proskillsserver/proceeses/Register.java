@@ -57,7 +57,6 @@ public class Register {
 					loginStatus = true;
 
 				}
-
 			}
 
 			if (!loginStatus) {

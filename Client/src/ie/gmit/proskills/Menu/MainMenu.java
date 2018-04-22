@@ -1,21 +1,26 @@
 package ie.gmit.proskills.Menu;
 
-import java.awt.EventQueue;
+import ie.gmit.proskills.Processes.StoreSearch;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
-import ie.gmit.proskills.Processes.StoreSearch;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.EventQueue;
 
 public class MainMenu extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7318028064219521737L;
 	private JPanel contentPane;
 	private JTable table;
 	private JTextField tfStore_Seach;

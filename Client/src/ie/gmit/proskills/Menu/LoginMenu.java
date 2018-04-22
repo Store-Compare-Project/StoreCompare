@@ -1,24 +1,19 @@
 package ie.gmit.proskills.Menu;
 
-import java.awt.EventQueue;
-import java.awt.Image;
+import ie.gmit.proskills.Processes.Login;
+import ie.gmit.proskills.Processes.Validator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import ie.gmit.proskills.Processes.Login;
-import ie.gmit.proskills.Processes.Validator;
-
-import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-
+import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;

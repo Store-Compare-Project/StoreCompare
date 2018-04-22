@@ -1,10 +1,11 @@
 package ie.gmit.proskillsserver.runner;
 
+
+import ie.gmit.proskillsserver.server.EchoServer;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import ie.gmit.proskillsserver.server.EchoServer;
 
 public class Runner {
 
@@ -18,9 +19,6 @@ public class Runner {
 		System.err.close();
 		
 		EchoServer.main(args);
-		
-		
-		
 	}
 	
 }

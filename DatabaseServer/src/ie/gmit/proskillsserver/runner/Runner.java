@@ -7,9 +7,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * This class is dedicated to running the program.
- * This class 'kick-starts' the server that is used to connect to a mongoDB.
- * The server accepts user input on one of the many threads and parses whether the data is login or register.
+ * This class is dedicated to running the program. This class 'kick-starts' the
+ * server that is used to connect to a mongoDB. The server accepts user input on
+ * one of the many threads and parses whether the data is login or register.
  * 
  * @author Cian Gannon
  * @author Danielis Joniškis
@@ -21,13 +21,17 @@ public class Runner {
 	/**
 	 * The server runner to 'kick-start' the server.
 	 * 
-	 * @param args Default function values
-	 * @throws Exception Ignores any errors that occur
+	 * @param args
+	 *            Default function values
+	 * @throws Exception
+	 *             Ignores any errors that occur
 	 * 
-	 * @param dateFormat Used to set date/time format
-	 * @param date Used to generate a date/time for the current date/time
-	 * @param EchoServer.main() Calls the main server component
-	 * 
+	 * @param dateFormat
+	 *            Used to set date/time format
+	 * @param date
+	 *            Used to generate a date/time for the current date/time
+	 * @param EchoServer.main()
+	 *            Calls the main server component
 	 */
 	public static void main(String[] args) throws Exception {
 

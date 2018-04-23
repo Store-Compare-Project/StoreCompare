@@ -38,7 +38,7 @@ public class Login {
 		DB db = mongoClient.getDB("loginproject");
 		DBCollection coll = db.getCollection("login");
 
-		//  Gets all DB collections
+		// Gets all DB collections
 		DBCursor cursor = coll.find();
 
 		// Loops through cursor entry by entry.
@@ -65,7 +65,7 @@ public class Login {
 		} finally {
 			// Close cursor
 			cursor.close();
-			
+
 			// Close database connection
 			mongoClient.close();
 		}

@@ -66,7 +66,7 @@ class ClientServiceThread extends Thread {
 		clientSocket = s;
 		clientID = i;
 	}
-	
+
 	void sendMessage(String msg) {
 		try {
 			out.writeObject(msg);

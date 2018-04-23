@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+//A LandingPage class which utilises a JFrame to allow the user to access the Register and Login pages.
 public class LandingPage extends JFrame {
 
 	/**

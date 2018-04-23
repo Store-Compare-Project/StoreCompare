@@ -19,7 +19,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+//A RegisterMenu class which utilises a JFrame to allow the user to Register a username and password for Login.
 public class RegisterMenu extends JFrame {
 
 	/**

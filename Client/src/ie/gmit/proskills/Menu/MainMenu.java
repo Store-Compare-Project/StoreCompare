@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
 import java.awt.Color;
-
+//A MainMenu class which utilises a JFrame to allow the user to search for products.
 public class MainMenu extends JFrame {
 
 	/**

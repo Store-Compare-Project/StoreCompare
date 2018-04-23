@@ -19,7 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
-
+//A LoginMenu class which utilises a JFrame to allow the user to Login to the MainMenu.
 public class LoginMenu extends JFrame {
 
 	/**

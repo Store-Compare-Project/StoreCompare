@@ -5,6 +5,7 @@ import ie.gmit.proskills.Processes.Validator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -27,8 +28,8 @@ public class RegisterMenu extends JFrame {
 	private static final long serialVersionUID = 3819995849104340705L;
 	private JPanel contentPane;
 	private JTextField usernameInput;
-	private JTextField passwordInput1;
-	private JTextField passwordInput2;
+	private JPasswordField passwordInput1;
+	private JPasswordField passwordInput2;
 
 	/**
 	 * Launch the application.
@@ -108,13 +109,13 @@ public class RegisterMenu extends JFrame {
 		panel.add(lblConfirmPassword);
 		
 		//A text field for the new password input
-		passwordInput1 = new JTextField();
+		passwordInput1 = new JPasswordField(); 
 		passwordInput1.setBounds(11, 153, 272, 20);
 		panel.add(passwordInput1);
 		passwordInput1.setColumns(10);
 
 		//A text field for the confirmed password input
-		passwordInput2 = new JTextField();
+		passwordInput2 = new JPasswordField(); 
 		passwordInput2.setBounds(10, 209, 273, 20);
 		panel.add(passwordInput2);
 		passwordInput2.setColumns(10);
@@ -147,8 +148,8 @@ public class RegisterMenu extends JFrame {
 
 				// Declare variables for input boxes
 				String username = usernameInput.getText();
-				String password1 = passwordInput1.getText();
-				String password2 = passwordInput2.getText();
+				String password1 = new String(passwordInput1.getPassword()); 
+				String password2 = new String(passwordInput2.getPassword());
 
 				// Input validation for register details
 				boolean usernameValidationCheck = Validator.validateUsername(username);

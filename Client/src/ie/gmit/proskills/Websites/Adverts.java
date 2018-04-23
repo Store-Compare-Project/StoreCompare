@@ -24,19 +24,17 @@ public class Adverts {
 		String name = null;
 		String price = null;
 		double total = 0.00;
-		String urlPart1 = "https://www.adverts.ie/for-sale/q_";
-		String urlPart2 = "/";
-		String completeUrl;
+		String url = "https://www.adverts.ie/for-sale/q_";
 
 		// Replace any spaces with a +
 		searchTerm = searchTerm.replaceAll(" ", "+");
 
 		// Complete the url with search terms added
-		completeUrl = urlPart1 + searchTerm + urlPart2;
+		url += searchTerm;
 
 		// Create a document of the HTML of the webpage we are searching (In our
 		// case ebay)
-		Document doc = Jsoup.connect(completeUrl)
+		Document doc = Jsoup.connect(url)
 				.userAgent(
 						"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2")
 				.timeout(60000).get();

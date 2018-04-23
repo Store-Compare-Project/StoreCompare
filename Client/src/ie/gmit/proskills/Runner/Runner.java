@@ -6,7 +6,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 		
-		LandingPage.main(args);
+		LandingPage.main(100, 100);
 		
 	}
 }

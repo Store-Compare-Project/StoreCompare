@@ -15,8 +15,30 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
 import java.awt.Color;
+
+/**
+ * This class is responsible for loading the Main Menu to the user. <br>
+ * The class allows the user to Search a product. 
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
+
 //A MainMenu class which utilises a JFrame to allow the user to search for products.
 public class MainMenu extends JFrame {
+	
+	/**
+	 * This class displays a Menu to the user.
+	 * From here they can enter a product name into the input field
+	 * and this will display the search results.
+	 * The user can also choose to logout.
+	 * 
+	 * @param x
+	 *            The x coordinates of the JFrame
+	 * @param y
+	 *            The y coordinates of the JFrame
+	 */
 
 	/**
 	 * 

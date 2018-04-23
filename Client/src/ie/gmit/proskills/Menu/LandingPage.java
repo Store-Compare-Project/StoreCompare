@@ -1,7 +1,7 @@
 package ie.gmit.proskills.Menu;
 
 /**
- * This class is responisble for loading the initial user interface. <br>
+ * This class is responsible for loading the initial user interface. <br>
  * The class allows the user to choose between Login and Register. 
  * 
  * @author Cian Gannon

@@ -108,10 +108,14 @@ public class LoginMenu extends JFrame {
 		passwordInput.setColumns(10);
 		
 		// Login button setup and action listener
-		JButton btnNewButton = new JButton("Login");
-		btnNewButton.setBounds(11, 215, 272, 88);
-		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton loginButton = new JButton("Login");
+		loginButton.setBounds(11, 215, 272, 88);
+		panel.add(loginButton);
+		
+		JButton backButton = new JButton("Back");
+		backButton.setBounds(11, 347, 89, 23);
+		panel.add(backButton);
+		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 				String username = usernameInput.getText();

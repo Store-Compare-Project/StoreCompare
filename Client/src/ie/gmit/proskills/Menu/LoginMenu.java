@@ -5,6 +5,7 @@ import ie.gmit.proskills.Processes.Validator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -27,8 +28,7 @@ public class LoginMenu extends JFrame {
 	private static final long serialVersionUID = 3819995849104340705L;
 	private JPanel contentPane;
 	private JTextField usernameInput;
-	private JTextField passwordInput;
-
+	private JPasswordField passwordInput;
 	/**
 	 * Launch the application.
 	 */
@@ -105,7 +105,7 @@ public class LoginMenu extends JFrame {
 		usernameInput.setColumns(10);
 		
 		//A text field for the password input
-		passwordInput = new JTextField();
+		passwordInput = new JPasswordField();
 		passwordInput.setBounds(10, 137, 273, 20);
 		panel.add(passwordInput);
 		passwordInput.setColumns(10);

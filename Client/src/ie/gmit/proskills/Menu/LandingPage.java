@@ -1,5 +1,14 @@
 package ie.gmit.proskills.Menu;
 
+/**
+ * This class is responisble for loading the initial user interface. <br>
+ * The class allows the user to choose between Login and Register. 
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -14,6 +23,17 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 //A LandingPage class which utilises a JFrame to allow the user to access the Register and Login pages.
 public class LandingPage extends JFrame {
+	
+	/**
+	 * This class simply displays a Landing Page to the user.
+	 * From here they can navigate to the Register Page or
+	 * the Login Page.
+	 * 
+	 * @param x
+	 *            The x coordinates of the JFrame
+	 * @param y
+	 *            The y coordinates of the JFrame
+	 */
 
 	/**
 	 * 

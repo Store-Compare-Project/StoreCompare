@@ -24,11 +24,11 @@ public class LandingPage extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LandingPage frame = new LandingPage();
+					LandingPage frame = new LandingPage(x, y);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +40,7 @@ public class LandingPage extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public LandingPage() {
+	public LandingPage(int x, int y) {
 		
 		// Frame settings
 		setBackground(Color.WHITE);

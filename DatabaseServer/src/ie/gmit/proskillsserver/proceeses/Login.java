@@ -30,40 +30,55 @@ public class Login {
 	@SuppressWarnings("deprecation")
 	public static Boolean main(String username, String password, int clientID) {
 
+		// Status returned to the user
 		Boolean loginStatus = false;
 
+		// MongoDB settings
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("loginproject");
 		DBCollection coll = db.getCollection("login");
 
+		//  Gets all DB collections
 		DBCursor cursor = coll.find();
 
+		// Loops through cursor entry by entry.
+		// Stops if there is no more entry's or the user name has been found
 		try {
 			while (cursor.hasNext() && !loginStatus) {
 
+				// Get cursor items and adds them to the DBObject
 				DBObject temp = cursor.next();
 
+				// Gets username and password
 				String usernameTemp = temp.get("username").toString();
 				String passwordTemp = temp.get("password").toString();
 
+				// Checks if entered username/password equals the current username/password iteration
 				if (usernameTemp.equals(username) && passwordTemp.equals(password)) {
 
+					// Makes login status true.
+					// This allows the user to procceed to the next page on the client
 					loginStatus = true;
 
 				}
 			}
 		} finally {
+			// Close cursor
 			cursor.close();
+			
+			// Close database connection
+			mongoClient.close();
 		}
 
-		mongoClient.close();
-
+		// If loginStatus is true the server will display that they have been logged in
+		// If loginStatus is false the server will display that the user login failed
 		if (loginStatus) {
 			System.out.println("> Client ID: " + clientID + " | Logged-in Username - " + username);
 		} else {
 			System.out.println("> Client ID: " + clientID + " | Failed Login Username - " + username);
 		}
 
+		// Return login status to be sent to user
 		return loginStatus;
 	}
 }

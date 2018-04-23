@@ -115,6 +115,14 @@ public class LoginMenu extends JFrame {
 		JButton backButton = new JButton("Back");
 		backButton.setBounds(11, 347, 89, 23);
 		panel.add(backButton);
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LandingPage.main(null);
+				CloseFrame();
+			}
+		});
+		
+		
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 

@@ -14,11 +14,11 @@ import java.util.Date;
 
 /**
  * This class is the main server competent used to sent and receive data from/to
- * the user.</br>
+ * the user.<br>
  * The server receives a header which is the first word in the string to
- * identify 'login' and</br>
+ * identify 'login' and<br>
  * register, otherwise the server would have no idea whether it was a login or
- * register attempt</br>
+ * register attempt<br>
  * 
  * @author Cian Gannon
  * @author Danielis Joniškis
@@ -27,7 +27,7 @@ import java.util.Date;
 public class EchoServer {
 
 	/**
-	 * The main server component.</br>
+	 * The main server component.<br>
 	 * The server starts the server on port '2004' and listens on this port for
 	 * a user connection. When a user connects they are setup on a new thread
 	 * and given an ID for their request to the server

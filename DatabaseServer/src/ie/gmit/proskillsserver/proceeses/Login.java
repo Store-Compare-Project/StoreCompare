@@ -3,7 +3,7 @@ package ie.gmit.proskillsserver.proceeses;
 import com.mongodb.*;
 
 /**
- * This class is responisble for logging the user into the system. </br>
+ * This class is responisble for logging the user into the system. <br>
  * The class checks if the user provided username and password match any users
  * in the system and then are told if they have provided correct information
  * client-side.

@@ -8,7 +8,7 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
 /**
- * This class is used to register the user into the system.</br>
+ * This class is used to register the user into the system.<br>
  * This class is responsible for registering the user name and password provided
  * by the user into the database.
  * 

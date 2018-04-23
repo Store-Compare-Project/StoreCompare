@@ -14,37 +14,37 @@
 * [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki)
 
 ## Description
-The aim of this project is to write a program in the Go programming language that can
-build a non-deterministic finite automaton (NFA) from a regular expression,
-and can use the NFA to check if the regular expression matches any given
-string of text.
+StoreCompare is a multi-threaded Java application that can be used to compare the price of products across websites such as Aliexpress and Ebay. 
+It provides the user a quick and easy way to compare the prices of a product across multiple websites.
 
 ## How to run the program
-This program uses the Go programming language .
+This program uses the Java programming language .
 
-If you do not currently have Go installed click on the following link to download [INSTALL GO](https://golang.org/dl/)
+To check if you have Java already installed you can run
+
+```
+java -version 
+```
+
+
+If you do not currently have Java installed click on the following link to download [INSTALL JAVA](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
+Once downloaded and installed, check again to see if you now have Java installed. (May require a restart of PC and command prompt)
 
 To clone the repository to your local machine, using your prefered command prompt, navigate to the folder you wish to download the files to and enter
 ```
-git clone https://github.com/EddieEldridge/GoLangAutomaton
+git clone https://github.com/Store-Compare-Project/ITProSkills.git
 ```
-There is two ways to run this program
-1. **Build and Run**
- Navigate to the GoLangAutomata\main folder and enter the following to compile the code 
+
+**Run**
+ Navigate to the folder you just cloned the project to (in your command prompt) and enter the following compile and run the code 
+
 ```
-go build main.go
+java -jar StoreCompare.jar
 ```
-This will create a .exe file in your current directory.To run the file that is created (note, unless specified, Go will name the .exe after the name of the folder which contrains the main.go file. E.g. in my case, my folder is called 'main' so an .exe called 'main.exe' is created)
-```
-main.exe
-```
-2. **Run** to simply run the program in your command prompt enter the following 
-```
-go run main.go
-```  
 
 ## Information
-For more information on concepts discussed and used in this program, please refer to the [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki) and resources below.
+For more information on concepts and technologies discussed and used in this program, please refer to the [Wiki](https://github.com/Store-Compare-Project/ITProSkills/wiki) and resources below.
 
 ## Technologies
 - [GO](https://golang.org/dl/)

@@ -1,56 +1,68 @@
 ![storecompare](https://user-images.githubusercontent.com/22448079/38895768-d87f1a4c-4288-11e8-99ab-416e24d32da8.png)
 
+<p align="center">
+  <b>A multi-threaded Java application for comparing the price of products across multiple websites</b><br>
+</p>
+
+## Contents
+* [Description](#description)
+* [How to run](#how-to-run-the-program)
+* [Design](#design)
+* [Information](#information)
+* [Technologies](#technologies)
+* [Resources](#resources)
+* [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki)
+
 ## Description
+The aim of this project is to write a program in the Go programming language that can
+build a non-deterministic finite automaton (NFA) from a regular expression,
+and can use the NFA to check if the regular expression matches any given
+string of text.
 
-The aim of this project is to develop a piece of software meeting industry standards for development, documentation and publishing. The collaboratively built program will be developed using the Java programming language and a database (yet to be decided) with Git and Github as version control. Documentation will include Javadocs, a Github read-me page, a video screencast to demonstrate the features of the program and a .pdf document explaining to the user how to use the program.
+## How to run the program
+This program uses the Go programming language .
 
-## Members
+If you do not currently have Go installed click on the following link to download [INSTALL GO](https://golang.org/dl/)
 
-Cian Gannon (G00337022)
+To clone the repository to your local machine, using your prefered command prompt, navigate to the folder you wish to download the files to and enter
+```
+git clone https://github.com/EddieEldridge/GoLangAutomaton
+```
+There is two ways to run this program
+1. **Build and Run**
+ Navigate to the GoLangAutomata\main folder and enter the following to compile the code 
+```
+go build main.go
+```
+This will create a .exe file in your current directory.To run the file that is created (note, unless specified, Go will name the .exe after the name of the folder which contrains the main.go file. E.g. in my case, my folder is called 'main' so an .exe called 'main.exe' is created)
+```
+main.exe
+```
+2. **Run** to simply run the program in your command prompt enter the following 
+```
+go run main.go
+```  
 
-Danielis Joniskis (G00333859)
-
-Edward Eldridge (G00337490)
-
-## Program
-
-The actual program to be developed is a price comparison tool using Java which is connected remotely to a MongoDB database that will store user&#39;s details.
-
-The program works by taking in the name of an item from a user and searching a website or websites for the price of the item listed on the website. This way the user can compare the price of one item across multiple websites with ease.
-
-Users can register/login through the database. Once logged-in, users can add items to their &#39;collection&#39; of items. They can then query their collection instead of having to manually search for a set of items each time. This collection is stored in the database and is linked to the users account (register/login details).
-
-## Interface
-The program will be designed using Java and Swing
-
-## Database
--	Prompt user to add item to their ‘collection’
--	Store the collection in the database
--	Users can query their whole collection whenever they like without having to manually re-enter each item
--	Users can add, delete or update items in their collection
--	Collection in database linked to users account (register/login)
--	Allow users to create a wishlist with items they want to add to their collection that they might not already own (Time permitting)
--	Show users price history of an item (Time permitting)
--	Show changes in price (Time permitting)
-
-## Documentation
--	Screencast demonstrating the features of the program and how to use it
--	Javadocs to explain the code
--	A .pdf read me included with the program as a simple quick start guide on how to use the program.
--	GitHub read me explain what the program is and how to use it
+## Information
+For more information on concepts discussed and used in this program, please refer to the [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki) and resources below.
 
 ## Technologies
--	Git
--	GitHub
--	Java
--	Swing
--	MongoDB
--	Javadocs
+- [GO](https://golang.org/dl/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/)
+- [Cmder](http://cmder.net/)
 
-## Links
+## Resources
+- [Thompson's Construction](https://en.wikipedia.org/wiki/Thompson%27s_construction) (For help understanding the concepts that this project is based upon)
 
-[Eddie Eldridge GitHub](https://github.com/EddieEldridge)
+- [Converting a regular expression to a NFA](http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html)
 
-[Danielis Joniskis GitHub](https://github.com/jawneck)
+- [Russ Cox article on RegXP matching](https://swtch.com/~rsc/regexp/regexp1.html)
 
-[Cian Gannon GitHub](https://github.com/cian2009/ITProSkills)
+
+## Developers
+Edward Eldridge (G00337490)
+
+## Acknowledgments
+- [Dr. Ian Mcloughlin](https://github.com/ianmcloughlin) - For help with the foundations of the project
+- [Cian Gannon](https://github.com/cian2009) - For bringing my attention to the fact that '/r' and '/n' characters were being passed into the PostMatch function

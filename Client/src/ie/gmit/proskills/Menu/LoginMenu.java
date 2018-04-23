@@ -168,8 +168,14 @@ public class LoginMenu extends JFrame {
 						// If the user logs in successfully, send them to the
 						// main landing page of the program
 						if (loginCheck) {
-							MainMenu.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
-									(int) Math.round(contentPane.getLocationOnScreen().getY()));
+							try {
+								MainPage.run();
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							//MainMenu.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
+							//		(int) Math.round(contentPane.getLocationOnScreen().getY()));
 							CloseFrame();
 						} else {
 							JOptionPane.showMessageDialog(null, "Username/Password are incorrect.");

@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 
 import ie.gmit.proskills.Storage.Items;
 
-public class Aliexpress {
+public class Newegg {
 
 	// Run this class when we want to search amazon
 	public static void run(String searchTerm, List<Items> itemList) throws IOException

@@ -41,6 +41,8 @@ public class MainPage
 		// Menu display
 		System.out.println("1: Ebay");
 		System.out.println("2: Aliexpress");
+		System.out.println("3: Newegg");
+
 		menuChoice = reader.nextInt();
 
 		// Switch statement for menu choice

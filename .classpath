@@ -4,7 +4,7 @@
 	<classpathentry kind="src" path="DatabaseServer/src"/>
 	<classpathentry kind="src" path="Prototype/src"/>
 	<classpathentry kind="lib" path="DatabaseServer/jars/mongo-java-driver-3.4.3.jar"/>
-	<classpathentry kind="lib" path="Prototype/jar/jsoup-1.11.2.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="Client/jars/jsoup-1.11.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

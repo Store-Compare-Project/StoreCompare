@@ -93,6 +93,13 @@ public class MainMenu extends JFrame {
 		JButton exitButton = new JButton("Exit");
 		exitButton.setBounds(545, 92, 89, 23);
 		contentPane.add(exitButton);
+		exitButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LandingPage.main(null);
+				CloseFrame();
+			}
+		});
+		
 		btnStore_Search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -111,5 +118,9 @@ public class MainMenu extends JFrame {
 		});
 		
 
+	}
+	// Frame closer function
+	public void CloseFrame() {
+		super.dispose();
 	}
 }

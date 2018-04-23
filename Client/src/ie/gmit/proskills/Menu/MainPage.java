@@ -165,7 +165,7 @@ class AdvertsThread extends Thread
 		// Try catch
 		try
 		{
-			Adverts.run(searchTerm, itemList);
+			Adverts.run(searchTerm, null);
 		}
 		catch (IOException e)
 		{

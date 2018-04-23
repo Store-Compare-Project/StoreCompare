@@ -1,2 +1,0 @@
-# ITProSkills
-IT Pro

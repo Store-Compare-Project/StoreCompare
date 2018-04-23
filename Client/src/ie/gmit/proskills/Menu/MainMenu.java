@@ -90,11 +90,11 @@ public class MainMenu extends JFrame {
 		btnStore_Search.setBounds(10, 92, 125, 23);
 		contentPane.add(btnStore_Search);
 		
-		//A button which take you back to the landing pages
-		JButton exitButton = new JButton("Exit");
-		exitButton.setBounds(545, 92, 89, 23);
-		contentPane.add(exitButton);
-		exitButton.addActionListener(new ActionListener() {
+		//A button which take you back to the landing page.
+		JButton logoutButton = new JButton("Logout");
+		logoutButton.setBounds(545, 92, 89, 23);
+		contentPane.add(logoutButton);
+		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LandingPage.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
 						(int) Math.round(contentPane.getLocationOnScreen().getY()));

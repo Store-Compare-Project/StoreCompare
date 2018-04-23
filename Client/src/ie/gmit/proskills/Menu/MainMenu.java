@@ -89,6 +89,10 @@ public class MainMenu extends JFrame {
 		JButton btnStore_Search = new JButton("Search");
 		btnStore_Search.setBounds(10, 92, 125, 23);
 		contentPane.add(btnStore_Search);
+		
+		JButton exitButton = new JButton("Exit");
+		exitButton.setBounds(545, 92, 89, 23);
+		contentPane.add(exitButton);
 		btnStore_Search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 

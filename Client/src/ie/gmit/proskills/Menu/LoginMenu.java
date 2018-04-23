@@ -19,8 +19,29 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
+/**
+ * This class is responisble for loading the Login Page. <br>
+ * The class allows the user to enter a username and password, and login. 
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
+
 //A LoginMenu class which utilises a JFrame to allow the user to Login to the MainMenu.
 public class LoginMenu extends JFrame {
+	
+	/**
+	 * This class displays a Login Page to the user.
+	 * From here they can enter a valid username and password,
+	 * allowing them to successful login and access the Main Menu.
+	 * The user can also choose to go back to the Landing Page.
+	 * 
+	 * @param x
+	 *            The x coordinates of the JFrame
+	 * @param y
+	 *            The y coordinates of the JFrame
+	 */
 
 	/**
 	 * 

@@ -37,27 +37,36 @@ git clone https://github.com/Store-Compare-Project/ITProSkills.git
 ```
 
 **Run**
- Navigate to the folder you just cloned the project to (in your command prompt) and enter the following compile and run the code 
+ Navigate to the folder you just cloned the project to (in your command prompt) and enter the following to compile and run the code 
 
 ```
 java -jar StoreCompare.jar
 ```
 
+OR
+
+Assuming you have Java installed, you can just double click the .jar file and the program will open.
+
 ## Information
 For more information on concepts and technologies discussed and used in this program, please refer to the [Wiki](https://github.com/Store-Compare-Project/ITProSkills/wiki) and resources below.
 
-## Technologies
-- [GO](https://golang.org/dl/)
-- [Visual Studio Code](https://code.visualstudio.com/)
+## Technologies and Software
+**Technologies**
+- [Java](https://java.com/en/download/)
+- [Swing](https://docs.oracle.com/javase/tutorial/uiswing/)
+- [MongoDB](https://www.mongodb.com/)
+- [JSoup](https://jsoup.org/)
 - [Git](https://git-scm.com/)
+- [Google Cloud Service](https://cloud.google.com/)
+
+
+**Software**
+- [Eclipse](https://www.eclipse.org/)
 - [Cmder](http://cmder.net/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Resources
-- [Thompson's Construction](https://en.wikipedia.org/wiki/Thompson%27s_construction) (For help understanding the concepts that this project is based upon)
-
-- [Converting a regular expression to a NFA](http://www.cs.may.ie/staff/jpower/Courses/Previous/parsing/node5.html)
-
-- [Russ Cox article on RegXP matching](https://swtch.com/~rsc/regexp/regexp1.html)
+- [JSoup Cookbook](https://jsoup.org/cookbook/)
 
 
 ## Developers
@@ -65,4 +74,4 @@ Edward Eldridge (G00337490)
 
 ## Acknowledgments
 - [Dr. Ian Mcloughlin](https://github.com/ianmcloughlin) - For help with the foundations of the project
-- [Cian Gannon](https://github.com/cian2009) - For bringing my attention to the fact that '/r' and '/n' characters were being passed into the PostMatch function
+

@@ -75,47 +75,51 @@ public class RegisterMenu extends JFrame {
 		coverPanel.setBounds(0, 199, 250, 182);
 		contentPane.add(coverPanel);
 		
-		// Text tables settings
+		//A label for the new password input
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblPassword.setBounds(11, 128, 200, 14);
 		panel.add(lblPassword);
 		
+		//A page header label
 		JLabel headerLabel = new JLabel("Register");
 		headerLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		headerLabel.setFont(new Font("Jokerman", Font.PLAIN, 28));
 		headerLabel.setBounds(11, 11, 272, 43);
 		panel.add(headerLabel);
 		
-		// Image labels
+		//An Image label for the logo
 		JLabel logoLabel = new JLabel("");
 		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
 		logoLabel.setIcon(new ImageIcon(img));
 		logoLabel.setBounds(0, 0, 250, 200);
 		contentPane.add(logoLabel);
 
-		// Labels and buttons for interface
+		//A label for the username input
 		JLabel lblUsername = new JLabel("Username:");
 		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblUsername.setBounds(11, 57, 200, 14);
 		panel.add(lblUsername);
 
+		//A label for the confirmed password input
 		JLabel lblConfirmPassword = new JLabel("Confirm Password:");
 		lblConfirmPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblConfirmPassword.setBounds(10, 184, 186, 14);
 		panel.add(lblConfirmPassword);
 		
-		// Textfield settings for user input
+		//A text field for the new password input
 		passwordInput1 = new JTextField();
 		passwordInput1.setBounds(11, 153, 272, 20);
 		panel.add(passwordInput1);
 		passwordInput1.setColumns(10);
 
+		//A text field for the confirmed password input
 		passwordInput2 = new JTextField();
 		passwordInput2.setBounds(10, 209, 273, 20);
 		panel.add(passwordInput2);
 		passwordInput2.setColumns(10);
 
+		//A text field for the username input
 		usernameInput = new JTextField();
 		usernameInput.setBounds(11, 82, 272, 20);
 		panel.add(usernameInput);
@@ -126,6 +130,7 @@ public class RegisterMenu extends JFrame {
 		buttonReg.setBounds(11, 251, 272, 88);
 		panel.add(buttonReg);
 		
+		//A button which takes you back to the landing page
 		JButton backButton = new JButton("Back");
 		backButton.setBounds(11, 347, 89, 23);
 		panel.add(backButton);
@@ -197,6 +202,7 @@ public class RegisterMenu extends JFrame {
 		});
 	}
 
+	//A function which closes the frame
 	public void CloseFrame() {
 		super.dispose();
 	}

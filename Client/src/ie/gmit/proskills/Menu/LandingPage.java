@@ -116,7 +116,7 @@ public class LandingPage extends JFrame {
 		});
 	}
 
-	// Frame closer function
+	//A function which closes the frame
 	public void CloseFrame() {
 		super.dispose();
 	}

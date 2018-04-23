@@ -90,6 +90,7 @@ public class MainMenu extends JFrame {
 		btnStore_Search.setBounds(10, 92, 125, 23);
 		contentPane.add(btnStore_Search);
 		
+		//A button which take you back to the landing pages
 		JButton exitButton = new JButton("Exit");
 		exitButton.setBounds(545, 92, 89, 23);
 		contentPane.add(exitButton);
@@ -119,7 +120,8 @@ public class MainMenu extends JFrame {
 		
 
 	}
-	// Frame closer function
+	
+	//A function which closes the frame
 	public void CloseFrame() {
 		super.dispose();
 	}

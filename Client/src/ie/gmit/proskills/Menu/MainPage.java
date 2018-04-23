@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import ie.gmit.proskills.Storage.Items;
-import ie.gmit.proskills.Websites.Aliexpress;
+import ie.gmit.proskills.Websites.Adverts;
 import ie.gmit.proskills.Websites.Ebay;
+import ie.gmit.proskills.Websites.Newegg;
 
 public class MainPage 
 {
@@ -18,7 +19,8 @@ public class MainPage
 		
 		// Threads
 		EbayThread EbayThread;
-		AliexpressThread AliexpressThread;
+		AdvertsThread AdvertsThread;
+		NeweggThread NeweggThread;
 							
 		// Variables
 		boolean menuKeeper = true;
@@ -41,6 +43,8 @@ public class MainPage
 		// Menu display
 		System.out.println("1: Ebay");
 		System.out.println("2: Aliexpress");
+		System.out.println("3: Newegg");
+
 		menuChoice = reader.nextInt();
 
 		// Switch statement for menu choice
@@ -53,11 +57,18 @@ public class MainPage
 				EbayThread.join();
 				break;
 			
-			// Amazon
+			// Aliexpress
 			case 2:
-				AliexpressThread = new AliexpressThread(searchTerm, itemList);
-				AliexpressThread.start();
-				AliexpressThread.join();
+				AdvertsThread = new AdvertsThread(searchTerm, itemList);
+				AdvertsThread.start();
+				AdvertsThread.join();
+			break;
+			
+			// Newegg
+			case 3:
+				NeweggThread = new NeweggThread(searchTerm, itemList);
+				NeweggThread.start();
+				NeweggThread.join();
 			break;
 				
 		}
@@ -104,15 +115,15 @@ class EbayThread extends Thread
 	}
 }
 
-// Amazon Thread
-class AliexpressThread extends Thread 
+//Newegg Thread
+class NeweggThread extends Thread 
 {
 	// Variables
 	String searchTerm;
 	List<Items> itemList;
 	
 	// Constructor
-	AliexpressThread(String g, List<Items> i)
+	NeweggThread(String g, List<Items> i)
 	{
 		searchTerm = g;
 		itemList = i;
@@ -124,7 +135,37 @@ class AliexpressThread extends Thread
 		// Try catch
 		try
 		{
-			Aliexpress.run(searchTerm, itemList);
+			Newegg.run(searchTerm, itemList);
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+}
+
+//Adverts Thread
+class AdvertsThread extends Thread 
+{
+	// Variables
+	String searchTerm;
+	List<Items> itemList;
+	
+	// Constructor
+	AdvertsThread(String g, List<Items> i)
+	{
+		searchTerm = g;
+		itemList = i;
+	}
+	
+	// Run method for thread
+	public void run()
+	{
+		// Try catch
+		try
+		{
+			Adverts.run(searchTerm, itemList);
 		}
 		catch (IOException e)
 		{

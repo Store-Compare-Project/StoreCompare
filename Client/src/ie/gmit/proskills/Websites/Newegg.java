@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 
 import ie.gmit.proskills.Storage.Items;
 
-public class Aliexpress {
+public class Newegg {
 
 	// Run this class when we want to search amazon
 	public static void run(String searchTerm, List<Items> itemList) throws IOException
@@ -17,8 +17,8 @@ public class Aliexpress {
 		// Varaibles
 		String name = null;
 		String priceString=null;
-		String urlPart1="https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20180418114634&SearchText=";
-		String urlPart2="";
+		String urlPart1="https://www.newegg.com/global/ie/Product/ProductList.aspx?Submit=ENE&DEPA=0&Order=BESTMATCH&Description=";
+		String urlPart2="&N=-1&isNodeId=1";
 		String completeUrl;
 		double price=0.00;
 		
@@ -26,7 +26,7 @@ public class Aliexpress {
 		searchTerm = searchTerm.replaceAll(" ", "+");
 		
 		// Complete the url with search terms added 
-		completeUrl = urlPart1 + searchTerm;
+		completeUrl = urlPart1 + searchTerm + urlPart2;
 
 		// Debug
 		System.out.println(urlPart1);
@@ -37,12 +37,14 @@ public class Aliexpress {
 		System.out.println("\nSending request..." + "\"" + completeUrl + "\"");
 		
 		// Create a document of the HTML of the webpage we are searching (In our case ebay)
-		Document doc = Jsoup.connect(completeUrl).userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2").timeout(60000).get();
-
+		Document doc =  Jsoup.connect(completeUrl)
+			      .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+			      .referrer("http://www.google.com")
+			      .get();
 		//System.out.println(doc);
 	
 		// If item is a special item, Aliexpress uses div
-		Elements els  = doc.select("div#hs-below-list-items");
+		Elements els  = doc.getElementsByClass("item-container");
 		
 		// If not a special item, Aliexpress uses ul
 		// Element els  = doc.select("ul#hs-below-list-items");
@@ -55,7 +57,8 @@ public class Aliexpress {
 		{
 					try
 					{
-						name = (el.getElementsByClass("history-item.product").text()).replaceAll("Name: ", "");
+						name = (el.getElementsByClass("item-title").text()).replaceAll("Name: ", "");
+						//System.out.println(name);
 					} 
 					catch (Exception e)
 					{
@@ -65,21 +68,14 @@ public class Aliexpress {
 					
 					try
 					{
-						priceString =  ((el.getElementsByClass("price price-m").text().replaceAll("[^0-9.]", "")));
-						System.out.println(priceString);
-						price = Double.parseDouble(priceString);
-						//System.out.println(price);
-						//price = Double.parseDouble(priceString);
-						//System.out.println(price);
-						//Elements itemPrice = doc.select("span[itemprop]"); //Get address
-						//name = itemPrice.text().replaceAll("Price: ", "");
-
-
+						priceString =  ((el.getElementsByClass("price-current").text().replaceAll("[^0-9,]", "")));
+						String newString = priceString.replaceAll(",",".");
+						String subbedPriceString = newString.substring(0, newString.length() - 1);
+						price = Double.parseDouble(subbedPriceString);
 					} 
 					catch (NumberFormatException e) 
 					{
-						//e.printStackTrace();
-						//System.out.println("Price not found.");
+						System.out.println("Price not found.");
 					}
 					
 					// Add the found stuff to our list

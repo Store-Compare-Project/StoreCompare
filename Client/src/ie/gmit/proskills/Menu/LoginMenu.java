@@ -121,7 +121,8 @@ public class LoginMenu extends JFrame {
 		panel.add(backButton);
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LandingPage.main(null);
+				LandingPage.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
+						(int) Math.round(contentPane.getLocationOnScreen().getY()));
 				CloseFrame();
 			}
 		});

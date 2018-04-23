@@ -96,7 +96,8 @@ public class MainMenu extends JFrame {
 		contentPane.add(exitButton);
 		exitButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LandingPage.main(null);
+				LandingPage.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
+						(int) Math.round(contentPane.getLocationOnScreen().getY()));
 				CloseFrame();
 			}
 		});

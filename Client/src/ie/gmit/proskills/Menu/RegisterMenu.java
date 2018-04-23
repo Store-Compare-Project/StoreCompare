@@ -125,6 +125,10 @@ public class RegisterMenu extends JFrame {
 		JButton buttonReg = new JButton("Register");
 		buttonReg.setBounds(11, 251, 272, 88);
 		panel.add(buttonReg);
+		
+		JButton backButton = new JButton("Back");
+		backButton.setBounds(11, 347, 89, 23);
+		panel.add(backButton);
 		buttonReg.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 

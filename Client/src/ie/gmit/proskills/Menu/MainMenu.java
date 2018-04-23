@@ -14,6 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
+import java.awt.Color;
 
 public class MainMenu extends JFrame {
 
@@ -54,6 +55,7 @@ public class MainMenu extends JFrame {
 		setBounds(x, y, 660, 500);
 		setTitle("StoreCompare - Main Menu");
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -73,6 +75,7 @@ public class MainMenu extends JFrame {
 		
 		// Text label settings
 		JLabel lblStore_Search = new JLabel("Store Search:");
+		lblStore_Search.setForeground(Color.LIGHT_GRAY);
 		lblStore_Search.setBounds(10, 56, 125, 14);
 		contentPane.add(lblStore_Search);
 

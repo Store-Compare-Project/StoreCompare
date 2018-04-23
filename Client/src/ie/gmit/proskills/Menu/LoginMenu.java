@@ -20,7 +20,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
 /**
- * This class is responisble for loading the Login Page. <br>
+ * This class is responsible for loading the Login Page. <br>
  * The class allows the user to enter a username and password, and login. 
  * 
  * @author Cian Gannon

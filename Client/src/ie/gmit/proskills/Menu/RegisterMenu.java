@@ -19,8 +19,30 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+/**
+ * This class is responsible for loading the Register Page. <br>
+ * The class allows the user to enter a new username and new password, and register. 
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 //A RegisterMenu class which utilises a JFrame to allow the user to Register a username and password for Login.
 public class RegisterMenu extends JFrame {
+	
+	/**
+	 * This class displays a Register Page to the user.
+	 * From here they can enter a new username and new password.
+	 * They must then confirm their new password,
+	 * allowing them to successfully register and access the Main Menu.
+	 * The user can also choose to go back to the Landing Page.
+	 * 
+	 * @param x
+	 *            The x coordinates of the JFrame
+	 * @param y
+	 *            The y coordinates of the JFrame
+	 */
 
 	/**
 	 * 

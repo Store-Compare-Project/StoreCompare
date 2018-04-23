@@ -132,7 +132,7 @@ public class LoginMenu extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 
 				String username = usernameInput.getText();
-				String password = passwordInput.getText();
+				String password = new String(passwordInput.getPassword()); 
 
 				// Input validation for register details
 				boolean usernameValidationCheck = Validator.validateUsername(username);

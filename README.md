@@ -57,8 +57,8 @@ For more information on concepts and technologies discussed and used in this pro
 - [MongoDB](https://www.mongodb.com/)
 - [JSoup](https://jsoup.org/)
 - [Git](https://git-scm.com/)
+- [JavaDocs](http://drjava.org/docs/user/ch10.html)
 - [Google Cloud Service](https://cloud.google.com/)
-
 
 **Software**
 - [Eclipse](https://www.eclipse.org/)
@@ -67,11 +67,18 @@ For more information on concepts and technologies discussed and used in this pro
 
 ## Resources
 - [JSoup Cookbook](https://jsoup.org/cookbook/)
+- [MongoDB Setup](https://www.tutorialspoint.com/mongodb/index.htm)
+- [Swing Tutorial](https://www.tutorialspoint.com/swing/index.htm)
+- [MongoDB Setup](https://www.tutorialspoint.com/mongodb/index.htm)
 
 
 ## Developers
-Edward Eldridge (G00337490)
+-[Eddie Eldridge](https://github.com/EddieEldridge)	
+ 	 
+-[Danielis Joniskis](https://github.com/jawneck)
+ 	 
+-[Cian Gannon](https://github.com/cian2009/ITProSkills)
 
 ## Acknowledgments
-- [Dr. Ian Mcloughlin](https://github.com/ianmcloughlin) - For help with the foundations of the project
+- Martin Hynes - For helping us with the many problems we encountered with the project and also for helping us keep a consistent work schedule.
 

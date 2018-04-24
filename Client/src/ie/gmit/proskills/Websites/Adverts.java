@@ -48,15 +48,19 @@ public class Adverts {
 		// For every element of the element we assigned above
 		for (Element el : els) {
 			
-			totalQueries++;
-
+			
+			try {
 			name = (el.getElementsByClass("title").text()).replaceAll("Name: ", "");
 
 			price = "€" + ((el.getElementsByClass("price").text().replaceAll("[^0-9.]", "")));
 
 			total = Double.parseDouble(price.replaceAll("[^0-9.]", ""));
+			} catch (NumberFormatException NumberFormatException){
+				continue;
+			}
 			
 			allPrices += total;
+			totalQueries++;
 
 			// Add the found stuff to our list
 			dtm.addRow(new Object[] { name, price, "Contact Seller", "€" + df.format(total), "DoneDeal" });

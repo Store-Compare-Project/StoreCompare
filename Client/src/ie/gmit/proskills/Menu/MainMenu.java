@@ -130,15 +130,15 @@ public class MainMenu extends JFrame {
 		
 		JLabel lblDoneDealAVG = new JLabel("DoneDeal AVG:");
 		lblDoneDealAVG.setForeground(Color.LIGHT_GRAY);
-		lblDoneDealAVG.setBounds(123, 466, 89, 14);
+		lblDoneDealAVG.setBounds(208, 466, 89, 14);
 		contentPane.add(lblDoneDealAVG);
 		
 		TextArea taDoneDealAVG = new TextArea("€0.00", 3 , 100 ,TextArea.SCROLLBARS_NONE);
-		taDoneDealAVG.setBounds(218, 465, 46, 20);
+		taDoneDealAVG.setBounds(301, 465, 46, 20);
 		contentPane.add(taDoneDealAVG);
 		
 		TextArea taEbayAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
-		taEbayAVG.setBounds(71, 465, 46, 20);
+		taEbayAVG.setBounds(71, 465, 64, 20);
 		contentPane.add(taEbayAVG);
 		
 		JLabel lblEbayAVG = new JLabel("Ebay AVG:");

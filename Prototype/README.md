@@ -5,13 +5,12 @@
 </p>
 
 ## Contents
-* [How to run](#how-to-run-the-program)
-* [Design](#design)
+* [Prototype](#protoype)
 * [Technologies and Software](#technologies-and-Software)
 * [Resources](#resources)
 
 ## Prototype
-Before we went ahead and tried to create the program, we created a prototype to test the viability of the program. It turned out quite well.
+Before we started work on the program, we created a prototype to test the viability of the program.
 
 In the prototype we tested JSoup and it's ability to parse the HTML from a website and in what ways we could interact with this data.
 

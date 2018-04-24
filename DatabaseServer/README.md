@@ -1,7 +1,7 @@
 ![storecompare](https://user-images.githubusercontent.com/22448079/38895768-d87f1a4c-4288-11e8-99ab-416e24d32da8.png)
 
 <p align="center">
-  <b>SERVER/DATABASE</b><br>
+  <b>DATABASE/SERVER</b><br>
 </p>
 
 ## Contents

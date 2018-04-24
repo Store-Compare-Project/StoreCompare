@@ -13,6 +13,10 @@
 ## Client
 The StoreCompare client is the main part of the program. It enables the user to login, register and displays the main table with the search results.
 
+![splash](https://user-images.githubusercontent.com/22448079/39190119-d629db7c-47cb-11e8-8bbd-cd7bfec73ace.PNG)
+![login](https://user-images.githubusercontent.com/22448079/39190122-d64424b4-47cb-11e8-83a3-5111d35f87cb.PNG)
+![register](https://user-images.githubusercontent.com/22448079/39190124-d662a36c-47cb-11e8-944b-9ad56473cb03.PNG)
+
 ## How to run the program
 This program uses the Java programming language .
 

@@ -34,7 +34,7 @@ public class HistoryGet {
 				String priceTemp = temp.get("price").toString();
 				String dateTemp = temp.get("date").toString();
 				
-				 builder.append(itemTemp + "?" + priceTemp + "?" + dateTemp + "?");
+				 builder.append("?" +itemTemp + "?" + priceTemp + "?" + dateTemp);
 		}
 
 		// Close cursor

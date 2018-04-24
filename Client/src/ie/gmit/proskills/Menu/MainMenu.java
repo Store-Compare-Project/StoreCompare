@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
@@ -210,9 +211,9 @@ public class MainMenu extends JFrame {
 		
 		String[] splited = test.split("\\?");
 		
+		System.out.println(Arrays.toString(splited));
 		
-		
-		for(int i = 0; i < splited.length/3; i++){
+		for(int i = 0; i < splited.length; i+=3){
 			dtmHistory.addRow(new Object[] { splited[i], "€" + splited[i+1], splited[i+2]});
 		}
 	}

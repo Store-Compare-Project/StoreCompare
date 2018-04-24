@@ -2,22 +2,22 @@ package ie.gmit.proskills.object;
 
 public class StoreInfo {
 
-	private static double ebayAVG;
-	private static double doneDealAVG;
+	private static String ebayAVG = "";
+	private static String doneDealAVG = "";
 
 	public static String getEbayAVG() {
-		return Double.toString(ebayAVG);
+		return ebayAVG;
 	}
 
 	public static String getDoneDealAVG() {
-		return Double.toString(doneDealAVG);
+		return doneDealAVG;
 	}
 
-	public static void setEbayAVG(double ebayAVGSet) {
-		ebayAVG += ebayAVGSet;
+	public static void setEbayAVG(String ebayAVGSet) {
+		ebayAVG = ebayAVGSet;
 	}
 
-	public void setDoneDealAVG(double doneDealAVGSet) {
-		doneDealAVG += doneDealAVGSet;
+	public static void setDoneDealAVG(String doneDealAVGSet) {
+		doneDealAVG = doneDealAVGSet;
 	}
 }

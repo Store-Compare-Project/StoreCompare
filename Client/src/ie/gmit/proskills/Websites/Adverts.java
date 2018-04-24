@@ -62,7 +62,7 @@ public class Adverts {
 			dtm.addRow(new Object[] { name, price, "Contact Seller", "€" + df.format(total), "DoneDeal" });
 		}
 		
-		StoreInfo.setEbayAVG(allPrices/totalQueries);
+		StoreInfo.setDoneDealAVG(df.format(allPrices/totalQueries));
 	}
 
 }

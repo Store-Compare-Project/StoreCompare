@@ -62,6 +62,11 @@ public class RegisterMenu extends JFrame {
 				try {
 					RegisterMenu frame = new RegisterMenu(x, y);
 					frame.setVisible(true);
+					
+					// Change the icon image for the frame
+					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
+				    frame.setIconImage(img);
+				    
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

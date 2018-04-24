@@ -11,10 +11,12 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.TextArea;
 import java.awt.Color;
 
@@ -60,6 +62,11 @@ public class MainMenu extends JFrame {
 				try {
 					MainMenu frame = new MainMenu(x, y);
 					frame.setVisible(true);
+					
+					// Change the icon image for the frame
+					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
+				    frame.setIconImage(img);
+				    
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

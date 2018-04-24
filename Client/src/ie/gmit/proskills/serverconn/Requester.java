@@ -6,7 +6,30 @@ import java.io.*;
 import java.net.*;
 import java.util.Scanner;
 
+/**
+ * This class is the Requester, which is used to sent and receive data from/to
+ * the user.<br>
+ * It is the class which connects to the server.
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
+
 public class Requester{
+	
+	/**
+	 * The main server component.<br>
+	 * Sends requests to the server on port 2004 and handles the messageSend.
+	 * 
+	 * 
+	 * 
+	 * @param messageSend
+	 *            the login object that is sent to the server
+	 * @param msg
+	 *            the message that is wrote to the server
+	 */
+	
 	Socket requestSocket;
 	ObjectOutputStream out;
  	ObjectInputStream in;

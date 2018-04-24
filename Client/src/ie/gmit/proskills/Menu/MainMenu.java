@@ -121,7 +121,7 @@ public class MainMenu extends JFrame {
 		JLabel lblTest = new JLabel("Test");
 		lblTest.setBounds(10, 11, 46, 14);
 		contentPane.add(lblTest);
-		lblTest.setText(StoreInfo.getEbayAVG());
+		lblTest.setText("€" + StoreInfo.getEbayAVG());
 		
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

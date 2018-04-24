@@ -177,10 +177,14 @@ public class MainMenu extends JFrame {
 
 		JCheckBox chckbxEbay = new JCheckBox("Ebay");
 		chckbxEbay.setBounds(141, 70, 97, 23);
+		chckbxEbay.setBackground(Color.DARK_GRAY);
+		chckbxEbay.setForeground(Color.LIGHT_GRAY);
 		contentPane.add(chckbxEbay);
 
 		JCheckBox chckbxDonedeal = new JCheckBox("DoneDeal");
 		chckbxDonedeal.setBounds(141, 92, 97, 23);
+		chckbxDonedeal.setBackground(Color.DARK_GRAY);
+		chckbxDonedeal.setForeground(Color.LIGHT_GRAY);
 		contentPane.add(chckbxDonedeal);
 
 		JLabel lblPreviousSearchHistory = new JLabel("Previous Search History:");

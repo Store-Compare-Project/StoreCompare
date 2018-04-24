@@ -10,9 +10,12 @@ public class HistoryGet {
 
 	@SuppressWarnings("deprecation")
 	public static String main(String username) {
-
-		String history = "";
-
+		
+		
+		int i = -1;
+		
+		StringBuilder builder = new StringBuilder();
+		
 		// MongoDB settings
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("history");
@@ -20,29 +23,30 @@ public class HistoryGet {
 
 		// Gets all DB collections
 		DBCursor cursor = coll.find();
-
-		try {
-			while (cursor.hasNext()) {
-
+		
+		while (cursor.hasNext()) {
+				i++;
 				// Get cursor items and adds them to the DBObject
 				DBObject temp = cursor.next();
 
 				// Gets username and password
 				String itemTemp = temp.get("item").toString();
 				String priceTemp = temp.get("price").toString();
-				String dateTemp = temp.get("price").toString();
-
-				history +=  itemTemp + " " + priceTemp + " " + dateTemp + " ";
-			}
-		} finally {
-			// Close cursor
-			cursor.close();
-
-			// Close database connection
-			mongoClient.close();
+				String dateTemp = temp.get("date").toString();
+				
+				 builder.append(itemTemp + " " + priceTemp + " " + dateTemp + " ");
 		}
+
+		// Close cursor
+		cursor.close();
+
+		// Close database connection
+		mongoClient.close();
+		
+		String history = builder.toString();
 
 		return history;
 	}
 
 }
+

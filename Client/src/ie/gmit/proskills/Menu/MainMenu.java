@@ -2,6 +2,9 @@ package ie.gmit.proskills.Menu;
 
 import ie.gmit.proskills.Processes.StoreSearch;
 import ie.gmit.proskills.object.StoreInfo;
+import ie.gmit.proskills.serverconn.Requester;
+import ie.gmit.proskills.Processes.HistoryAdd;
+import ie.gmit.proskills.Processes.HistoryGet;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -14,6 +17,10 @@ import javax.swing.JTextField;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
 import java.awt.Image;
@@ -55,12 +62,13 @@ public class MainMenu extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param username 
 	 */
-	public static void main(int x, int y) {
+	public static void main(int x, int y, String username) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainMenu frame = new MainMenu(x, y);
+					MainMenu frame = new MainMenu(x, y, username);
 					frame.setVisible(true);
 					
 					// Change the icon image for the frame
@@ -79,8 +87,9 @@ public class MainMenu extends JFrame {
 	 * 
 	 * @param y
 	 * @param x
+	 * @param username 
 	 */
-	public MainMenu(int x, int y) {
+	public MainMenu(int x, int y, String username) {
 		
 		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -183,9 +192,28 @@ public class MainMenu extends JFrame {
 				taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
 				
 				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
-
+				
+				double totalAVG = (Double.parseDouble(StoreInfo.getEbayAVG()) + Double.parseDouble(StoreInfo.getDoneDealAVG()))/2;
+				
+				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+				Date date = new Date();
+				
+				DecimalFormat df = new DecimalFormat("#.00");
+				
+				HistoryAdd.main(username, itemSearch, Double.toString(totalAVG), dateFormat.format(date));
+				
+				dtmHistory.addRow(new Object[] { itemSearch, "€" + df.format(totalAVG), dateFormat.format(date)});
 			}
 		});
+		
+		String test = HistoryGet.main(username);
+		
+		String[] splited = test.split("\\s+");
+		
+		for(int i = 0; i < splited.length/3; i++){
+			System.out.println(splited[i]);
+			dtmHistory.addRow(new Object[] { splited[i], "€" + splited[i+1], splited[i+2]});
+		}
 	}
 	
 	//A function which closes the frame

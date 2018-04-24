@@ -2,6 +2,7 @@ package ie.gmit.proskillsserver.server;
 
 import ie.gmit.proskillsserver.proceeses.CreateHistory;
 import ie.gmit.proskillsserver.proceeses.History;
+import ie.gmit.proskillsserver.proceeses.HistoryGet;
 import ie.gmit.proskillsserver.proceeses.Login;
 import ie.gmit.proskillsserver.proceeses.Register;
 
@@ -101,20 +102,33 @@ class ClientServiceThread extends Thread {
 				System.out.println("> Client ID: " + clientID + " | Login Attempt Username - " + splited[1]);
 
 				loginStatus = Login.main(splited[1], splited[2], clientID);
+				
+				sendMessage("" + loginStatus);
 
 			} else if (splited[0].equals("register")) {
 
 				System.out.println("> Client ID: " + clientID + " | Register Attempt Username - " + splited[1]);
 
 				loginStatus = Register.main(splited[1], splited[2], clientID);
+				
+				sendMessage("" + loginStatus);
+				
+			}else if (splited[0].equals("history")) {
 
-			}
+				System.out.println("> Client ID: " + clientID + " | Adding History for - " + splited[1]);
 
-			if(splited[0].equals("login") || splited[0].equals("register")){
-				sendMessage("user" + loginStatus);
-			}else if(splited[0].equals("history")){
-				String[] splitHist = History.main(splited);
-				sendMessage("history" + splitHist);
+				History.main(splited);
+				
+				sendMessage("");
+
+			}else if (splited[0].equals("historyGet")) {
+
+				System.out.println("> Client ID: " + clientID + " | Getting all History");
+
+				String newHistory = HistoryGet.main(splited[1]);
+				
+				System.out.println(newHistory);
+				sendMessage(newHistory);
 			}
 			
 

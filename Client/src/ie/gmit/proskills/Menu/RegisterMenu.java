@@ -194,7 +194,7 @@ public class RegisterMenu extends JFrame {
 							// If the validated login details match those in the database
 							if (!registerCheck) {
 								MainMenu.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
-										(int) Math.round(contentPane.getLocationOnScreen().getY()));
+										(int) Math.round(contentPane.getLocationOnScreen().getY()), username);
 								CloseFrame();
 							} else {
 								JOptionPane.showMessageDialog(null, "Error: Could not register. Please try again.");

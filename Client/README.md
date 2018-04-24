@@ -5,13 +5,10 @@
 </p>
 
 ## Contents
-* [Description](#description)
 * [How to run](#how-to-run-the-program)
 * [Design](#design)
-* [Information](#information)
-* [Technologies](#technologies)
+* [Technologies and Software](#technologies)
 * [Resources](#resources)
-* [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki)
 
 ## Client
 The StoreCompare client is the main part of the program. It enables the user to login, register and displays the main table with the search results.

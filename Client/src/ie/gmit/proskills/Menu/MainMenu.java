@@ -163,7 +163,7 @@ public class MainMenu extends JFrame {
 		
 		// Table settings
 		DefaultTableModel dtmHistory = new DefaultTableModel(0, 0);
-		String headerHistory[] = new String[] { "Item Name", "Avg Price", "Date" };
+		String headerHistory[] = new String[] { "Item Name", "Ebay AVG", "DoneDeal AVG", "Date" };
 		dtmHistory.setColumnIdentifiers(headerHistory);
 		table_1 = new JTable();
 		table_1.setModel(dtmHistory);
@@ -195,14 +195,12 @@ public class MainMenu extends JFrame {
 				
 				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
 				
-				double totalAVG = (Double.parseDouble(StoreInfo.getEbayAVG()) + Double.parseDouble(StoreInfo.getDoneDealAVG()))/2;
-				
 				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 				Date date = new Date();
 				
-				HistoryAdd.main(username, itemSearch, Double.toString(totalAVG), dateFormat.format(date));
+				HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(), dateFormat.format(date));
 				
-				dtmHistory.addRow(new Object[] { itemSearch, "€" + df.format(totalAVG), dateFormat.format(date)});
+				dtmHistory.addRow(new Object[] { itemSearch, "€" + df.format(Double.parseDouble(StoreInfo.getEbayAVG())), "€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())) , dateFormat.format(date)});
 			}
 		});
 		
@@ -210,9 +208,13 @@ public class MainMenu extends JFrame {
 		
 		String[] splited = history.split("\\?");
 		
-		for(int i = 0; i < splited.length; i+=3){
-			dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i+1])), splited[i+2]});
+		try {
+			for(int i = 0; i < splited.length; i+=3){
+				dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i+1])), splited[i+2]});
+			}
+		} catch (ArrayIndexOutOfBoundsException ArrayIndexOutOfBoundsException){	
 		}
+		
 	}
 	
 	//A function which closes the frame

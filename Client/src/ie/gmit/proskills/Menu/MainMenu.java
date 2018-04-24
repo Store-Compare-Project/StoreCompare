@@ -201,7 +201,12 @@ public class MainMenu extends JFrame {
 		
 		String test = HistoryGet.main(username);
 		
-		System.out.println(test);
+		String[] splited = test.split("\\s+");
+		
+		for(int i = 0; i < splited.length/3; i++){
+			System.out.println(splited[i]);
+			dtmHistory.addRow(new Object[] { splited[i], "€" + splited[i+1], splited[i+2]});
+		}
 	}
 	
 	//A function which closes the frame

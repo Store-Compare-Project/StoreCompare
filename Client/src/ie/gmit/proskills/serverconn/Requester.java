@@ -37,7 +37,6 @@ public class Requester{
 				LoginObject.setLogin(Boolean.parseBoolean(message));
 			}else if (splited[0].equals("historyGet")){
 				History.setHistory(message);
-				System.out.println(message);
 			}
 			
 			

@@ -15,7 +15,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
+import java.awt.TextArea;
 import java.awt.Color;
+import javax.swing.SwingConstants;
+import javax.swing.JTextPane;
 
 /**
  * This class is responsible for loading the Main Menu to the user. <br>
@@ -52,10 +55,17 @@ public class MainMenu extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(int x, int y) {
+	public static void main(String[] args) {
+		
+		int x = 100;
+		int y = 100;
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					
+					
+					
 					MainMenu frame = new MainMenu(x, y);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -75,7 +85,7 @@ public class MainMenu extends JFrame {
 		
 		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(x, y, 660, 500);
+		setBounds(x, y, 660, 530);
 		setTitle("StoreCompare - Main Menu");
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.DARK_GRAY);
@@ -115,13 +125,17 @@ public class MainMenu extends JFrame {
 		
 		//A button which take you back to the landing page.
 		JButton logoutButton = new JButton("Logout");
-		logoutButton.setBounds(545, 92, 89, 23);
+		logoutButton.setBounds(545, 462, 89, 23);
 		contentPane.add(logoutButton);
 		
-		JLabel lblTest = new JLabel("Test");
-		lblTest.setBounds(10, 11, 46, 14);
-		contentPane.add(lblTest);
-		lblTest.setText("€" + StoreInfo.getEbayAVG());
+		JLabel lblDoneDealAVG = new JLabel("DoneDeal AVG:");
+		lblDoneDealAVG.setBounds(145, 96, 89, 14);
+		contentPane.add(lblDoneDealAVG);
+		
+		TextArea doneDealAverage = new TextArea("text", 3 , 100 ,TextArea.SCROLLBARS_NONE);
+		doneDealAverage.setText("0");
+		doneDealAverage.setBounds(240, 92, 46, 20);
+		contentPane.add(doneDealAverage);
 		
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -146,7 +160,7 @@ public class MainMenu extends JFrame {
 					e.printStackTrace();
 				}
 				
-				lblTest.setText("€" + StoreInfo.getDoneDealAVG());
+				doneDealAverage.setText("€" + StoreInfo.getDoneDealAVG());
 
 			}
 		});

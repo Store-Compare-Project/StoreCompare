@@ -115,7 +115,7 @@ class ClientServiceThread extends Thread {
 				
 			}else if (splited[0].equals("history")) {
 
-				System.out.println("> Client ID: " + clientID + " | Register Attempt Username - " + splited[1]);
+				System.out.println("> Client ID: " + clientID + " | Adding History for - " + splited[1]);
 
 				History.main(splited);
 				
@@ -123,9 +123,9 @@ class ClientServiceThread extends Thread {
 
 			}else if (splited[0].equals("historyGet")) {
 
-				System.out.println("> Client ID: " + clientID + " | Register Attempt Username - " + splited[1]);
+				System.out.println("> Client ID: " + clientID + " | Getting all History");
 
-				HistoryGet.main(splited);
+				String[] newHistory = HistoryGet.main(splited[1]);
 				
 				sendMessage("");
 			}

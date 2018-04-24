@@ -6,6 +6,8 @@ public class HistoryGet {
 		
 		String history = "";
 		
+		System.out.print("Test");
+		
 		return history;
 	}
 

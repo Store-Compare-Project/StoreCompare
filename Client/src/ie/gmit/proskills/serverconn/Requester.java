@@ -1,5 +1,6 @@
 package ie.gmit.proskills.serverconn;
 
+import ie.gmit.proskills.object.History;
 import ie.gmit.proskills.object.LoginObject;
 
 import java.io.*;
@@ -35,6 +36,7 @@ public class Requester{
 			if(splited[0].equals("login") || splited[0].equals("register")){
 				LoginObject.setLogin(Boolean.parseBoolean(message));
 			}else if (splited[0].equals("historyGet")){
+				History.setHistory(message);
 				System.out.println(message);
 			}
 			

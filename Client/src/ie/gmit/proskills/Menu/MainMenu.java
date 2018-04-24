@@ -129,13 +129,22 @@ public class MainMenu extends JFrame {
 		contentPane.add(logoutButton);
 		
 		JLabel lblDoneDealAVG = new JLabel("DoneDeal AVG:");
+		lblDoneDealAVG.setForeground(Color.LIGHT_GRAY);
 		lblDoneDealAVG.setBounds(145, 96, 89, 14);
 		contentPane.add(lblDoneDealAVG);
 		
-		TextArea doneDealAverage = new TextArea("text", 3 , 100 ,TextArea.SCROLLBARS_NONE);
-		doneDealAverage.setText("0");
-		doneDealAverage.setBounds(240, 92, 46, 20);
-		contentPane.add(doneDealAverage);
+		TextArea taDoneDealAVG = new TextArea("€0.00", 3 , 100 ,TextArea.SCROLLBARS_NONE);
+		taDoneDealAVG.setBounds(240, 92, 46, 20);
+		contentPane.add(taDoneDealAVG);
+		
+		TextArea taEbayAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
+		taEbayAVG.setBounds(240, 71, 46, 20);
+		contentPane.add(taEbayAVG);
+		
+		JLabel lblEbayAVG = new JLabel("Ebay AVG:");
+		lblEbayAVG.setForeground(Color.LIGHT_GRAY);
+		lblEbayAVG.setBounds(145, 74, 89, 14);
+		contentPane.add(lblEbayAVG);
 		
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -160,7 +169,7 @@ public class MainMenu extends JFrame {
 					e.printStackTrace();
 				}
 				
-				doneDealAverage.setText("€" + StoreInfo.getDoneDealAVG());
+				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
 
 			}
 		});

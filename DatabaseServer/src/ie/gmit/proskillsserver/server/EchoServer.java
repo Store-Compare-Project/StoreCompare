@@ -94,7 +94,7 @@ class ClientServiceThread extends Thread {
 
 			message = (String) in.readObject();
 
-			String[] splited = message.split("\\s+");
+			String[] splited = message.split("\\?");
 			boolean loginStatus = false;
 
 			if (splited[0].equals("login")) {

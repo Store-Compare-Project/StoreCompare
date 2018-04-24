@@ -6,7 +6,7 @@ public class HistoryAdd {
 
 	public static void main(String username, String item, String totalAVG, String date) {
 			   
-		String messageSend = "history " + username + " " + item + " " + totalAVG + " "  +  date;
+		String messageSend = "history?" + username + "?" + item + "?" + totalAVG + "?"  +  date;
 	   
 	   	Requester.main(messageSend);
 	}

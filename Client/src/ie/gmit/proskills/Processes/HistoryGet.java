@@ -7,7 +7,7 @@ public class HistoryGet {
 
 	public static String main(String username) {
 		
-		String messageSend = "historyGet " + username;
+		String messageSend = "historyGet?" + username;
 
 		Requester.main(messageSend);
 		

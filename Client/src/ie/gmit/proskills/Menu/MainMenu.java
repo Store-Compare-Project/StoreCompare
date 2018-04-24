@@ -208,7 +208,7 @@ public class MainMenu extends JFrame {
 		
 		String test = HistoryGet.main(username);
 		
-		String[] splited = test.split("\\s+");
+		String[] splited = test.split("\\?");
 		
 		for(int i = 0; i < splited.length/3; i++){
 			dtmHistory.addRow(new Object[] { splited[i], "€" + splited[i+1], splited[i+2]});

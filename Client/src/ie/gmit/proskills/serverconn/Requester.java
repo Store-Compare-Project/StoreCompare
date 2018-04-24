@@ -54,7 +54,7 @@ public class Requester{
 			sendMessage(message);
 			message = (String)in.readObject();
 			
-			String[] splited = messageSend.split("\\s+");
+			String[] splited = messageSend.split("\\?");
 			
 			if(splited[0].equals("login") || splited[0].equals("register")){
 				LoginObject.setLogin(Boolean.parseBoolean(message));

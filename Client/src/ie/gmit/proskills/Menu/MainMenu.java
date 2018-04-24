@@ -2,7 +2,6 @@ package ie.gmit.proskills.Menu;
 
 import ie.gmit.proskills.Processes.StoreSearch;
 import ie.gmit.proskills.object.StoreInfo;
-import ie.gmit.proskills.serverconn.Requester;
 import ie.gmit.proskills.Processes.HistoryAdd;
 import ie.gmit.proskills.Processes.HistoryGet;
 
@@ -12,6 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
@@ -20,13 +20,13 @@ import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.TextArea;
 import java.awt.Color;
+import javax.swing.JCheckBox;
 
 /**
  * This class is responsible for loading the Main Menu to the user. <br>
@@ -159,7 +159,7 @@ public class MainMenu extends JFrame {
 		contentPane.add(lblEbayAVG);
 
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(242, 11, 392, 104);
+		scrollPane_1.setBounds(242, 28, 392, 87);
 		contentPane.add(scrollPane_1);
 
 		// Table settings
@@ -169,6 +169,24 @@ public class MainMenu extends JFrame {
 		table_1 = new JTable();
 		table_1.setModel(dtmHistory);
 		scrollPane_1.setViewportView(table_1);
+
+		JLabel lblUser = new JLabel("User: " + username);
+		lblUser.setForeground(Color.LIGHT_GRAY);
+		lblUser.setBounds(10, 12, 125, 14);
+		contentPane.add(lblUser);
+
+		JCheckBox chckbxEbay = new JCheckBox("Ebay");
+		chckbxEbay.setBounds(141, 70, 97, 23);
+		contentPane.add(chckbxEbay);
+
+		JCheckBox chckbxDonedeal = new JCheckBox("DoneDeal");
+		chckbxDonedeal.setBounds(141, 92, 97, 23);
+		contentPane.add(chckbxDonedeal);
+
+		JLabel lblPreviousSearchHistory = new JLabel("Previous Search History:");
+		lblPreviousSearchHistory.setForeground(Color.LIGHT_GRAY);
+		lblPreviousSearchHistory.setBounds(243, 12, 177, 14);
+		contentPane.add(lblPreviousSearchHistory);
 
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -181,42 +199,53 @@ public class MainMenu extends JFrame {
 		btnStore_Search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				// Reset table for new query
-				dtm.setRowCount(0);
+				if (tfStore_Seach.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Please do not leave search blank!");
+				} else if (!chckbxEbay.isSelected() && !chckbxDonedeal.isSelected()){
+					System.out.println(chckbxEbay.isSelected());
+					JOptionPane.showMessageDialog(null, "Please tick at least one of the boxes!");
+				}else {
+					// Reset table for new query
+					dtm.setRowCount(0);
 
-				String itemSearch = tfStore_Seach.getText();
+					String itemSearch = tfStore_Seach.getText();
 
-				try {
-					StoreSearch.main(itemSearch, dtm);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
+					try {
+						StoreSearch.main(itemSearch, dtm, chckbxEbay, chckbxDonedeal);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+
+					taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
+
+					taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
+
+					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+					Date date = new Date();
+
+					HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(),
+							dateFormat.format(date));
+
+					dtmHistory.addRow(new Object[] { itemSearch,
+							"€" + df.format(Double.parseDouble(StoreInfo.getEbayAVG())),
+							"€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())), dateFormat.format(date) });
+					StoreInfo.setEbayAVG("0.00");
+					StoreInfo.setDoneDealAVG("0.00");
 				}
-
-				taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
-
-				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
-
-				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-				Date date = new Date();
-
-				HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(),
-						dateFormat.format(date));
-
-				dtmHistory.addRow(new Object[] { itemSearch,
-						"€" + df.format(Double.parseDouble(StoreInfo.getEbayAVG())),
-						"€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())), dateFormat.format(date) });
 			}
 		});
 
 		String history = HistoryGet.main(username);
-
+		
 		String[] splited = history.split("\\?");
+
+		System.out.println(history);
 
 		try {
 			for (int i = 0; i < splited.length; i += 4) {
-				dtmHistory.addRow(new Object[] { splited[i],
-						"€" + df.format(Double.parseDouble(splited[i+1])),
-						"€" + df.format(Double.parseDouble(splited[i+2])), splited[i+3] });
+				System.out.println(splited[i] + " " + splited[i + 1] + " " + splited[i + 2] + " " + splited[i + 3]);
+				dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i + 1])),
+						"€" + df.format(Double.parseDouble(splited[i + 2])), splited[i + 3] });
 			}
 		} catch (ArrayIndexOutOfBoundsException ArrayIndexOutOfBoundsException) {
 		}

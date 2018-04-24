@@ -6,10 +6,20 @@ public class StoreInfo {
 	private static String doneDealAVG = "";
 
 	public static String getEbayAVG() {
+		
+		if(ebayAVG.isEmpty()){
+			ebayAVG = "0.00";
+		}
+		
 		return ebayAVG;
 	}
 
 	public static String getDoneDealAVG() {
+		
+		if(doneDealAVG.isEmpty()){
+			doneDealAVG = "0.00";
+		}
+		
 		return doneDealAVG;
 	}
 

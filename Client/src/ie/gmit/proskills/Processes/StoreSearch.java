@@ -5,23 +5,29 @@ import ie.gmit.proskills.Websites.Ebay;
 
 import java.io.IOException;
 
+import javax.swing.JCheckBox;
 import javax.swing.table.DefaultTableModel;
 
 public class StoreSearch {
 
-	public static void main(String item, DefaultTableModel dtm) throws InterruptedException {
+	public static void main(String item, DefaultTableModel dtm, JCheckBox chckbxEbay, JCheckBox chckbxDonedeal)
+			throws InterruptedException {
 
 		// Threads
 		EbayThread EbayThread;
 		AdvertsThread AdvertsThread;
 
-		EbayThread = new EbayThread(item, dtm);
-		EbayThread.start();
-		EbayThread.join();
+		if (chckbxEbay.isSelected()) {
+			EbayThread = new EbayThread(item, dtm);
+			EbayThread.start();
+			EbayThread.join();
+		}
 
-		AdvertsThread = new AdvertsThread(item, dtm);
-		AdvertsThread.start();
-		AdvertsThread.join();
+		if (chckbxDonedeal.isSelected()) {
+			AdvertsThread = new AdvertsThread(item, dtm);
+			AdvertsThread.start();
+			AdvertsThread.join();
+		}
 	}
 }
 

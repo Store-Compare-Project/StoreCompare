@@ -2,6 +2,7 @@ package ie.gmit.proskills.Menu;
 
 import ie.gmit.proskills.Processes.StoreSearch;
 import ie.gmit.proskills.object.StoreInfo;
+import ie.gmit.proskills.serverconn.Requester;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,6 +14,9 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
 import java.awt.TextArea;
@@ -53,12 +57,13 @@ public class MainMenu extends JFrame {
 
 	/**
 	 * Launch the application.
+	 * @param username 
 	 */
-	public static void main(int x, int y) {
+	public static void main(int x, int y, String username) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainMenu frame = new MainMenu(x, y);
+					MainMenu frame = new MainMenu(x, y, username);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -72,8 +77,9 @@ public class MainMenu extends JFrame {
 	 * 
 	 * @param y
 	 * @param x
+	 * @param username 
 	 */
-	public MainMenu(int x, int y) {
+	public MainMenu(int x, int y, String username) {
 		
 		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -176,7 +182,16 @@ public class MainMenu extends JFrame {
 				taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
 				
 				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
+				
+				double totalAVG = (Double.parseDouble(StoreInfo.getEbayAVG()) + Double.parseDouble(StoreInfo.getDoneDealAVG())/2);
+				
+				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+				Date date = new Date();
 
+				String messageSend = "history " + username + " " + totalAVG + "" + dateFormat.format(date);
+				
+				Requester.main(messageSend);
+				
 			}
 		});
 	}

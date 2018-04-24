@@ -1,16 +1,15 @@
 package ie.gmit.proskills.Processes;
 
-import ie.gmit.proskills.object.LoginObject;
 import ie.gmit.proskills.serverconn.Requester;
 
 public class HistoryAdd {
 
-	public static String main(String username) {
+	public static String main(String username, String item, String totalAVG, String date) {
 			   
-		String messageSend = "login " + username + " " + password;
+		String messageSend = "history " + username + " " + item + " " + totalAVG + " "  +  date;
 	   
 	   	Requester.main(messageSend);
 		
-		return LoginObject.getLogin();
+		return null;
 	}
 }

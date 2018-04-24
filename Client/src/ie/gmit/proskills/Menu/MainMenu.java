@@ -134,6 +134,7 @@ public class MainMenu extends JFrame {
 		btnStore_Search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
+				// Reset table for new query
 				dtm.setRowCount(0);
 
 				String itemSearch = tfStore_Seach.getText();
@@ -144,6 +145,8 @@ public class MainMenu extends JFrame {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
+				lblTest.setText("€" + "5.00");
 
 			}
 		});

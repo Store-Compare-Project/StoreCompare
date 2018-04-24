@@ -211,7 +211,6 @@ public class MainMenu extends JFrame {
 		String[] splited = test.split("\\s+");
 		
 		for(int i = 0; i < splited.length/3; i++){
-			System.out.println(splited[i]);
 			dtmHistory.addRow(new Object[] { splited[i], "€" + splited[i+1], splited[i+2]});
 		}
 	}

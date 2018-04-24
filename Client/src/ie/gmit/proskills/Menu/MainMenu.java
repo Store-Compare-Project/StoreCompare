@@ -146,7 +146,7 @@ public class MainMenu extends JFrame {
 					e.printStackTrace();
 				}
 				
-				lblTest.setText("€" + "5.00");
+				lblTest.setText("€" + StoreInfo.getDoneDealAVG());
 
 			}
 		});

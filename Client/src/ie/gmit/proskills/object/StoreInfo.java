@@ -3,14 +3,14 @@ package ie.gmit.proskills.object;
 public class StoreInfo {
 
 	private static double ebayAVG;
-	private double doneDealAVG;
+	private static double doneDealAVG;
 
 	public static String getEbayAVG() {
 		return Double.toString(ebayAVG);
 	}
 
-	public double getDoneDealAVG() {
-		return doneDealAVG;
+	public static String getDoneDealAVG() {
+		return Double.toString(doneDealAVG);
 	}
 
 	public void setEbayAVG(double ebayAVG) {

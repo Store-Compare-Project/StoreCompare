@@ -1,7 +1,7 @@
 ![storecompare](https://user-images.githubusercontent.com/22448079/38895768-d87f1a4c-4288-11e8-99ab-416e24d32da8.png)
 
 <p align="center">
-  <b>A multi-threaded Java application for comparing the price of products across multiple websites</b><br>
+  <b>CLIENT</b><br>
 </p>
 
 ## Contents
@@ -13,7 +13,7 @@
 * [Resources](#resources)
 * [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki)
 
-## Description
+## Client
 The StoreCompare client is the main part of the program. It enables the user to login, register and displays the main table with the search results.
 
 ## How to run the program
@@ -46,8 +46,6 @@ OR
 
 Assuming you have Java installed, you can just double click the .jar file and the program will open.
 
-## Information
-For more information on concepts and technologies discussed and used in this program, please refer to the [Wiki](https://github.com/Store-Compare-Project/ITProSkills/wiki) and resources below.
 
 ## Technologies and Software
 **Technologies**
@@ -69,15 +67,3 @@ For more information on concepts and technologies discussed and used in this pro
 - [MongoDB Setup](https://www.tutorialspoint.com/mongodb/index.htm)
 - [Swing Tutorial](https://www.tutorialspoint.com/swing/index.htm)
 - [MongoDB Setup](https://www.tutorialspoint.com/mongodb/index.htm)
-
-
-## Developers
-[Eddie Eldridge](https://github.com/EddieEldridge)	
- 	 
-[Danielis Joniskis](https://github.com/jawneck)
- 	 
-[Cian Gannon](https://github.com/cian2009/ITProSkills)
-
-## Acknowledgments
-- Martin Hynes - For helping us with the many problems we encountered with the project and also for helping us keep a consistent work schedule.
-

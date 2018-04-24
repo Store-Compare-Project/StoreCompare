@@ -30,21 +30,21 @@ import java.awt.Color;
 
 /**
  * This class is responsible for loading the Main Menu to the user. <br>
- * The class allows the user to Search a product. 
+ * The class allows the user to Search a product.
  * 
  * @author Cian Gannon
  * @author Danielis Joniškis
  * @author Eddie Eldridge
  */
 
-//A MainMenu class which utilises a JFrame to allow the user to search for products.
+// A MainMenu class which utilises a JFrame to allow the user to search for
+// products.
 public class MainMenu extends JFrame {
-	
+
 	/**
-	 * This class displays a Menu to the user.
-	 * From here they can enter a product name into the input field
-	 * and this will display the search results.
-	 * The user can also choose to logout.
+	 * This class displays a Menu to the user. From here they can enter a
+	 * product name into the input field and this will display the search
+	 * results. The user can also choose to logout.
 	 * 
 	 * @param x
 	 *            The x coordinates of the JFrame
@@ -63,7 +63,8 @@ public class MainMenu extends JFrame {
 
 	/**
 	 * Launch the application.
-	 * @param username 
+	 * 
+	 * @param username
 	 */
 	public static void main(int x, int y, String username) {
 		EventQueue.invokeLater(new Runnable() {
@@ -71,11 +72,11 @@ public class MainMenu extends JFrame {
 				try {
 					MainMenu frame = new MainMenu(x, y, username);
 					frame.setVisible(true);
-					
+
 					// Change the icon image for the frame
 					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
-				    frame.setIconImage(img);
-				    
+					frame.setIconImage(img);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -88,12 +89,12 @@ public class MainMenu extends JFrame {
 	 * 
 	 * @param y
 	 * @param x
-	 * @param username 
+	 * @param username
 	 */
 	public MainMenu(int x, int y, String username) {
-		
+
 		DecimalFormat df = new DecimalFormat("#.00");
-		
+
 		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(x, y, 660, 530);
@@ -116,7 +117,7 @@ public class MainMenu extends JFrame {
 		scrollPane.setBounds(10, 126, 624, 325);
 		contentPane.add(scrollPane);
 		scrollPane.setViewportView(table);
-		
+
 		// Text label settings
 		JLabel lblStore_Search = new JLabel("Store Search:");
 		lblStore_Search.setForeground(Color.LIGHT_GRAY);
@@ -133,34 +134,34 @@ public class MainMenu extends JFrame {
 		JButton btnStore_Search = new JButton("Search");
 		btnStore_Search.setBounds(10, 92, 125, 23);
 		contentPane.add(btnStore_Search);
-		
-		//A button which take you back to the landing page.
+
+		// A button which take you back to the landing page.
 		JButton logoutButton = new JButton("Logout");
 		logoutButton.setBounds(545, 462, 89, 23);
 		contentPane.add(logoutButton);
-		
+
 		JLabel lblDoneDealAVG = new JLabel("DoneDeal AVG:");
 		lblDoneDealAVG.setForeground(Color.LIGHT_GRAY);
 		lblDoneDealAVG.setBounds(147, 466, 89, 14);
 		contentPane.add(lblDoneDealAVG);
-		
-		TextArea taDoneDealAVG = new TextArea("€0.00", 3 , 100 ,TextArea.SCROLLBARS_NONE);
+
+		TextArea taDoneDealAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
 		taDoneDealAVG.setBounds(242, 465, 70, 20);
 		contentPane.add(taDoneDealAVG);
-		
+
 		TextArea taEbayAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
 		taEbayAVG.setBounds(71, 465, 70, 20);
 		contentPane.add(taEbayAVG);
-		
+
 		JLabel lblEbayAVG = new JLabel("Ebay AVG:");
 		lblEbayAVG.setForeground(Color.LIGHT_GRAY);
 		lblEbayAVG.setBounds(10, 466, 89, 14);
 		contentPane.add(lblEbayAVG);
-		
+
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(242, 11, 392, 104);
 		contentPane.add(scrollPane_1);
-		
+
 		// Table settings
 		DefaultTableModel dtmHistory = new DefaultTableModel(0, 0);
 		String headerHistory[] = new String[] { "Item Name", "Ebay AVG", "DoneDeal AVG", "Date" };
@@ -168,7 +169,7 @@ public class MainMenu extends JFrame {
 		table_1 = new JTable();
 		table_1.setModel(dtmHistory);
 		scrollPane_1.setViewportView(table_1);
-		
+
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LandingPage.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
@@ -176,7 +177,7 @@ public class MainMenu extends JFrame {
 				CloseFrame();
 			}
 		});
-		
+
 		btnStore_Search.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
@@ -190,34 +191,39 @@ public class MainMenu extends JFrame {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-				
+
 				taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
-				
+
 				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
-				
+
 				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 				Date date = new Date();
-				
-				HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(), dateFormat.format(date));
-				
-				dtmHistory.addRow(new Object[] { itemSearch, "€" + df.format(Double.parseDouble(StoreInfo.getEbayAVG())), "€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())) , dateFormat.format(date)});
+
+				HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(),
+						dateFormat.format(date));
+
+				dtmHistory.addRow(new Object[] { itemSearch,
+						"€" + df.format(Double.parseDouble(StoreInfo.getEbayAVG())),
+						"€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())), dateFormat.format(date) });
 			}
 		});
-		
+
 		String history = HistoryGet.main(username);
-		
+
 		String[] splited = history.split("\\?");
-		
+
 		try {
-			for(int i = 0; i < splited.length; i+=3){
-				dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i+1])), splited[i+2]});
+			for (int i = 0; i < splited.length; i += 4) {
+				dtmHistory.addRow(new Object[] { splited[i],
+						"€" + df.format(Double.parseDouble(splited[i+1])),
+						"€" + df.format(Double.parseDouble(splited[i+2])), splited[i+3] });
 			}
-		} catch (ArrayIndexOutOfBoundsException ArrayIndexOutOfBoundsException){	
+		} catch (ArrayIndexOutOfBoundsException ArrayIndexOutOfBoundsException) {
 		}
-		
+
 	}
-	
-	//A function which closes the frame
+
+	// A function which closes the frame
 	public void CloseFrame() {
 		super.dispose();
 	}

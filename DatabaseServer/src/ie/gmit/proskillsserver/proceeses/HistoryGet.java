@@ -31,10 +31,11 @@ public class HistoryGet {
 
 				// Gets username and password
 				String itemTemp = temp.get("item").toString();
-				String priceTemp = temp.get("price").toString();
+				String price1Temp = temp.get("ebayAVG").toString();
+				String price2Temp = temp.get("doneDealAVG").toString();
 				String dateTemp = temp.get("date").toString();
 				
-				 builder.append("?" +itemTemp + "?" + priceTemp + "?" + dateTemp);
+				 builder.append("?" +itemTemp + "?" + price1Temp + "?" + price2Temp + "?" + dateTemp);
 		}
 
 		// Close cursor

@@ -23,8 +23,9 @@ public class History {
 		BasicDBObject command = new BasicDBObject();
 		
 		command.put("item", history[2]);
-		command.put("price", history[3]);
-		command.put("date", history[4]);
+		command.put("ebayAVG", history[3]);
+		command.put("doneDealAVG", history[4]);
+		command.put("date", history[5]);
 		
 		coll.insert(command);
 

@@ -4,6 +4,7 @@ import ie.gmit.proskills.Processes.StoreSearch;
 import ie.gmit.proskills.object.StoreInfo;
 import ie.gmit.proskills.serverconn.Requester;
 import ie.gmit.proskills.Processes.HistoryAdd;
+import ie.gmit.proskills.Processes.HistoryGet;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -197,6 +198,10 @@ public class MainMenu extends JFrame {
 				dtmHistory.addRow(new Object[] { itemSearch, "€" + df.format(totalAVG), dateFormat.format(date)});
 			}
 		});
+		
+		String test = HistoryGet.main(username);
+		
+		System.out.println(test);
 	}
 	
 	//A function which closes the frame

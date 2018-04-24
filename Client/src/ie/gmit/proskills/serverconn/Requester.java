@@ -34,7 +34,7 @@ public class Requester{
 			
 			if(splited[0].equals("login") || splited[0].equals("register")){
 				LoginObject.setLogin(Boolean.parseBoolean(message));
-			}else if (splited[0].equals("history")){
+			}else if (splited[0].equals("historyGet")){
 				System.out.println(message);
 			}
 			

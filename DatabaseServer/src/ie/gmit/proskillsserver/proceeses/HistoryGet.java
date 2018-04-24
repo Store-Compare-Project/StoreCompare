@@ -2,9 +2,9 @@ package ie.gmit.proskillsserver.proceeses;
 
 public class HistoryGet {
 
-	public static String[] main(String username) {
+	public static String main(String username) {
 		
-		String[] history = null;
+		String history = "";
 		
 		return history;
 	}

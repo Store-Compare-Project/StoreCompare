@@ -125,9 +125,9 @@ class ClientServiceThread extends Thread {
 
 				System.out.println("> Client ID: " + clientID + " | Getting all History");
 
-				String[] newHistory = HistoryGet.main(splited[1]);
+				String newHistory = HistoryGet.main(splited[1]);
 				
-				sendMessage("");
+				sendMessage(newHistory);
 			}
 			
 

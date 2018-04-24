@@ -1,10 +1,17 @@
 package ie.gmit.proskills.Processes;
 
+import ie.gmit.proskills.object.History;
+import ie.gmit.proskills.serverconn.Requester;
+
 public class HistoryGet {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static String main(String username) {
+		
+		String messageSend = "historyGet " + username;
 
+		Requester.main(messageSend);
+		
+		return History.getHistory();
 	}
 
 }

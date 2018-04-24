@@ -13,6 +13,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.Toolkit;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -50,11 +52,20 @@ public class LandingPage extends JFrame {
 				try {
 					LandingPage frame = new LandingPage(x, y);
 					frame.setVisible(true);
+					
+					// Change the icon image for the frame
+					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
+				    frame.setIconImage(img);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
+		
+
 		});
+		
+		
 	}
 
 	/**
@@ -91,9 +102,9 @@ public class LandingPage extends JFrame {
 		
 		// Image labels
 		JLabel imageLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/img/barcode.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
 		imageLabel.setIcon(new ImageIcon(img));
-		imageLabel.setBounds(207, 85, 128, 165);
+		imageLabel.setBounds(150, 80, 250, 200);
 		panel.add(imageLabel);
 
 		JLabel imageLabel2 = new JLabel("");
@@ -107,6 +118,9 @@ public class LandingPage extends JFrame {
 		imageLabel3.setIcon(new ImageIcon(img3));
 		imageLabel3.setBounds(391, 279, 32, 40);
 		panel.add(imageLabel3);
+		
+	
+
 
 		// Login button setup and action listener
 		JButton buttonLogin = new JButton("Login");

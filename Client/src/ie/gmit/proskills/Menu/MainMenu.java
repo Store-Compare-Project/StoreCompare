@@ -92,6 +92,8 @@ public class MainMenu extends JFrame {
 	 */
 	public MainMenu(int x, int y, String username) {
 		
+		DecimalFormat df = new DecimalFormat("#.00");
+		
 		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(x, y, 660, 530);
@@ -199,8 +201,6 @@ public class MainMenu extends JFrame {
 				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 				Date date = new Date();
 				
-				DecimalFormat df = new DecimalFormat("#.00");
-				
 				HistoryAdd.main(username, itemSearch, Double.toString(totalAVG), dateFormat.format(date));
 				
 				dtmHistory.addRow(new Object[] { itemSearch, "€" + df.format(totalAVG), dateFormat.format(date)});
@@ -212,7 +212,7 @@ public class MainMenu extends JFrame {
 		String[] splited = test.split("\\?");
 		
 		for(int i = 0; i < splited.length; i+=3){
-			dtmHistory.addRow(new Object[] { splited[i], "€" + splited[i+1], splited[i+2]});
+			dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i+1])), splited[i+2]});
 		}
 	}
 	

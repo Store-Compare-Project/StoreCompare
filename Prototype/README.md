@@ -6,7 +6,7 @@
 
 ## Contents
 * [Prototype](#protoype)
-* [Technologies and Software](#technologies-and-Software)
+* [Technologies and Software](#technologies-and-software)
 * [Resources](#resources)
 
 ## Prototype

@@ -189,7 +189,7 @@ public class MainMenu extends JFrame {
 				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 				Date date = new Date();
 				
-				String history = HistoryAdd.main(username, itemSearch, Double.toString(totalAVG), dateFormat.format(date));
+				HistoryAdd.main(username, itemSearch, Double.toString(totalAVG), dateFormat.format(date));
 				
 			}
 		});

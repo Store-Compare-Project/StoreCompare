@@ -130,20 +130,20 @@ public class MainMenu extends JFrame {
 		
 		JLabel lblDoneDealAVG = new JLabel("DoneDeal AVG:");
 		lblDoneDealAVG.setForeground(Color.LIGHT_GRAY);
-		lblDoneDealAVG.setBounds(145, 96, 89, 14);
+		lblDoneDealAVG.setBounds(123, 466, 89, 14);
 		contentPane.add(lblDoneDealAVG);
 		
 		TextArea taDoneDealAVG = new TextArea("€0.00", 3 , 100 ,TextArea.SCROLLBARS_NONE);
-		taDoneDealAVG.setBounds(240, 92, 46, 20);
+		taDoneDealAVG.setBounds(218, 465, 46, 20);
 		contentPane.add(taDoneDealAVG);
 		
 		TextArea taEbayAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
-		taEbayAVG.setBounds(240, 71, 46, 20);
+		taEbayAVG.setBounds(71, 465, 46, 20);
 		contentPane.add(taEbayAVG);
 		
 		JLabel lblEbayAVG = new JLabel("Ebay AVG:");
 		lblEbayAVG.setForeground(Color.LIGHT_GRAY);
-		lblEbayAVG.setBounds(145, 74, 89, 14);
+		lblEbayAVG.setBounds(10, 466, 89, 14);
 		contentPane.add(lblEbayAVG);
 		
 		logoutButton.addActionListener(new ActionListener() {
@@ -168,6 +168,8 @@ public class MainMenu extends JFrame {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
+				taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
 				
 				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
 

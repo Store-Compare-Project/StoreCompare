@@ -188,7 +188,6 @@ public class MainMenu extends JFrame {
 				try {
 					StoreSearch.main(itemSearch, dtm);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				
@@ -207,9 +206,9 @@ public class MainMenu extends JFrame {
 			}
 		});
 		
-		String test = HistoryGet.main(username);
+		String history = HistoryGet.main(username);
 		
-		String[] splited = test.split("\\?");
+		String[] splited = history.split("\\?");
 		
 		for(int i = 0; i < splited.length; i+=3){
 			dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i+1])), splited[i+2]});

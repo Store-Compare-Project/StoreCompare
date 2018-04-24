@@ -51,6 +51,7 @@ public class MainMenu extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private JTextField tfStore_Seach;
+	private JTable table_1;
 
 	/**
 	 * Launch the application.
@@ -130,21 +131,33 @@ public class MainMenu extends JFrame {
 		
 		JLabel lblDoneDealAVG = new JLabel("DoneDeal AVG:");
 		lblDoneDealAVG.setForeground(Color.LIGHT_GRAY);
-		lblDoneDealAVG.setBounds(141, 466, 89, 14);
+		lblDoneDealAVG.setBounds(147, 466, 89, 14);
 		contentPane.add(lblDoneDealAVG);
 		
 		TextArea taDoneDealAVG = new TextArea("€0.00", 3 , 100 ,TextArea.SCROLLBARS_NONE);
-		taDoneDealAVG.setBounds(236, 465, 64, 20);
+		taDoneDealAVG.setBounds(242, 465, 70, 20);
 		contentPane.add(taDoneDealAVG);
 		
 		TextArea taEbayAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
-		taEbayAVG.setBounds(71, 465, 64, 20);
+		taEbayAVG.setBounds(71, 465, 70, 20);
 		contentPane.add(taEbayAVG);
 		
 		JLabel lblEbayAVG = new JLabel("Ebay AVG:");
 		lblEbayAVG.setForeground(Color.LIGHT_GRAY);
 		lblEbayAVG.setBounds(10, 466, 89, 14);
 		contentPane.add(lblEbayAVG);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(362, 11, 272, 104);
+		contentPane.add(scrollPane_1);
+		
+		// Table settings
+		DefaultTableModel dtmHistory = new DefaultTableModel(0, 0);
+		String headerHistory[] = new String[] { "Item Name", "Price", "Date" };
+		dtmHistory.setColumnIdentifiers(headerHistory);
+		table_1 = new JTable();
+		table_1.setModel(dtmHistory);
+		scrollPane_1.setViewportView(table_1);
 		
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

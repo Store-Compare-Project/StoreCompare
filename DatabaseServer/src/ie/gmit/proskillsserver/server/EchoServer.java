@@ -123,7 +123,7 @@ class ClientServiceThread extends Thread {
 
 			}else if (splited[0].equals("historyGet")) {
 
-				System.out.println("> Client ID: " + clientID + " | Getting all History");
+				System.out.println("> Client ID: " + clientID + " | Getting all History for User - " + splited[1]);
 
 				String newHistory = HistoryGet.main(splited[1]);
 				

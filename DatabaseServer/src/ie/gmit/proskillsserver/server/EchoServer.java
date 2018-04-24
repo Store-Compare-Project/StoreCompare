@@ -1,5 +1,7 @@
 package ie.gmit.proskillsserver.server;
 
+import ie.gmit.proskillsserver.proceeses.CreateHistory;
+import ie.gmit.proskillsserver.proceeses.History;
 import ie.gmit.proskillsserver.proceeses.Login;
 import ie.gmit.proskillsserver.proceeses.Register;
 
@@ -108,7 +110,13 @@ class ClientServiceThread extends Thread {
 
 			}
 
-			sendMessage("" + loginStatus);
+			if(splited[0].equals("login") || splited[0].equals("register")){
+				sendMessage("user" + loginStatus);
+			}else if(splited[0].equals("history")){
+				String[] splitHist = History.main(splited);
+				sendMessage("history" + splitHist);
+			}
+			
 
 			System.out.println("> (" + dateFormat.format(date) + ") Disconnecting Client ID: " + clientID
 					+ " | Address - " + clientSocket.getInetAddress().getHostName());

@@ -30,7 +30,14 @@ public class Requester{
 			sendMessage(message);
 			message = (String)in.readObject();
 			
-			LoginObject.setLogin(Boolean.parseBoolean(message));
+			String[] splited = message.split("\\s+");
+			
+			if(splited[0].equals("user")){
+				LoginObject.setLogin(Boolean.parseBoolean(message));
+			}else if (splited[0].equals("history")){
+				System.out.println(message);
+			}
+			
 			
 		}
 		catch(UnknownHostException unknownHost){

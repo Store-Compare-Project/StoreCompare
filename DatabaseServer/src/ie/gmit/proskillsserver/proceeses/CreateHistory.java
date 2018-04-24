@@ -10,8 +10,6 @@ public class CreateHistory {
 	@SuppressWarnings("deprecation")
 	public static void main(String username) {
 
-		System.out.println("Test");
-
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("history");
 		db.createCollection(username, new BasicDBObject("capped", false));

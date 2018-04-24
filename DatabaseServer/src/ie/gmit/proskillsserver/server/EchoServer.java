@@ -115,8 +115,8 @@ class ClientServiceThread extends Thread {
 			}else if (splited[0].equals("register")){
 				sendMessage("" + loginStatus);
 			}else if(splited[0].equals("history")){
-				String[] splitHist = History.main(splited);
-				sendMessage("" + splitHist);
+				History.main(splited);
+				sendMessage("");
 			}
 			
 

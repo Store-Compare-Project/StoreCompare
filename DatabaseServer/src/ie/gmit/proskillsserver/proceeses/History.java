@@ -8,7 +8,7 @@ import com.mongodb.MongoClient;
 
 public class History {
 
-	public static String[] main(String[] history) {
+	public static void main(String[] history) {
 		
 		String[] newHistory = history;
 		
@@ -27,9 +27,6 @@ public class History {
 		command.put("date", history[4]);
 		
 		coll.insert(command);
-		
-		
-		return newHistory;
 
 	}
 

@@ -127,7 +127,6 @@ class ClientServiceThread extends Thread {
 
 				String newHistory = HistoryGet.main(splited[1]);
 				
-				System.out.println(newHistory);
 				sendMessage(newHistory);
 			}
 			

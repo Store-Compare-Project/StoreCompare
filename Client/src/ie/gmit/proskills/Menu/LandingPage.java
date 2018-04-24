@@ -102,9 +102,9 @@ public class LandingPage extends JFrame {
 		
 		// Image labels
 		JLabel imageLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/img/barcode.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
 		imageLabel.setIcon(new ImageIcon(img));
-		imageLabel.setBounds(207, 85, 128, 165);
+		imageLabel.setBounds(150, 80, 250, 200);
 		panel.add(imageLabel);
 
 		JLabel imageLabel2 = new JLabel("");

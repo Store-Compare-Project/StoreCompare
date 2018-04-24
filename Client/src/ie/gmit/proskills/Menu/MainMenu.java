@@ -17,8 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.EventQueue;
 import java.awt.TextArea;
 import java.awt.Color;
-import javax.swing.SwingConstants;
-import javax.swing.JTextPane;
 
 /**
  * This class is responsible for loading the Main Menu to the user. <br>
@@ -56,17 +54,10 @@ public class MainMenu extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		
-		int x = 100;
-		int y = 100;
-		
+	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
-					
-					
 					MainMenu frame = new MainMenu(x, y);
 					frame.setVisible(true);
 				} catch (Exception e) {

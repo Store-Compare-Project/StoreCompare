@@ -158,12 +158,12 @@ public class MainMenu extends JFrame {
 		contentPane.add(lblEbayAVG);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(362, 11, 272, 104);
+		scrollPane_1.setBounds(242, 11, 392, 104);
 		contentPane.add(scrollPane_1);
 		
 		// Table settings
 		DefaultTableModel dtmHistory = new DefaultTableModel(0, 0);
-		String headerHistory[] = new String[] { "Item Name", "Price", "Date" };
+		String headerHistory[] = new String[] { "Item Name", "Avg Price", "Date" };
 		dtmHistory.setColumnIdentifiers(headerHistory);
 		table_1 = new JTable();
 		table_1.setModel(dtmHistory);

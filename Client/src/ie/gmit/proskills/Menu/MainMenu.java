@@ -3,6 +3,7 @@ package ie.gmit.proskills.Menu;
 import ie.gmit.proskills.Processes.StoreSearch;
 import ie.gmit.proskills.object.StoreInfo;
 import ie.gmit.proskills.serverconn.Requester;
+import ie.gmit.proskills.Processes.HistoryAdd;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -188,9 +189,11 @@ public class MainMenu extends JFrame {
 				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 				Date date = new Date();
 
-				String messageSend = "history " + username + " " + totalAVG + "" + dateFormat.format(date);
+				String messageSend = "history " + username + " " + totalAVG + " " + dateFormat.format(date);
 				
-				Requester.main(messageSend);
+				System.out.print(username, totalAVG, dateFormat.format(date));
+				
+				String history = HistoryAdd.main(username, totalAVG, dateFormat.format(date));
 				
 			}
 		});

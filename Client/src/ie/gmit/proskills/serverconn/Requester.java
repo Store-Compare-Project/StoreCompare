@@ -38,8 +38,6 @@ public class Requester{
 				System.out.println(message);
 			}
 			
-			System.out.println(message);
-			
 			
 			
 			

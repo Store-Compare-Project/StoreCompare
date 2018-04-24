@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.event.ActionEvent;
@@ -184,13 +185,16 @@ public class MainMenu extends JFrame {
 				
 				taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
 				
-				double totalAVG = (Double.parseDouble(StoreInfo.getEbayAVG()) + Double.parseDouble(StoreInfo.getDoneDealAVG())/2);
+				double totalAVG = (Double.parseDouble(StoreInfo.getEbayAVG()) + Double.parseDouble(StoreInfo.getDoneDealAVG()))/2;
 				
-				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+				DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 				Date date = new Date();
+				
+				DecimalFormat df = new DecimalFormat("#.00");
 				
 				HistoryAdd.main(username, itemSearch, Double.toString(totalAVG), dateFormat.format(date));
 				
+				dtmHistory.addRow(new Object[] { itemSearch, "€" + df.format(totalAVG), dateFormat.format(date)});
 			}
 		});
 	}

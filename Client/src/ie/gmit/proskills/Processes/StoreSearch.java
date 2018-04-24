@@ -1,11 +1,9 @@
 package ie.gmit.proskills.Processes;
 
-import ie.gmit.proskills.Storage.Items;
 import ie.gmit.proskills.Websites.Adverts;
 import ie.gmit.proskills.Websites.Ebay;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
 

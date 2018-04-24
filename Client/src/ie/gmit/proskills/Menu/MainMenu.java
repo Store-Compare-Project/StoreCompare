@@ -1,6 +1,7 @@
 package ie.gmit.proskills.Menu;
 
 import ie.gmit.proskills.Processes.StoreSearch;
+import ie.gmit.proskills.object.StoreInfo;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -116,6 +117,12 @@ public class MainMenu extends JFrame {
 		JButton logoutButton = new JButton("Logout");
 		logoutButton.setBounds(545, 92, 89, 23);
 		contentPane.add(logoutButton);
+		
+		JLabel lblTest = new JLabel("Test");
+		lblTest.setBounds(10, 11, 46, 14);
+		contentPane.add(lblTest);
+		lblTest.setText(StoreInfo.getEbayAVG());
+		
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LandingPage.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
@@ -140,8 +147,6 @@ public class MainMenu extends JFrame {
 
 			}
 		});
-		
-
 	}
 	
 	//A function which closes the frame

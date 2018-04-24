@@ -13,11 +13,11 @@ public class StoreInfo {
 		return Double.toString(doneDealAVG);
 	}
 
-	public void setEbayAVG(double ebayAVG) {
-		this.ebayAVG += ebayAVG;
+	public static void setEbayAVG(double ebayAVGSet) {
+		ebayAVG += ebayAVGSet;
 	}
 
-	public void setDoneDealAVG(double doneDealAVG) {
-		this.doneDealAVG += doneDealAVG;
+	public void setDoneDealAVG(double doneDealAVGSet) {
+		doneDealAVG += doneDealAVGSet;
 	}
 }

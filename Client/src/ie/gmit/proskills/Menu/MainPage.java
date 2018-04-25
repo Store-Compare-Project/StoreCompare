@@ -10,9 +10,24 @@ import ie.gmit.proskills.Websites.Adverts;
 import ie.gmit.proskills.Websites.Ebay;
 import ie.gmit.proskills.Websites.Newegg;
 
+/**
+ * This class starts the threads for scraping the websites. <br>
+ * 
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
+
 public class MainPage 
 {
-
+	/**
+	 *	The MainPage class start the threads<br>
+	 *	To scrape Ebay, Adverts and Newegg for prices<br>
+	 * 	on products searched by the user.
+	 * @throws Exception
+	 *             Throws all errors
+	 */
 	@SuppressWarnings("deprecation")
 	public static void run() throws InterruptedException 
 	{

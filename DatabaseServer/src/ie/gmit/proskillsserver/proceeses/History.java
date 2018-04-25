@@ -38,7 +38,8 @@ public class History {
 		command.put("item", history[2]);
 		command.put("ebayAVG", history[3]);
 		command.put("doneDealAVG", history[4]);
-		command.put("date", history[5]);
+		command.put("neweggAVG", history[5]);
+		command.put("date", history[6]);
 
 		// Insert collection into database
 		coll.insert(command);

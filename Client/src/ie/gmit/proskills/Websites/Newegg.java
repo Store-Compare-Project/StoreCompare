@@ -27,11 +27,6 @@ public class Newegg {
 		
 		// Complete the url with search terms added 
 		completeUrl = urlPart1 + searchTerm + urlPart2;
-
-		// Debug
-		System.out.println(urlPart1);
-		System.out.println(urlPart2);
-		System.out.println(completeUrl);
 		
 		// Tell the user they're request is being sent to the user
 		System.out.println("\nSending request..." + "\"" + completeUrl + "\"");
@@ -57,7 +52,6 @@ public class Newegg {
 						System.out.println("Name not found.");
 					}
 					
-					
 					try
 					{
 						priceString =  ((el.getElementsByClass("price-current").text().replaceAll("[^0-9,]", "")));
@@ -67,7 +61,7 @@ public class Newegg {
 					} 
 					catch (NumberFormatException e) 
 					{
-						System.out.println("Price not found.");
+						continue;
 					}
 					
 					// Add the found stuff to our list

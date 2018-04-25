@@ -24,8 +24,14 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /**
+<<<<<<< HEAD
  * Stuff here
  * 
+=======
+ * This class is responsible for loading the Landing Page. <br>
+ * From here the user can register as a new user<br>
+ * Or they can log in as an existing user.
+>>>>>>> branchy
  * @author Cian Gannon
  * @author Danielis Joniškis
  * @author Eddie Eldridge

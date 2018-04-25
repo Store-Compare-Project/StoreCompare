@@ -191,7 +191,6 @@ public class LoginMenu extends JFrame {
 						JOptionPane.showMessageDialog(null, "Please enter a valid password. \n -No spaces allowed");
 
 						// Set all text boxes to default
-						usernameInput.setText("");
 						passwordInput.setText("");
 					}
 

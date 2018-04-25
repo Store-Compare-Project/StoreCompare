@@ -172,6 +172,11 @@ public class MainMenu extends JFrame {
 		TextArea taEbayAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
 		taEbayAVG.setBounds(86, 465, 70, 20);
 		contentPane.add(taEbayAVG);
+		
+		// Displays the average price for Newegg store
+		TextArea taNeweggAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
+		taNeweggAVG.setBounds(426, 465, 70, 20);
+		contentPane.add(taNeweggAVG);
 
 		// Search button setup and action listener
 		JButton btnStore_Search = new JButton("Search");
@@ -203,6 +208,13 @@ public class MainMenu extends JFrame {
 		chckbxDonedeal.setBackground(Color.DARK_GRAY);
 		chckbxDonedeal.setForeground(Color.LIGHT_GRAY);
 		contentPane.add(chckbxDonedeal);
+		
+		JLabel lblNeweggAVG = new JLabel("Newegg AVG:");
+		lblNeweggAVG.setForeground(Color.LIGHT_GRAY);
+		lblNeweggAVG.setBounds(331, 466, 89, 14);
+		contentPane.add(lblNeweggAVG);
+		
+		
 
 				
 		// Button listener for the back button
@@ -238,6 +250,8 @@ public class MainMenu extends JFrame {
 					taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
 
 					taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
+					
+					taNeweggAVG.setText("€" + StoreInfo.getNeweggAVG());
 
 					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 					Date date = new Date();

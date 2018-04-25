@@ -41,17 +41,9 @@ public class Newegg {
 			      .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
 			      .referrer("http://www.google.com")
 			      .get();
-		//System.out.println(doc);
 	
-		// If item is a special item, Aliexpress uses div
 		Elements els  = doc.getElementsByClass("item-container");
-		
-		// If not a special item, Aliexpress uses ul
-		// Element els  = doc.select("ul#hs-below-list-items");
-		
-
-		//System.out.println(els);
-		
+				
 		// For every element of the element we assigned above
 		for(Element el : els)
 		{

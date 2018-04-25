@@ -8,6 +8,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import ie.gmit.proskills.object.StoreInfo;
+
 public class Ebay {
 
 	public static void main(String searchTerm, DefaultTableModel dtm) throws IOException {
@@ -18,6 +20,8 @@ public class Ebay {
 		String price = null;
 		String postage = "€0.00";
 		double total = 0.00;
+		int totalQueries = 0;
+		double allPrices = 0;
 		String url = "https://www.ebay.ie/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR0.TRC0.H0.X";
 
 		// Replace any spaces with a +
@@ -38,6 +42,8 @@ public class Ebay {
 
 		// For every element of the element we assign above
 		for (Element el : els) {
+			
+			totalQueries++;
 
 			name = (el.getElementsByClass("lvtitle").text()).replaceAll("Name: ", "");
 
@@ -57,8 +63,12 @@ public class Ebay {
 
 			total = Double.parseDouble(price.replaceAll("[^0-9.]", ""))
 					+ Double.parseDouble(postage.replaceAll("[^0-9.]", ""));
+			
+			allPrices += total;
 
 			dtm.addRow(new Object[] { name, price, postage, "€" + df.format(total), "Ebay" });
 		}
+		
+		StoreInfo.setEbayAVG(df.format(allPrices/totalQueries));
 	}
 }

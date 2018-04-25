@@ -26,7 +26,7 @@ public class Login {
 
 	public static Boolean main(String username, String password) {
 			   
-		String messageSend = "login " + username + " " + password;
+		String messageSend = "login?" + username + "?" + password;
 	   
 	   	Requester.main(messageSend);
 		

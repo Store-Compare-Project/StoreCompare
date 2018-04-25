@@ -12,6 +12,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import ie.gmit.proskills.Storage.Items;
+import ie.gmit.proskills.object.StoreInfo;
 
 public class Adverts {
 
@@ -24,6 +25,8 @@ public class Adverts {
 		String name = null;
 		String price = null;
 		double total = 0.00;
+		int totalQueries = 0;
+		double allPrices = 0;
 		String url = "https://www.adverts.ie/for-sale/q_";
 
 		// Replace any spaces with a +
@@ -39,21 +42,31 @@ public class Adverts {
 						"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2")
 				.timeout(60000).get();
 
-		// If item is a special item, Aliexpress uses div
+		// Get all html of this class
 		Elements els = doc.getElementsByClass("sr-grid-cell quick-peek-container");
 
 		// For every element of the element we assigned above
 		for (Element el : els) {
-
+			
+			
+			try {
 			name = (el.getElementsByClass("title").text()).replaceAll("Name: ", "");
 
 			price = "€" + ((el.getElementsByClass("price").text().replaceAll("[^0-9.]", "")));
 
 			total = Double.parseDouble(price.replaceAll("[^0-9.]", ""));
+			} catch (NumberFormatException NumberFormatException){
+				continue;
+			}
+			
+			allPrices += total;
+			totalQueries++;
 
 			// Add the found stuff to our list
 			dtm.addRow(new Object[] { name, price, "Contact Seller", "€" + df.format(total), "DoneDeal" });
 		}
+		
+		StoreInfo.setDoneDealAVG(df.format(allPrices/totalQueries));
 	}
 
 }

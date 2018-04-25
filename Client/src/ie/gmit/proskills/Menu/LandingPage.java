@@ -13,6 +13,7 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,9 +22,21 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+/**
+ * This class is responsible for loading the Landing Page. <br>
+ * From here the user can register as a new user<br>
+ * Or they can log in as an existing user.
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 //A LandingPage class which utilises a JFrame to allow the user to access the Register and Login pages.
 public class LandingPage extends JFrame {
 	
+	private static final long serialVersionUID = 9184087532979872713L;
+	private JPanel contentPane;
+
 	/**
 	 * This class simply displays a Landing Page to the user.
 	 * From here they can navigate to the Register Page or
@@ -34,27 +47,26 @@ public class LandingPage extends JFrame {
 	 * @param y
 	 *            The y coordinates of the JFrame
 	 */
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 9184087532979872713L;
-	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
 	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					LandingPage frame = new LandingPage(x, y);
 					frame.setVisible(true);
+					
+					// Change the icon image for the frame
+					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
+				    frame.setIconImage(img);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
+		
+
 		});
+		
+		
 	}
 
 	/**
@@ -91,9 +103,9 @@ public class LandingPage extends JFrame {
 		
 		// Image labels
 		JLabel imageLabel = new JLabel("");
-		Image img = new ImageIcon(this.getClass().getResource("/img/barcode.png")).getImage();
+		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
 		imageLabel.setIcon(new ImageIcon(img));
-		imageLabel.setBounds(207, 85, 128, 165);
+		imageLabel.setBounds(150, 80, 250, 200);
 		panel.add(imageLabel);
 
 		JLabel imageLabel2 = new JLabel("");
@@ -107,6 +119,9 @@ public class LandingPage extends JFrame {
 		imageLabel3.setIcon(new ImageIcon(img3));
 		imageLabel3.setBounds(391, 279, 32, 40);
 		panel.add(imageLabel3);
+		
+	
+
 
 		// Login button setup and action listener
 		JButton buttonLogin = new JButton("Login");

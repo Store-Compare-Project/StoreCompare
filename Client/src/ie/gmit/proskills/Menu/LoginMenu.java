@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -59,6 +60,11 @@ public class LoginMenu extends JFrame {
 				try {
 					LoginMenu frame = new LoginMenu(x, y);
 					frame.setVisible(true);
+					
+					// Change the icon image for the frame
+					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
+				    frame.setIconImage(img);
+				    
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -70,6 +76,9 @@ public class LoginMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginMenu(int x, int y) {
+		
+		// Set jFrame icon to be the StoreCompare logo
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage("/img/logo.png"));
 		
 		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -169,7 +178,7 @@ public class LoginMenu extends JFrame {
 						// main landing page of the program
 						if (loginCheck) {
 							MainMenu.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
-							(int) Math.round(contentPane.getLocationOnScreen().getY()));
+							(int) Math.round(contentPane.getLocationOnScreen().getY()), username);
 							CloseFrame();
 						} else {
 							JOptionPane.showMessageDialog(null, "Username/Password are incorrect.");
@@ -182,7 +191,6 @@ public class LoginMenu extends JFrame {
 						JOptionPane.showMessageDialog(null, "Please enter a valid password. \n -No spaces allowed");
 
 						// Set all text boxes to default
-						usernameInput.setText("");
 						passwordInput.setText("");
 					}
 

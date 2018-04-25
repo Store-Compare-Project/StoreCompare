@@ -36,7 +36,7 @@ public class Register {
 	 */
 	@SuppressWarnings("deprecation")
 	public static Boolean main(String username, String password, int clientID) {
-
+		
 		// Status returned to the user
 		Boolean registerStatus = false;
 
@@ -93,6 +93,7 @@ public class Register {
 		// If loginStatus is false the server will display that the user registered failed
 		if (!registerStatus) {
 			System.out.println("> Client ID: " + clientID + " | Registed Username - " + username);
+			CreateHistory.main(username);
 		} else {
 			System.out.println("> Client ID: " + clientID + " | Failed Register Username - " + username);
 		}

@@ -275,10 +275,13 @@ public class MainMenu extends JFrame {
 		String[] splited = history.split("\\?");
 
 		System.out.println(history);
+		System.out.println(splited.toString());
 
 		try {
 			for (int i = 0; i < splited.length; i += 5) {
-				dtmHistory.addRow(new Object[] { splited[i], 
+				System.out.println(splited[i] + " " + splited[i+1] + " " + splited[i+2] + " " + splited[i+3] + " " + splited[i+4] + " ");
+				dtmHistory.addRow(new Object[] { 
+				splited[i], 
 				"€" + df.format(Double.parseDouble(splited[i + 1])),
 				"€" + df.format(Double.parseDouble(splited[i + 2])), 
 				"€" + df.format(Double.parseDouble(splited[i + 3])), 

@@ -50,7 +50,7 @@ public class HistoryGet {
 
 			// Builder separates items with '?' Used later to differentiate data
 			// with a string array split
-			builder.append("?" + itemTemp + "?" + price1Temp + "?" + price2Temp + "?" + price3Temp + "?" + dateTemp);
+			builder.append(itemTemp + "?" + price1Temp + "?" + price2Temp + "?" + price3Temp + "?" + dateTemp + "?");
 		}
 
 		// Close cursor

@@ -1,32 +1,33 @@
 package ie.gmit.proskills.Menu;
 
-import ie.gmit.proskills.Processes.StoreSearch;
-import ie.gmit.proskills.object.StoreInfo;
-import ie.gmit.proskills.Processes.HistoryAdd;
-import ie.gmit.proskills.Processes.HistoryGet;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.TextArea;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.awt.event.ActionEvent;
-import java.awt.EventQueue;
-import java.awt.Image;
-import java.awt.TextArea;
-import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import ie.gmit.proskills.Processes.HistoryAdd;
+import ie.gmit.proskills.Processes.HistoryGet;
+import ie.gmit.proskills.Processes.StoreSearch;
+import ie.gmit.proskills.object.StoreInfo;
 
 /**
  * This class is responsible for loading the Main Menu to the user. <br>

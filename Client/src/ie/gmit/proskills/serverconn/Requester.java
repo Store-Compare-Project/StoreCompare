@@ -1,11 +1,14 @@
 package ie.gmit.proskills.serverconn;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+
 import ie.gmit.proskills.object.History;
 import ie.gmit.proskills.object.LoginObject;
-
-import java.io.*;
-import java.net.*;
-import java.util.Scanner;
 
 /**
  * This class is the Requester, which is used to sent and receive data from/to

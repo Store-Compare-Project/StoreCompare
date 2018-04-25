@@ -2,7 +2,6 @@ package ie.gmit.proskills.Websites;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.List;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -11,7 +10,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import ie.gmit.proskills.Storage.Items;
 import ie.gmit.proskills.object.StoreInfo;
 /**
  * This class is responsible for parsing and extracing data from the Newegg.ie website. <br>

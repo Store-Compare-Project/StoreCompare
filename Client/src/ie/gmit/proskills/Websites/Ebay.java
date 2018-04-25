@@ -1,8 +1,10 @@
 package ie.gmit.proskills.Websites;
 
-import javax.swing.table.DefaultTableModel;
 import java.io.IOException;
 import java.text.DecimalFormat;
+
+import javax.swing.table.DefaultTableModel;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

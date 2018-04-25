@@ -1,14 +1,22 @@
 package ie.gmit.proskills.Processes;
 
-import ie.gmit.proskills.Websites.Adverts;
-import ie.gmit.proskills.Websites.Ebay;
-import ie.gmit.proskills.Websites.Newegg;
-
 import java.io.IOException;
 
 import javax.swing.JCheckBox;
 import javax.swing.table.DefaultTableModel;
 
+import ie.gmit.proskills.Websites.Adverts;
+import ie.gmit.proskills.Websites.Ebay;
+import ie.gmit.proskills.Websites.Newegg;
+
+/**
+ * This class is the main class for handling the threads for each store
+ * each store is run in a seperate thread to return the results of each search at the same time.<br>
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 public class StoreSearch {
 
 	public static void main(String item, DefaultTableModel dtm, JCheckBox chckbxEbay, JCheckBox chckbxDonedeal, JCheckBox chkBoxNewegg)
@@ -39,6 +47,7 @@ public class StoreSearch {
 	}
 }
 
+// Ebay thread
 class EbayThread extends Thread {
 	String item;
 	DefaultTableModel dtm;
@@ -83,7 +92,7 @@ class AdvertsThread extends Thread {
 	}
 }
 
-//Newegg Thread
+// Newegg Thread
 class NeweggThread extends Thread {
 	// Variables
 	String item;

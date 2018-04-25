@@ -1,5 +1,12 @@
 package ie.gmit.proskills.object;
 
+/**
+ * This class handles information about each stores search results such as average price for a product.<br>
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 public class StoreInfo {
 
 	private static String ebayAVG = "";

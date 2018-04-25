@@ -8,7 +8,6 @@ package ie.gmit.proskills.Menu;
  * @author Danielis Joniškis
  * @author Eddie Eldridge
  */
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -24,34 +23,27 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 /**
-<<<<<<< HEAD
-<<<<<<< HEAD
- * Stuff here
+ * This class is responsible for loading the Landing Page. <br>
+ * From here the user can register as a new user<br>
+ * Or they can log in as an existing user. This class is responsible for loading
+ * the Landing Page. <br>
+ * From here the user can register as a new user<br>
+ * Or they can log in as an existing user.
  * 
-=======
- * This class is responsible for loading the Landing Page. <br>
- * From here the user can register as a new user<br>
- * Or they can log in as an existing user.
->>>>>>> branchy
-=======
- * This class is responsible for loading the Landing Page. <br>
- * From here the user can register as a new user<br>
- * Or they can log in as an existing user.
->>>>>>> branchy
  * @author Cian Gannon
  * @author Danielis Joniškis
  * @author Eddie Eldridge
  */
-//A LandingPage class which utilises a JFrame to allow the user to access the Register and Login pages.
+// A LandingPage class which utilises a JFrame to allow the user to access the
+// Register and Login pages.
 public class LandingPage extends JFrame {
-	
+
 	private static final long serialVersionUID = 9184087532979872713L;
 	private JPanel contentPane;
 
 	/**
-	 * This class simply displays a Landing Page to the user.
-	 * From here they can navigate to the Register Page or
-	 * the Login Page.
+	 * This class simply displays a Landing Page to the user. From here they can
+	 * navigate to the Register Page or the Login Page.
 	 * 
 	 * @param x
 	 *            The x coordinates of the JFrame
@@ -64,27 +56,30 @@ public class LandingPage extends JFrame {
 				try {
 					LandingPage frame = new LandingPage(x, y);
 					frame.setVisible(true);
-					
+
 					// Change the icon image for the frame
 					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
-				    frame.setIconImage(img);
-					
+					frame.setIconImage(img);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		
 
 		});
-		
-		
+
 	}
 
 	/**
 	 * Create the frame.
+	 * 
+	 * @param x
+	 *            x position og frame
+	 * @param y
+	 *            y position of frame
 	 */
 	public LandingPage(int x, int y) {
-		
+
 		// Frame settings
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,7 +106,7 @@ public class LandingPage extends JFrame {
 		welcomeLabel.setBackground(Color.BLACK);
 		welcomeLabel.setFont(new Font("Papyrus", Font.PLAIN, 33));
 		panel.add(welcomeLabel);
-		
+
 		// Image labels
 		JLabel imageLabel = new JLabel("");
 		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
@@ -130,9 +125,6 @@ public class LandingPage extends JFrame {
 		imageLabel3.setIcon(new ImageIcon(img3));
 		imageLabel3.setBounds(391, 279, 32, 40);
 		panel.add(imageLabel3);
-		
-	
-
 
 		// Login button setup and action listener
 		JButton buttonLogin = new JButton("Login");
@@ -162,7 +154,7 @@ public class LandingPage extends JFrame {
 		});
 	}
 
-	//A function which closes the frame
+	// A function which closes the frame
 	public void CloseFrame() {
 		super.dispose();
 	}

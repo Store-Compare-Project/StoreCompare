@@ -220,7 +220,7 @@ public class MainMenu extends JFrame {
 
 				if (tfStore_Seach.getText().isEmpty()) {
 					JOptionPane.showMessageDialog(null, "Please do not leave search blank!");
-				} else if (!chckbxEbay.isSelected() && !chckbxDonedeal.isSelected()) {
+				} else if (!chckbxEbay.isSelected() && !chckbxDonedeal.isSelected() && !chckbxNewegg.isSelected()) {
 					System.out.println(chckbxEbay.isSelected());
 					JOptionPane.showMessageDialog(null, "Please tick at least one of the boxes!");
 				} else {
@@ -230,7 +230,7 @@ public class MainMenu extends JFrame {
 					String itemSearch = tfStore_Seach.getText();
 
 					try {
-						StoreSearch.main(itemSearch, dtm, chckbxEbay, chckbxDonedeal);
+						StoreSearch.main(itemSearch, dtm, chckbxEbay, chckbxDonedeal, chckbxNewegg);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

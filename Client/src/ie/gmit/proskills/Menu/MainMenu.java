@@ -110,7 +110,7 @@ public class MainMenu extends JFrame {
 
 		// Table settings
 		DefaultTableModel dtmHistory = new DefaultTableModel(0, 0);
-		String headerHistory[] = new String[] { "Item Name", "Ebay AVG", "DoneDeal AVG", "Date" };
+		String headerHistory[] = new String[] { "Item Name", "Ebay AVG", "DoneDeal AVG", "Newegg AVG", "Date" };
 		dtmHistory.setColumnIdentifiers(headerHistory);
 		table_1 = new JTable();
 		table_1.setModel(dtmHistory);
@@ -247,7 +247,9 @@ public class MainMenu extends JFrame {
 
 					dtmHistory.addRow(new Object[] { itemSearch,
 							"€" + df.format(Double.parseDouble(StoreInfo.getEbayAVG())),
-							"€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())), dateFormat.format(date) });
+							"€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())),
+							"€" + df.format(Double.parseDouble(StoreInfo.getNeweggAVG())),
+							dateFormat.format(date) });
 					StoreInfo.setEbayAVG("0.00");
 					StoreInfo.setDoneDealAVG("0.00");
 				}

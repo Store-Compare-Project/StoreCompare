@@ -183,6 +183,13 @@ public class MainMenu extends JFrame {
 		logoutButton.setBounds(545, 462, 89, 23);
 		contentPane.add(logoutButton);
 
+		// Radio box for querying the DoneDeal store
+		JCheckBox chckbxNewegg = new JCheckBox("Newegg");
+		chckbxNewegg.setBounds(141, 50, 97, 23);
+		chckbxNewegg.setBackground(Color.DARK_GRAY);
+		chckbxNewegg.setForeground(Color.LIGHT_GRAY);
+		contentPane.add(chckbxNewegg);
+		
 		// Radio box for querying the ebay store
 		JCheckBox chckbxEbay = new JCheckBox("Ebay");
 		chckbxEbay.setBounds(141, 70, 97, 23);
@@ -197,6 +204,7 @@ public class MainMenu extends JFrame {
 		chckbxDonedeal.setForeground(Color.LIGHT_GRAY);
 		contentPane.add(chckbxDonedeal);
 
+				
 		// Button listener for the back button
 		logoutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

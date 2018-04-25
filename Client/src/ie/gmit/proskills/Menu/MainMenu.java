@@ -110,7 +110,7 @@ public class MainMenu extends JFrame {
 
 		// Table settings
 		DefaultTableModel dtmHistory = new DefaultTableModel(0, 0);
-		String headerHistory[] = new String[] { "Item Name", "Ebay AVG", "DoneDeal AVG", "Date" };
+		String headerHistory[] = new String[] { "Item Name", "Ebay AVG", "DoneDeal AVG", "Newegg AVG", "Date" };
 		dtmHistory.setColumnIdentifiers(headerHistory);
 		table_1 = new JTable();
 		table_1.setModel(dtmHistory);
@@ -172,6 +172,11 @@ public class MainMenu extends JFrame {
 		TextArea taEbayAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
 		taEbayAVG.setBounds(86, 465, 70, 20);
 		contentPane.add(taEbayAVG);
+		
+		// Displays the average price for Newegg store
+		TextArea taNeweggAVG = new TextArea("€0.00", 3, 100, TextArea.SCROLLBARS_NONE);
+		taNeweggAVG.setBounds(426, 465, 70, 20);
+		contentPane.add(taNeweggAVG);
 
 		// Search button setup and action listener
 		JButton btnStore_Search = new JButton("Search");
@@ -203,6 +208,13 @@ public class MainMenu extends JFrame {
 		chckbxDonedeal.setBackground(Color.DARK_GRAY);
 		chckbxDonedeal.setForeground(Color.LIGHT_GRAY);
 		contentPane.add(chckbxDonedeal);
+		
+		JLabel lblNeweggAVG = new JLabel("Newegg AVG:");
+		lblNeweggAVG.setForeground(Color.LIGHT_GRAY);
+		lblNeweggAVG.setBounds(331, 466, 89, 14);
+		contentPane.add(lblNeweggAVG);
+		
+		
 
 				
 		// Button listener for the back button
@@ -238,16 +250,20 @@ public class MainMenu extends JFrame {
 					taEbayAVG.setText("€" + StoreInfo.getEbayAVG());
 
 					taDoneDealAVG.setText("€" + StoreInfo.getDoneDealAVG());
+					
+					taNeweggAVG.setText("€" + StoreInfo.getNeweggAVG());
 
 					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 					Date date = new Date();
 
-					HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(),
+					HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(), StoreInfo.getNeweggAVG(),
 							dateFormat.format(date));
 
 					dtmHistory.addRow(new Object[] { itemSearch,
 							"€" + df.format(Double.parseDouble(StoreInfo.getEbayAVG())),
-							"€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())), dateFormat.format(date) });
+							"€" + df.format(Double.parseDouble(StoreInfo.getDoneDealAVG())),
+							"€" + df.format(Double.parseDouble(StoreInfo.getNeweggAVG())),
+							dateFormat.format(date) });
 					StoreInfo.setEbayAVG("0.00");
 					StoreInfo.setDoneDealAVG("0.00");
 				}
@@ -261,10 +277,12 @@ public class MainMenu extends JFrame {
 		System.out.println(history);
 
 		try {
-			for (int i = 0; i < splited.length; i += 4) {
-				System.out.println(splited[i] + " " + splited[i + 1] + " " + splited[i + 2] + " " + splited[i + 3]);
-				dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i + 1])),
-						"€" + df.format(Double.parseDouble(splited[i + 2])), splited[i + 3] });
+			for (int i = 0; i < splited.length; i += 5) {
+				dtmHistory.addRow(new Object[] { splited[i], 
+				"€" + df.format(Double.parseDouble(splited[i + 1])),
+				"€" + df.format(Double.parseDouble(splited[i + 2])), 
+				"€" + df.format(Double.parseDouble(splited[i + 3])), 
+				splited[i + 4] });
 			}
 		} catch (ArrayIndexOutOfBoundsException ArrayIndexOutOfBoundsException) {
 		}

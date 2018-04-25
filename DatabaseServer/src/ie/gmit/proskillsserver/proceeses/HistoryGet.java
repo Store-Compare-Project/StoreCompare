@@ -45,11 +45,12 @@ public class HistoryGet {
 			String itemTemp = temp.get("item").toString();
 			String price1Temp = temp.get("ebayAVG").toString();
 			String price2Temp = temp.get("doneDealAVG").toString();
+			String price3Temp = temp.get("neweggAVG").toString();
 			String dateTemp = temp.get("date").toString();
 
 			// Builder separates items with '?' Used later to differentiate data
 			// with a string array split
-			builder.append("?" + itemTemp + "?" + price1Temp + "?" + price2Temp + "?" + dateTemp);
+			builder.append("?" + itemTemp + "?" + price1Temp + "?" + price2Temp + "?" + price3Temp + "?" + dateTemp);
 		}
 
 		// Close cursor

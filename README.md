@@ -48,7 +48,7 @@ java -jar StoreCompare.jar
 
 OR
 
-Assuming you have Java installed, you can just double click the .jar file and the program will open.
+Assuming you have Java installed, you can just run the StoreCompare.exe file and the program will open.
 
 ## Information
 For more information on concepts and technologies discussed and used in this program, please refer to the [Wiki](https://github.com/Store-Compare-Project/ITProSkills/wiki) and resources below.

@@ -25,8 +25,14 @@ import java.awt.event.ActionEvent;
 
 /**
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Stuff here
  * 
+=======
+ * This class is responsible for loading the Landing Page. <br>
+ * From here the user can register as a new user<br>
+ * Or they can log in as an existing user.
+>>>>>>> branchy
 =======
  * This class is responsible for loading the Landing Page. <br>
  * From here the user can register as a new user<br>

@@ -256,7 +256,7 @@ public class MainMenu extends JFrame {
 					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 					Date date = new Date();
 
-					HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(),
+					HistoryAdd.main(username, itemSearch, StoreInfo.getEbayAVG(), StoreInfo.getDoneDealAVG(), StoreInfo.getNeweggAVG(),
 							dateFormat.format(date));
 
 					dtmHistory.addRow(new Object[] { itemSearch,
@@ -278,9 +278,10 @@ public class MainMenu extends JFrame {
 
 		try {
 			for (int i = 0; i < splited.length; i += 4) {
-				System.out.println(splited[i] + " " + splited[i + 1] + " " + splited[i + 2] + " " + splited[i + 3]);
-				dtmHistory.addRow(new Object[] { splited[i], "€" + df.format(Double.parseDouble(splited[i + 1])),
-						"€" + df.format(Double.parseDouble(splited[i + 2])), splited[i + 3] });
+				dtmHistory.addRow(new Object[] { splited[i], 
+				"€" + df.format(Double.parseDouble(splited[i + 1])),
+				"€" + df.format(Double.parseDouble(splited[i + 2])), 
+				splited[i + 3] });
 			}
 		} catch (ArrayIndexOutOfBoundsException ArrayIndexOutOfBoundsException) {
 		}

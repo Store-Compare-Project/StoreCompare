@@ -9,6 +9,7 @@
 * [How to run](#how-to-run-the-program)
 * [Design](#design)
 * [Information](#information)
+* [Video](#video)
 * [Technologies](#technologies)
 * [Resources](#resources)
 * [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki)
@@ -49,6 +50,10 @@ Assuming you have Java installed, you can just double click the .jar file and th
 
 ## Information
 For more information on concepts and technologies discussed and used in this program, please refer to the [Wiki](https://github.com/Store-Compare-Project/ITProSkills/wiki) and resources below.
+
+## Video
+A video demonstration of the program can be found here
+https://www.youtube.com/watch?v=3TmqZpaAYAA&feature=youtu.be
 
 ## Technologies and Software
 **Technologies**

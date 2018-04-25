@@ -67,7 +67,7 @@ public class Newegg {
 			// Add the found stuff to our list
 			allPrices += total;
 			
-			dtm.addRow(new Object [] { name, price, postage, "€" +df.format(total), "Newegg"});
+			dtm.addRow(new Object [] { name, "€" + df.format(price), "€" + df.format(postage), "€" + df.format(total), "Newegg"});
 		}
 		
 		StoreInfo.setNeweggAvg(df.format(allPrices/totalQueries));

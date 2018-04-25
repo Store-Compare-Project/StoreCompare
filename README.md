@@ -18,6 +18,8 @@
 StoreCompare is a multi-threaded Java application that can be used to compare the price of products across websites such as Aliexpress and Ebay. 
 It provides the user a quick and easy way to compare the prices of a product across multiple websites.
 
+![storecompare](https://user-images.githubusercontent.com/22448079/39260663-107c2abe-48b2-11e8-86d7-46046e4db086.gif)
+
 ## How to run the program
 This program uses the Java programming language .
 

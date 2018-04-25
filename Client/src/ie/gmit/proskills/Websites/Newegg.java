@@ -13,15 +13,22 @@ import org.jsoup.select.Elements;
 
 import ie.gmit.proskills.Storage.Items;
 import ie.gmit.proskills.object.StoreInfo;
-
+/**
+ * This class is responsible for parsing and extracing data from the Newegg.ie website. <br>
+ * From here the DOM is broken down into elements which we can loop through and extract data from <br>
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 public class Newegg {
 
-	// Run this class when we want to search amazon
+	// Run this class when we want to search Newegg
 	public static void run(String searchTerm, DefaultTableModel dtm) throws IOException
 	{
 		DecimalFormat df = new DecimalFormat("#.00");
 
-		// Varaibles
+		// Variables
 		String name = null;
 		String priceString=null;
 		String urlPart1="https://www.newegg.com/global/ie/Product/ProductList.aspx?Submit=ENE&DEPA=0&Order=BESTMATCH&Description=";
@@ -48,6 +55,7 @@ public class Newegg {
 			      .referrer("http://www.google.com")
 			      .get();
 	
+		// Get all html of this class
 		Elements els  = doc.getElementsByClass("item-container");
 				
 		// For every element of the element we assigned above
@@ -64,9 +72,10 @@ public class Newegg {
 					
 			total = price + postage;
 			
-			// Add the found stuff to our list
 			allPrices += total;
+			totalQueries++;
 			
+			// Add the found stuff to our list
 			dtm.addRow(new Object [] { name, "€" + df.format(price), "€" + df.format(postage), "€" + df.format(total), "Newegg"});
 		}
 		

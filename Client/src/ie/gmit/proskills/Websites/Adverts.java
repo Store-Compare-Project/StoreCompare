@@ -14,14 +14,22 @@ import org.jsoup.select.Elements;
 import ie.gmit.proskills.Storage.Items;
 import ie.gmit.proskills.object.StoreInfo;
 
+/**
+ * This class is responsible for parsing and extracing data from the Adverts.ie website. <br>
+ * From here the DOM is broken down into elements which we can loop through and extract data from <br>
+ * 
+ * @author Cian Gannon
+ * @author Danielis Joniškis
+ * @author Eddie Eldridge
+ */
 public class Adverts {
 
-	// Run this class when we want to search amazon
+	// Run this class when we want to search Adverts
 	public static void run(String searchTerm, DefaultTableModel dtm) throws IOException {
 
 		DecimalFormat df = new DecimalFormat("#.00");
 
-		// Varaibles
+		// Variables
 		String name = null;
 		String price = null;
 		double total = 0.00;
@@ -35,12 +43,11 @@ public class Adverts {
 		// Complete the url with search terms added
 		url += searchTerm;
 
-		// Create a document of the HTML of the webpage we are searching (In our
-		// case ebay)
+		// Create a document of the HTML of the webpage we are searching
 		Document doc = Jsoup.connect(url)
-				.userAgent(
-						"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2")
-				.timeout(60000).get();
+				.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.874.120 Safari/535.2")
+				.timeout(60000)
+				.get();
 
 		// Get all html of this class
 		Elements els = doc.getElementsByClass("sr-grid-cell quick-peek-container");
@@ -62,7 +69,7 @@ public class Adverts {
 			allPrices += total;
 			totalQueries++;
 
-			// Add the found stuff to our list
+			// Add the found stuff to our table
 			dtm.addRow(new Object[] { name, price, "Contact Seller", "€" + df.format(total), "DoneDeal" });
 		}
 		

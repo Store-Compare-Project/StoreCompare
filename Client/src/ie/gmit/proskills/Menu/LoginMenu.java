@@ -20,39 +20,34 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
+
 /**
  * This class is responsible for loading the Login Page. <br>
- * The class allows the user to enter a username and password, and login. 
+ * The class allows the user to enter a username and password, and login.
  * 
  * @author Cian Gannon
  * @author Danielis Joniškis
  * @author Eddie Eldridge
  */
 
-//A LoginMenu class which utilises a JFrame to allow the user to Login to the MainMenu.
+// A LoginMenu class which utilises a JFrame to allow the user to Login to the
+// MainMenu.
 public class LoginMenu extends JFrame {
-	
+
+	private static final long serialVersionUID = 3819995849104340705L;
+	private JPanel contentPane;
+	private JTextField usernameInput;
+	private JPasswordField passwordInput;
+
 	/**
-	 * This class displays a Login Page to the user.
-	 * From here they can enter a valid username and password,
-	 * allowing them to successful login and access the Main Menu.
-	 * The user can also choose to go back to the Landing Page.
+	 * This class displays a Login Page to the user. From here they can enter a
+	 * valid username and password, allowing them to successful login and access
+	 * the Main Menu. The user can also choose to go back to the Landing Page.
 	 * 
 	 * @param x
 	 *            The x coordinates of the JFrame
 	 * @param y
 	 *            The y coordinates of the JFrame
-	 */
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3819995849104340705L;
-	private JPanel contentPane;
-	private JTextField usernameInput;
-	private JPasswordField passwordInput;
-	/**
-	 * Launch the application.
 	 */
 	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {
@@ -60,11 +55,11 @@ public class LoginMenu extends JFrame {
 				try {
 					LoginMenu frame = new LoginMenu(x, y);
 					frame.setVisible(true);
-					
+
 					// Change the icon image for the frame
 					Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
-				    frame.setIconImage(img);
-				    
+					frame.setIconImage(img);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -74,12 +69,17 @@ public class LoginMenu extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * 
+	 * @param x
+	 *            y position of frame
+	 * @param y
+	 *            y position of frame
 	 */
 	public LoginMenu(int x, int y) {
-		
+
 		// Set jFrame icon to be the StoreCompare logo
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage("/img/logo.png"));
-		
+
 		// Frame settings
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(x, y, 560, 420);
@@ -95,57 +95,57 @@ public class LoginMenu extends JFrame {
 		panel.setBounds(251, 0, 293, 381);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
+
 		JPanel coverPanel = new JPanel();
 		coverPanel.setBackground(Color.DARK_GRAY);
 		coverPanel.setBounds(0, 199, 250, 182);
 		contentPane.add(coverPanel);
-		
-		//A label for the usename input
+
+		// A label for the usename input
 		JLabel lblNewLabel = new JLabel("Username:");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblNewLabel.setBounds(11, 57, 200, 14);
 		panel.add(lblNewLabel);
-		
-		//A label for the password input
+
+		// A label for the password input
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblPassword.setBounds(11, 113, 200, 14);
 		panel.add(lblPassword);
-		
-		//A page header label
+
+		// A page header label
 		JLabel lblHeader = new JLabel("Login");
 		lblHeader.setHorizontalAlignment(SwingConstants.CENTER);
 		lblHeader.setFont(new Font("Jokerman", Font.PLAIN, 28));
 		lblHeader.setBounds(11, 11, 272, 43);
 		panel.add(lblHeader);
-		
-		//An Image label for the logo
+
+		// An Image label for the logo
 		JLabel logoLabel = new JLabel("");
 		Image img = new ImageIcon(this.getClass().getResource("/img/logo.png")).getImage();
 		logoLabel.setIcon(new ImageIcon(img));
 		logoLabel.setBounds(0, 0, 250, 200);
-		
+
 		contentPane.add(logoLabel);
-		
-		//A text field for the username input
+
+		// A text field for the username input
 		usernameInput = new JTextField();
 		usernameInput.setBounds(11, 82, 272, 20);
 		panel.add(usernameInput);
 		usernameInput.setColumns(10);
-		
-		//A text field for the password input
+
+		// A text field for the password input
 		passwordInput = new JPasswordField();
 		passwordInput.setBounds(10, 137, 273, 20);
 		panel.add(passwordInput);
 		passwordInput.setColumns(10);
-		
-		//Login button which is handled by an action listener
+
+		// Login button which is handled by an action listener
 		JButton loginButton = new JButton("Login");
 		loginButton.setBounds(11, 215, 272, 88);
 		panel.add(loginButton);
-		
-		//A button which takes you back to the landing page
+
+		// A button which takes you back to the landing page
 		JButton backButton = new JButton("Back");
 		backButton.setBounds(11, 347, 89, 23);
 		panel.add(backButton);
@@ -156,13 +156,12 @@ public class LoginMenu extends JFrame {
 				CloseFrame();
 			}
 		});
-		
-		
+
 		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
 				String username = usernameInput.getText();
-				String password = new String(passwordInput.getPassword()); 
+				String password = new String(passwordInput.getPassword());
 
 				// Input validation for register details
 				boolean usernameValidationCheck = Validator.validateUsername(username);
@@ -178,7 +177,7 @@ public class LoginMenu extends JFrame {
 						// main landing page of the program
 						if (loginCheck) {
 							MainMenu.main((int) Math.round(contentPane.getLocationOnScreen().getX()),
-							(int) Math.round(contentPane.getLocationOnScreen().getY()), username);
+									(int) Math.round(contentPane.getLocationOnScreen().getY()), username);
 							CloseFrame();
 						} else {
 							JOptionPane.showMessageDialog(null, "Username/Password are incorrect.");
@@ -214,10 +213,10 @@ public class LoginMenu extends JFrame {
 				}
 			}
 		});
-		
+
 	}
 
-	//A function which closes the frame
+	// A function which closes the frame
 	public void CloseFrame() {
 		super.dispose();
 	}

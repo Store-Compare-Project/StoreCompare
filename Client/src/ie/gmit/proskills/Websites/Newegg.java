@@ -23,7 +23,15 @@ import ie.gmit.proskills.object.StoreInfo;
  */
 public class Newegg {
 
-	// Run this class when we want to search Newegg
+	/**
+	 * The main component.<br>
+	 * 
+	 * 
+	 * @param searchTerm
+	 *            the search term the user has entered
+	 * @param dtm
+	 *            the name of the TableModel
+	 */	
 	public static void run(String searchTerm, DefaultTableModel dtm) throws IOException
 	{
 		DecimalFormat df = new DecimalFormat("#.00");

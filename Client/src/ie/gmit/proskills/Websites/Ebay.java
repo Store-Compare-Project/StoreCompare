@@ -19,7 +19,15 @@ import ie.gmit.proskills.object.StoreInfo;
  */
 public class Ebay {
 	
-	// Run this class when we want to search Ebay
+	/**
+	 * The main component.<br> 
+	 * 
+	 * 
+	 * @param searchTerm
+	 *            the search term the user has entered
+	 * @param dtm
+	 *            the name of the TableModel
+	 */	
 	public static void main(String searchTerm, DefaultTableModel dtm) throws IOException {
 
 		DecimalFormat df = new DecimalFormat("#.00");

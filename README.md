@@ -79,11 +79,11 @@ A video demonstration of the program can be found [here](https://www.youtube.com
 
 
 ## Developers
--[Eddie Eldridge](https://github.com/EddieEldridge)	
+[Eddie Eldridge](https://github.com/EddieEldridge)	
  	 
--[Danielis Joniskis](https://github.com/jawneck)
+[Danielis Joniskis](https://github.com/jawneck)
  	 
--[Cian Gannon](https://github.com/cian2009/ITProSkills)
+[Cian Gannon](https://github.com/cian2009/ITProSkills)
 
 ## Acknowledgments
 - Martin Hynes - For helping us with the many problems we encountered with the project and also for helping us keep a consistent work schedule.

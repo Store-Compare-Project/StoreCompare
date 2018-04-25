@@ -83,7 +83,7 @@ public class LandingPage extends JFrame {
 		// Frame settings
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(x, y, 560, 420);
+		setBounds(x, y, 550, 410);
 		setTitle("StoreCompare - Landing Page");
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);

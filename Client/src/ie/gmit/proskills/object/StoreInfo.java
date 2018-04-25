@@ -4,6 +4,7 @@ public class StoreInfo {
 
 	private static String ebayAVG = "";
 	private static String doneDealAVG = "";
+	private static String neweggAVG = "";
 
 	public static String getEbayAVG() {
 		
@@ -23,11 +24,24 @@ public class StoreInfo {
 		return doneDealAVG;
 	}
 
+	public static String getNeweggAVG() {
+		
+		if(neweggAVG.isEmpty()){
+			neweggAVG = "0.00";
+		}
+		
+		return neweggAVG;
+	}
+	
 	public static void setEbayAVG(String ebayAVGSet) {
 		ebayAVG = ebayAVGSet;
 	}
 
 	public static void setDoneDealAVG(String doneDealAVGSet) {
 		doneDealAVG = doneDealAVGSet;
+	}
+
+	public static void setNeweggAvg(String neweggAVGSet) {
+		neweggAVG = neweggAVGSet;		
 	}
 }

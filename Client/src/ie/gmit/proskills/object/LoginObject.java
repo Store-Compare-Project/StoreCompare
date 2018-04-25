@@ -1,7 +1,7 @@
 package ie.gmit.proskills.object;
 
 /**
- * This class is simpy the LoginObject.<br>
+ * This Login object checks if the user has logged in/registered successfully.<br>
  * 
  * @author Cian Gannon
  * @author Danielis Joniškis
@@ -10,10 +10,6 @@ package ie.gmit.proskills.object;
 
 public class LoginObject {
 	
-	/**
-	 * This Login object checks if the user has logged in successfully.
-	 * 
-	 */
 	public static Boolean login;
 
 	public static Boolean getLogin() {

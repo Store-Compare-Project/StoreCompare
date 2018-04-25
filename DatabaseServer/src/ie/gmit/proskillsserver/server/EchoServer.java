@@ -41,14 +41,19 @@ public class EchoServer {
 	 *             Throws all errors
 	 */
 	public static void main(String[] args) throws Exception {
+
+		// Set serversocket with port
 		ServerSocket m_ServerSocket = new ServerSocket(2004, 10);
 
+		// Setup date
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 
+		// Output server status
 		System.out.println(
 				"> (" + dateFormat.format(date) + ") Started Server on port: " + m_ServerSocket.getLocalPort());
 
+		// Set id and listen for incoming connections
 		int id = 0;
 		while (true) {
 			Socket clientSocket = m_ServerSocket.accept();
@@ -58,6 +63,7 @@ public class EchoServer {
 	}
 }
 
+// Thread settings
 class ClientServiceThread extends Thread {
 	Socket clientSocket;
 	String message;
@@ -70,6 +76,7 @@ class ClientServiceThread extends Thread {
 		clientID = i;
 	}
 
+	// Send message method
 	void sendMessage(String msg) {
 		try {
 			out.writeObject(msg);
@@ -79,11 +86,14 @@ class ClientServiceThread extends Thread {
 		}
 	}
 
+	// Thread
 	public void run() {
 
+		// Setup date
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
 
+		// Output server status
 		System.out.println("\n> (" + dateFormat.format(date) + ") Accepted Client ID: " + clientID + " | Address - "
 				+ clientSocket.getInetAddress().getHostName());
 
@@ -97,47 +107,61 @@ class ClientServiceThread extends Thread {
 			String[] splited = message.split("\\?");
 			boolean loginStatus = false;
 
+			// If first word in string equals 'login' then user is attempting to login
 			if (splited[0].equals("login")) {
 
+				// Output server status
 				System.out.println("> Client ID: " + clientID + " | Login Attempt Username - " + splited[1]);
 
+				// Get login status from login to check if details are correct
 				loginStatus = Login.main(splited[1], splited[2], clientID);
-				
+
+				// Send back true/false statement to client
 				sendMessage("" + loginStatus);
 
+			// If first word in string equals 'register' then user is attempting to register
 			} else if (splited[0].equals("register")) {
 
+				// Output server status
 				System.out.println("> Client ID: " + clientID + " | Register Attempt Username - " + splited[1]);
 
+				// Get login status from register to check if username is taken
 				loginStatus = Register.main(splited[1], splited[2], clientID);
-				
-				sendMessage("" + loginStatus);
-				
-			}else if (splited[0].equals("history")) {
 
+				// Send back true/false statement to client
+				sendMessage("" + loginStatus);
+
+			// If first word in string equals 'history' then user is attempting to add item search history
+			} else if (splited[0].equals("history")) {
+
+				// Output server status
 				System.out.println("> Client ID: " + clientID + " | Adding History for - " + splited[1]);
 
+				// Run method to add history and pass item info
 				History.main(splited);
-				
+
+				// Send nothing and stop client form waiting for message
 				sendMessage("");
 
-			}else if (splited[0].equals("historyGet")) {
+			// If first word in string equals 'historyGet' then user is attempting to get all item search history
+			} else if (splited[0].equals("historyGet")) {
 
+				// Output server status
 				System.out.println("> Client ID: " + clientID + " | Getting all History for User - " + splited[1]);
 
+				// Get history search results
 				String newHistory = HistoryGet.main(splited[1]);
-				
+
+				// Send history search results
 				sendMessage(newHistory);
 			}
-			
 
+			// Output server status
 			System.out.println("> (" + dateFormat.format(date) + ") Disconnecting Client ID: " + clientID
 					+ " | Address - " + clientSocket.getInetAddress().getHostName());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

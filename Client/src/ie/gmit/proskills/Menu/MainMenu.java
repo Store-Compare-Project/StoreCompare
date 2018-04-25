@@ -277,11 +277,12 @@ public class MainMenu extends JFrame {
 		System.out.println(history);
 
 		try {
-			for (int i = 0; i < splited.length; i += 4) {
+			for (int i = 0; i < splited.length; i += 5) {
 				dtmHistory.addRow(new Object[] { splited[i], 
 				"€" + df.format(Double.parseDouble(splited[i + 1])),
 				"€" + df.format(Double.parseDouble(splited[i + 2])), 
-				splited[i + 3] });
+				"€" + df.format(Double.parseDouble(splited[i + 3])), 
+				splited[i + 4] });
 			}
 		} catch (ArrayIndexOutOfBoundsException ArrayIndexOutOfBoundsException) {
 		}

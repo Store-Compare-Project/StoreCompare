@@ -26,6 +26,9 @@ import java.awt.event.ActionEvent;
 //A LandingPage class which utilises a JFrame to allow the user to access the Register and Login pages.
 public class LandingPage extends JFrame {
 	
+	private static final long serialVersionUID = 9184087532979872713L;
+	private JPanel contentPane;
+
 	/**
 	 * This class simply displays a Landing Page to the user.
 	 * From here they can navigate to the Register Page or
@@ -35,16 +38,6 @@ public class LandingPage extends JFrame {
 	 *            The x coordinates of the JFrame
 	 * @param y
 	 *            The y coordinates of the JFrame
-	 */
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 9184087532979872713L;
-	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
 	 */
 	public static void main(int x, int y) {
 		EventQueue.invokeLater(new Runnable() {

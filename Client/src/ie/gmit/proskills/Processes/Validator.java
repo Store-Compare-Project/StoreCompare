@@ -35,7 +35,7 @@ public class Validator {
 	  
 	   /**
 	    * Validate password with regular expression
-		   * @param Password password for validation
+		   * @param  password for validation
 		   * @return true valid password, false invalid password
 		   */
 		  public static boolean validatePassword(String password)

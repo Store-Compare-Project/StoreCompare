@@ -61,7 +61,7 @@ public class Newegg {
 			      .referrer("http://www.google.com")
 			      .get();
 	
-		// Get all html of this class
+		// Get all HTML of this class
 		Elements els  = doc.getElementsByClass("item-container");
 				
 		// For every element of the element we assigned above

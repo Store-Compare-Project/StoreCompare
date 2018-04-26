@@ -7,10 +7,10 @@
 ## Contents
 * [Description](#description)
 * [How to run](#how-to-run-the-program)
-* [Design](#design)
+* [Design](https://github.com/Store-Compare-Project/StoreCompare/wiki/Design-Document)
 * [Information](#information)
 * [Video](#video)
-* [Technologies](#technologies)
+* [Technologies](#technologies-and-software)
 * [Resources](#resources)
 * [Wiki](https://github.com/EddieEldridge/GoLangAutomaton/wiki)
 

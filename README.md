@@ -8,6 +8,7 @@
 * [Description](#description)
 * [How to run](#how-to-run-the-program)
 * [Design](https://github.com/Store-Compare-Project/StoreCompare/wiki/Design-Document)
+* [Documentation](#documentation)
 * [Information](#information)
 * [Video](#video)
 * [Technologies](#technologies-and-software)
@@ -53,6 +54,11 @@ Assuming you have Java installed, you can just run the StoreCompare.exe file and
 
 ## Information
 For more information on concepts and technologies discussed and used in this program, please refer to the [Wiki](https://github.com/Store-Compare-Project/ITProSkills/wiki) and resources below.
+
+## Documentation
+Included in both client and database/server folders is a 'docs' folder containing JavaDocs for their respective classes.
+- [Client Docs](https://github.com/Store-Compare-Project/StoreCompare/tree/master/Client/doc)
+- [Database/Server Docs](https://github.com/Store-Compare-Project/StoreCompare/tree/master/DatabaseServer/doc)
 
 ## Video
 A video demonstration of the program can be found [here](https://www.youtube.com/watch?v=3TmqZpaAYAA&feature=youtu.be)
